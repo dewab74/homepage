@@ -1,0 +1,1024 @@
+{
+  "cruises": [
+    {
+      "cruise_id": "2010-06-06-carnival-conquest-western-caribbean",
+      "cruise_line": "Carnival Cruise Line",
+      "ship": "Carnival Conquest",
+      "cruise_name": "7 Day Western Caribbean Itinerary",
+      "embarkation": {
+        "date": "2010-06-06"
+      },
+      "disembarkation": {
+        "date": "2010-06-13"
+      },
+      "length_nights": 7,
+      "cabin": null,
+      "itinerary": [
+        {
+          "port": "At Sea",
+          "type": "sea_day"
+        },
+        {
+          "port": "At Sea",
+          "type": "sea_day"
+        },
+        {
+          "port": "Montego Bay, Jamaica",
+          "type": "port"
+        },
+        {
+          "port": "Grand Cayman, Cayman Islands",
+          "type": "tender_port"
+        },
+        {
+          "port": "Cozumel, Mexico",
+          "type": "port"
+        },
+        {
+          "port": "At Sea",
+          "type": "sea_day"
+        }
+      ],
+      "significant_entries": []
+    },
+    {
+      "cruise_id": "2011-04-24-royal-caribbean-voyager-western-caribbean",
+      "cruise_line": "Royal Caribbean International",
+      "ship": "Voyager of the Seas",
+      "cruise_name": "7 Night Western Caribbean Cruise",
+      "embarkation": {
+        "date": "2011-04-24"
+      },
+      "disembarkation": {
+        "date": "2011-05-01"
+      },
+      "length_nights": 7,
+      "cabin": null,
+      "itinerary": [
+        {
+          "port": "At Sea",
+          "type": "sea_day"
+        },
+        {
+          "port": "Cozumel, Mexico",
+          "type": "port"
+        },
+        {
+          "port": "George Town, Grand Cayman",
+          "type": "tender_port"
+        },
+        {
+          "port": "Falmouth, Jamaica",
+          "type": "port"
+        },
+        {
+          "port": "At Sea",
+          "type": "sea_day"
+        },
+        {
+          "port": "At Sea",
+          "type": "sea_day"
+        }
+      ],
+      "significant_entries": []
+    },
+    {
+      "cruise_id": "2012-08-19-carnival-magic-western-caribbean",
+      "cruise_line": "Carnival Cruise Line",
+      "ship": "Carnival Magic",
+      "cruise_name": "Western Caribbean",
+      "embarkation": {
+        "date": "2012-08-19"
+      },
+      "disembarkation": {
+        "date": "2012-08-26"
+      },
+      "length_nights": 7,
+      "cabin": {
+        "category": "GS"
+      },
+      "itinerary": [
+        {
+          "port": "At Sea",
+          "type": "sea_day"
+        },
+        {
+          "port": "At Sea",
+          "type": "sea_day"
+        },
+        {
+          "port": "Montego Bay, Jamaica",
+          "type": "port"
+        },
+        {
+          "port": "Grand Cayman, Cayman Islands",
+          "type": "port"
+        },
+        {
+          "port": "Cozumel, Mexico",
+          "type": "port"
+        },
+        {
+          "port": "At Sea",
+          "type": "sea_day"
+        }
+      ],
+      "significant_entries": []
+    },
+    {
+      "cruise_id": "2013-04-07-royal-caribbean-mariner-western-caribbean",
+      "cruise_line": "Royal Caribbean International",
+      "ship": "Mariner of the Seas",
+      "cruise_name": "Western Caribbean",
+      "embarkation": {
+        "date": "2013-04-07"
+      },
+      "disembarkation": {
+        "date": "2013-04-14"
+      },
+      "length_nights": 7,
+      "cabin": {
+        "category": "GS"
+      },
+      "itinerary": [
+        {
+          "port": "At Sea",
+          "type": "sea_day"
+        },
+        {
+          "port": "At Sea",
+          "type": "sea_day"
+        },
+        {
+          "port": "Falmouth, Jamaica",
+          "type": "port"
+        },
+        {
+          "port": "George Town, Grand Cayman",
+          "type": "tender_port"
+        },
+        {
+          "port": "Cozumel, Mexico",
+          "type": "port"
+        },
+        {
+          "port": "At Sea",
+          "type": "sea_day"
+        }
+      ],
+      "significant_entries": []
+    },
+    {
+      "cruise_id": "2014-05-11-royal-caribbean-navigator-western-caribbean",
+      "cruise_line": "Royal Caribbean International",
+      "ship": "Navigator of the Seas",
+      "cruise_name": "Western Caribbean",
+      "embarkation": {
+        "date": "2014-05-11"
+      },
+      "disembarkation": {
+        "date": "2014-05-18"
+      },
+      "length_nights": 7,
+      "cabin": {
+        "category": "OS"
+      },
+      "itinerary": [
+        {
+          "port": "At Sea",
+          "type": "sea_day"
+        },
+        {
+          "port": "At Sea",
+          "type": "sea_day"
+        },
+        {
+          "port": "Falmouth, Jamaica",
+          "type": "port"
+        },
+        {
+          "port": "George Town, Grand Cayman",
+          "type": "tender_port"
+        },
+        {
+          "port": "Cozumel, Mexico",
+          "type": "port"
+        },
+        {
+          "port": "At Sea",
+          "type": "sea_day"
+        }
+      ],
+      "significant_entries": [
+        "Exclusive Jamaica Sandals Resort Day Pass for 2"
+      ]
+    },
+    {
+      "cruise_id": "2015-02-21-royal-caribbean-serenade-bahamas",
+      "cruise_line": "Royal Caribbean International",
+      "ship": "Serenade of the Seas",
+      "cruise_name": "7 Night Bahamas",
+      "embarkation": {
+        "date": "2015-02-21"
+      },
+      "disembarkation": {
+        "date": "2015-02-28"
+      },
+      "length_nights": 7,
+      "cabin": {
+        "category": "RS"
+      },
+      "itinerary": [
+        {
+          "port": "At Sea",
+          "type": "sea_day"
+        },
+        {
+          "port": "Key West, Florida, US",
+          "type": "port"
+        },
+        {
+          "port": "Nassau, Bahamas",
+          "type": "port"
+        },
+        {
+          "port": "CocoCay, Bahamas",
+          "type": "tender_port"
+        },
+        {
+          "port": "At Sea",
+          "type": "sea_day"
+        },
+        {
+          "port": "At Sea",
+          "type": "sea_day"
+        }
+      ],
+      "significant_entries": []
+    },
+    {
+      "cruise_id": "2016-03-20-royal-caribbean-liberty-western-caribbean",
+      "cruise_line": "Royal Caribbean International",
+      "ship": "Liberty of the Seas",
+      "cruise_name": "7 Night Western Caribbean Cruise",
+      "embarkation": {
+        "date": "2016-03-20"
+      },
+      "disembarkation": {
+        "date": "2016-03-27"
+      },
+      "length_nights": 7,
+      "cabin": {
+        "category": "OS"
+      },
+      "itinerary": [
+        {
+          "port": "At Sea",
+          "type": "sea_day"
+        },
+        {
+          "port": "At Sea",
+          "type": "sea_day"
+        },
+        {
+          "port": "Falmouth, Jamaica",
+          "type": "port"
+        },
+        {
+          "port": "George Town, Grand Cayman",
+          "type": "tender_port"
+        },
+        {
+          "port": "Cozumel, Mexico",
+          "type": "port"
+        },
+        {
+          "port": "At Sea",
+          "type": "sea_day"
+        }
+      ],
+      "significant_entries": []
+    },
+    {
+      "cruise_id": "2018-04-22-royal-caribbean-liberty-western-caribbean",
+      "cruise_line": "Royal Caribbean International",
+      "ship": "Liberty of the Seas",
+      "cruise_name": "7 Night Western Caribbean Cruise",
+      "embarkation": {
+        "date": "2018-04-22"
+      },
+      "disembarkation": {
+        "date": "2018-04-29"
+      },
+      "length_nights": 7,
+      "cabin": {
+        "category": "GS"
+      },
+      "itinerary": [
+        {
+          "port": "At Sea",
+          "type": "sea_day"
+        },
+        {
+          "port": "At Sea",
+          "type": "sea_day"
+        },
+        {
+          "port": "Roatan, Honduras",
+          "type": "port"
+        },
+        {
+          "port": "Costa Maya, Mexico",
+          "type": "port"
+        },
+        {
+          "port": "Cozumel, Mexico",
+          "type": "port"
+        },
+        {
+          "port": "At Sea",
+          "type": "sea_day"
+        }
+      ],
+      "significant_entries": []
+    },
+    {
+      "cruise_id": "2019-06-02-holland-america-oosterdam-alaska",
+      "cruise_line": "Holland America Line",
+      "ship": "Oosterdam",
+      "cruise_name": "7 Nights Alaska round trip Seattle",
+      "embarkation": {
+        "date": "2019-06-02"
+      },
+      "disembarkation": {
+        "date": "2019-06-09"
+      },
+      "length_nights": 7,
+      "cabin": null,
+      "itinerary": [
+        {
+          "port": "Juneau, Alaska, US",
+          "type": "port"
+        },
+        {
+          "port": "Sitka, Alaska, US",
+          "type": "port"
+        },
+        {
+          "port": "Ketchikan, Alaska, US",
+          "type": "port"
+        },
+        {
+          "port": "Victoria, British Columbia, Canada",
+          "type": "port"
+        }
+      ],
+      "significant_entries": [
+        "Whale watching shore excursion"
+      ]
+    },
+    {
+      "cruise_id": "2020-01-11-holland-america-nieuw-amsterdam-eastern-caribbean",
+      "cruise_line": "Holland America Line",
+      "ship": "Nieuw Amsterdam",
+      "cruise_name": "7-Day Eastern Caribbean",
+      "embarkation": {
+        "date": "2020-01-11"
+      },
+      "disembarkation": {
+        "date": "2020-01-18"
+      },
+      "length_nights": 7,
+      "cabin": {
+        "category": "SA"
+      },
+      "itinerary": [
+        {
+          "port": "At Sea",
+          "type": "sea_day"
+        },
+        {
+          "port": "Grand Turk, Turks and Caicos",
+          "type": "port"
+        },
+        {
+          "port": "San Juan, Puerto Rico",
+          "type": "port"
+        },
+        {
+          "port": "St. Thomas, U.S. Virgin Islands",
+          "type": "port"
+        },
+        {
+          "port": "At Sea",
+          "type": "sea_day"
+        },
+        {
+          "port": "Half Moon Cay, Bahamas",
+          "type": "tender_port"
+        }
+      ],
+      "significant_entries": [
+        "Beach villa confirmation found; price not reliably extracted.",
+        "Post-cruise Harbor Beach Marriott Resort and transfers listed in HAL itinerary; price not separately extracted."
+      ]
+    },
+    {
+      "cruise_id": "2021-09-19-royal-caribbean-independence-western-caribbean",
+      "cruise_line": "Royal Caribbean International",
+      "ship": "Independence of the Seas",
+      "cruise_name": "8 Night Western Caribbean",
+      "embarkation": {
+        "date": "2021-09-19"
+      },
+      "disembarkation": {
+        "date": "2021-09-27"
+      },
+      "length_nights": 8,
+      "cabin": {
+        "category": "OS"
+      },
+      "itinerary": [
+        {
+          "port": "At Sea",
+          "type": "sea_day"
+        },
+        {
+          "port": "Cozumel, Mexico",
+          "type": "port"
+        },
+        {
+          "port": "George Town, Grand Cayman",
+          "type": "port"
+        },
+        {
+          "port": "Falmouth, Jamaica",
+          "type": "port"
+        },
+        {
+          "port": "At Sea",
+          "type": "sea_day"
+        },
+        {
+          "port": "At Sea",
+          "type": "sea_day"
+        },
+        {
+          "port": "At Sea",
+          "type": "sea_day"
+        }
+      ],
+      "significant_entries": [
+        "Royal Caribbean Cruise Planner order history total paid"
+      ]
+    },
+    {
+      "cruise_id": "2022-04-17-holland-america-nieuw-statendam-passage-to-spain",
+      "cruise_line": "Holland America Line",
+      "ship": "Nieuw Statendam",
+      "cruise_name": "14-Day Passage To Spain",
+      "embarkation": {
+        "date": "2022-04-17"
+      },
+      "disembarkation": {
+        "date": "2022-05-01"
+      },
+      "length_nights": 14,
+      "cabin": {
+        "category": "A"
+      },
+      "itinerary": [
+        {
+          "port": "At Sea",
+          "type": "sea_day"
+        },
+        {
+          "port": "At Sea",
+          "type": "sea_day"
+        },
+        {
+          "port": "At Sea",
+          "type": "sea_day"
+        },
+        {
+          "port": "At Sea",
+          "type": "sea_day"
+        },
+        {
+          "port": "At Sea",
+          "type": "sea_day"
+        },
+        {
+          "port": "At Sea",
+          "type": "sea_day"
+        },
+        {
+          "port": "Ponta Delgada, Sao Miguel, Azores, Portugal",
+          "type": "port"
+        },
+        {
+          "port": "At Sea",
+          "type": "sea_day"
+        },
+        {
+          "port": "At Sea",
+          "type": "sea_day"
+        },
+        {
+          "port": "Cadiz (Seville), Spain",
+          "type": "port"
+        },
+        {
+          "port": "Gibraltar",
+          "type": "port"
+        },
+        {
+          "port": "Malaga, Spain",
+          "type": "port"
+        },
+        {
+          "port": "Alicante, Spain",
+          "type": "port"
+        }
+      ],
+      "significant_entries": [
+        "Thermal Suite and Thalassotherapy / onboard extras purchase"
+      ]
+    },
+    {
+      "cruise_id": "2022-09-18-royal-caribbean-liberty-western-caribbean",
+      "cruise_line": "Royal Caribbean International",
+      "ship": "Liberty of the Seas",
+      "cruise_name": "7 Night Western Caribbean",
+      "embarkation": {
+        "date": "2022-09-18"
+      },
+      "disembarkation": {
+        "date": "2022-09-25"
+      },
+      "length_nights": 7,
+      "cabin": null,
+      "itinerary": [
+        {
+          "port": "At Sea",
+          "type": "sea_day"
+        },
+        {
+          "port": "At Sea",
+          "type": "sea_day"
+        },
+        {
+          "port": "Roatan, Honduras",
+          "type": "port"
+        },
+        {
+          "port": "Costa Maya, Mexico",
+          "type": "port"
+        },
+        {
+          "port": "Cozumel, Mexico",
+          "type": "port"
+        },
+        {
+          "port": "At Sea",
+          "type": "sea_day"
+        }
+      ],
+      "significant_entries": []
+    },
+    {
+      "cruise_id": "2023-01-14-holland-america-nieuw-statendam-eastern-caribbean",
+      "cruise_line": "Holland America Line",
+      "ship": "Nieuw Statendam",
+      "cruise_name": "7-Day Eastern Caribbean",
+      "embarkation": {
+        "date": "2023-01-14"
+      },
+      "disembarkation": {
+        "date": "2023-01-21"
+      },
+      "length_nights": 7,
+      "cabin": null,
+      "itinerary": [
+        {
+          "port": "At Sea",
+          "type": "sea_day"
+        },
+        {
+          "port": "At Sea",
+          "type": "sea_day"
+        },
+        {
+          "port": "San Juan, Puerto Rico",
+          "type": "port"
+        },
+        {
+          "port": "St. Thomas, U.S. Virgin Islands",
+          "type": "port"
+        },
+        {
+          "port": "At Sea",
+          "type": "sea_day"
+        },
+        {
+          "port": "Half Moon Cay, Bahamas",
+          "type": "tender_port"
+        }
+      ],
+      "significant_entries": []
+    },
+    {
+      "cruise_id": "2023-06-18-holland-america-westerdam-alaska",
+      "cruise_line": "Holland America Line",
+      "ship": "Westerdam",
+      "cruise_name": "7-Day Alaska",
+      "embarkation": {
+        "date": "2023-06-18"
+      },
+      "disembarkation": {
+        "date": "2023-06-25"
+      },
+      "length_nights": 7,
+      "cabin": null,
+      "itinerary": [
+        {
+          "port": "At Sea",
+          "type": "sea_day"
+        },
+        {
+          "port": "Juneau, Alaska, US",
+          "type": "port"
+        },
+        {
+          "port": "Icy Strait Point, Alaska, US",
+          "type": "port"
+        },
+        {
+          "port": "Sitka, Alaska, US",
+          "type": "port"
+        },
+        {
+          "port": "Ketchikan, Alaska, US",
+          "type": "port"
+        }
+      ],
+      "significant_entries": [
+        "Couples Aroma Stone Therapy purchase",
+        "Pinnacle Grill Dinner - likely promotional or prepaid at zero cost"
+      ]
+    },
+    {
+      "cruise_id": "2023-12-05-holland-america-koningsdam-mexico",
+      "cruise_line": "Holland America Line",
+      "ship": "Koningsdam",
+      "cruise_name": "11-Day Mexico",
+      "embarkation": {
+        "date": "2023-12-05"
+      },
+      "disembarkation": {
+        "date": "2023-12-16"
+      },
+      "length_nights": 11,
+      "cabin": null,
+      "itinerary": [
+        {
+          "port": "At Sea",
+          "type": "sea_day"
+        },
+        {
+          "port": "Cabo San Lucas, Mexico",
+          "type": "port"
+        },
+        {
+          "port": "Mazatlan, Mexico",
+          "type": "port"
+        },
+        {
+          "port": "Puerto Vallarta, Mexico",
+          "type": "port"
+        },
+        {
+          "port": "At Sea",
+          "type": "sea_day"
+        },
+        {
+          "port": "Huatulco, Mexico",
+          "type": "port"
+        },
+        {
+          "port": "Puerto Chiapas, Mexico",
+          "type": "port"
+        },
+        {
+          "port": "At Sea",
+          "type": "sea_day"
+        },
+        {
+          "port": "At Sea",
+          "type": "sea_day"
+        },
+        {
+          "port": "Ensenada, Mexico",
+          "type": "port"
+        }
+      ],
+      "significant_entries": []
+    },
+    {
+      "cruise_id": "2024-04-07-holland-america-nieuw-statendam-transatlantic",
+      "cruise_line": "Holland America Line",
+      "ship": "Nieuw Statendam",
+      "cruise_name": "14-Day Transatlantic / Europe",
+      "embarkation": {
+        "date": "2024-04-07"
+      },
+      "disembarkation": {
+        "date": "2024-04-21"
+      },
+      "length_nights": 14,
+      "cabin": null,
+      "itinerary": [
+        {
+          "port": "At Sea",
+          "type": "sea_day"
+        },
+        {
+          "port": "At Sea",
+          "type": "sea_day"
+        },
+        {
+          "port": "At Sea",
+          "type": "sea_day"
+        },
+        {
+          "port": "At Sea",
+          "type": "sea_day"
+        },
+        {
+          "port": "At Sea",
+          "type": "sea_day"
+        },
+        {
+          "port": "At Sea",
+          "type": "sea_day"
+        },
+        {
+          "port": "Ponta Delgada, Azores, Portugal",
+          "type": "port"
+        },
+        {
+          "port": "At Sea",
+          "type": "sea_day"
+        },
+        {
+          "port": "At Sea",
+          "type": "sea_day"
+        },
+        {
+          "port": "Cobh (Cork), Ireland",
+          "type": "port"
+        },
+        {
+          "port": "Dover, England, UK",
+          "type": "port"
+        },
+        {
+          "port": "At Sea",
+          "type": "sea_day"
+        },
+        {
+          "port": "Amsterdam/IJmuiden or Rotterdam area, Netherlands",
+          "type": "port"
+        }
+      ],
+      "significant_entries": [
+        "Keukenhof tickets; amount not reliably extracted from ticket PDF."
+      ]
+    },
+    {
+      "cruise_id": "2024-05-18-royal-caribbean-mariner-family-western-caribbean",
+      "cruise_line": "Royal Caribbean International",
+      "ship": "Mariner of the Seas",
+      "cruise_name": "5 Night Western Caribbean Cruise",
+      "embarkation": {
+        "date": "2024-05-18"
+      },
+      "disembarkation": {
+        "date": "2024-05-23"
+      },
+      "length_nights": 5,
+      "cabin": null,
+      "itinerary": [
+        {
+          "port": "At Sea",
+          "type": "sea_day"
+        },
+        {
+          "port": "Puerto Costa Maya, Mexico",
+          "type": "port"
+        },
+        {
+          "port": "Cozumel, Mexico",
+          "type": "port"
+        },
+        {
+          "port": "At Sea",
+          "type": "sea_day"
+        }
+      ],
+      "significant_entries": []
+    },
+    {
+      "cruise_id": "2024-09-07-royal-caribbean-mariner-western-caribbean",
+      "cruise_line": "Royal Caribbean International",
+      "ship": "Mariner of the Seas",
+      "cruise_name": "5 Night Western Caribbean",
+      "embarkation": {
+        "date": "2024-09-07"
+      },
+      "disembarkation": {
+        "date": "2024-09-12"
+      },
+      "length_nights": 5,
+      "cabin": null,
+      "itinerary": [
+        {
+          "port": "At Sea",
+          "type": "sea_day"
+        },
+        {
+          "port": "Puerto Costa Maya, Mexico",
+          "type": "port"
+        },
+        {
+          "port": "Cozumel, Mexico",
+          "type": "port"
+        },
+        {
+          "port": "At Sea",
+          "type": "sea_day"
+        }
+      ],
+      "significant_entries": []
+    },
+    {
+      "cruise_id": "2025-04-06-holland-america-nieuw-amsterdam-eastern-caribbean",
+      "cruise_line": "Holland America Line",
+      "ship": "Nieuw Amsterdam",
+      "cruise_name": "7-Day Eastern Caribbean",
+      "embarkation": {
+        "date": "2025-04-06"
+      },
+      "disembarkation": {
+        "date": "2025-04-13"
+      },
+      "length_nights": 7,
+      "cabin": null,
+      "itinerary": [
+        {
+          "port": "At Sea",
+          "type": "sea_day"
+        },
+        {
+          "port": "Amber Cove, Dominican Republic",
+          "type": "port"
+        },
+        {
+          "port": "San Juan, Puerto Rico",
+          "type": "port"
+        },
+        {
+          "port": "St. Thomas, U.S. Virgin Islands",
+          "type": "port"
+        },
+        {
+          "port": "At Sea",
+          "type": "sea_day"
+        },
+        {
+          "port": "Half Moon Cay, Bahamas",
+          "type": "tender_port"
+        }
+      ],
+      "significant_entries": []
+    },
+    {
+      "cruise_id": "2026-10-02-holland-america-nieuw-amsterdam-panama-canal",
+      "cruise_line": "Holland America Line",
+      "ship": "Nieuw Amsterdam",
+      "cruise_name": "16-Day Panama Canal",
+      "embarkation": {
+        "date": "2026-10-02"
+      },
+      "disembarkation": {
+        "date": "2026-10-18"
+      },
+      "length_nights": 16,
+      "cabin": {
+        "category": "D"
+      },
+      "itinerary": [
+        {
+          "port": "At Sea",
+          "type": "sea_day"
+        },
+        {
+          "port": "At Sea",
+          "type": "sea_day"
+        },
+        {
+          "port": "Puerto Vallarta, Mexico",
+          "type": "port"
+        },
+        {
+          "port": "At Sea",
+          "type": "sea_day"
+        },
+        {
+          "port": "Huatulco, Mexico",
+          "type": "port"
+        },
+        {
+          "port": "Puerto Chiapas, Mexico",
+          "type": "port"
+        },
+        {
+          "port": "Puerto Quetzal, Guatemala",
+          "type": "port"
+        },
+        {
+          "port": "Acajutla, El Salvador",
+          "type": "port"
+        },
+        {
+          "port": "At Sea",
+          "type": "sea_day"
+        },
+        {
+          "port": "At Sea",
+          "type": "sea_day"
+        },
+        {
+          "port": "Cartagena, Colombia",
+          "type": "port"
+        },
+        {
+          "port": "At Sea",
+          "type": "sea_day"
+        },
+        {
+          "port": "At Sea",
+          "type": "sea_day"
+        },
+        {
+          "port": "RelaxAway Half Moon Cay, Bahamas",
+          "type": "tender_port"
+        }
+      ],
+      "significant_entries": []
+    },
+    {
+      "cruise_id": "2026-11-07-royal-caribbean-mariner-western-caribbean",
+      "cruise_line": "Royal Caribbean International",
+      "ship": "Mariner of the Seas",
+      "cruise_name": "7 Night Western Caribbean Cruise",
+      "embarkation": {
+        "date": "2026-11-07"
+      },
+      "disembarkation": {
+        "date": "2026-11-14"
+      },
+      "length_nights": 7,
+      "cabin": {
+        "category": "JT"
+      },
+      "itinerary": [
+        {
+          "port": "At Sea",
+          "type": "sea_day"
+        },
+        {
+          "port": "Cozumel, Mexico",
+          "type": "port"
+        },
+        {
+          "port": "Grand Cayman, Cayman Islands",
+          "type": "tender_port"
+        },
+        {
+          "port": "Falmouth, Jamaica",
+          "type": "port"
+        },
+        {
+          "port": "At Sea",
+          "type": "sea_day"
+        },
+        {
+          "port": "At Sea",
+          "type": "sea_day"
+        }
+      ],
+      "significant_entries": []
+    }
+  ]
+}

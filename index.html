@@ -302,7 +302,7 @@
 </div>
 
 <script>
-const DATA_URL = './cruise_history.json';
+const DATA_URL = './cruise_history_public.json';
 const shipPhotoCache = new Map();
 const SHIP_PHOTO_CACHE_KEY = 'ship-photo-cache-v5';
 const CRUISE_DECKPLANS_PROFILE_MAP = {
@@ -336,7 +336,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     try {
         const response = await fetch(DATA_URL);
         if (!response.ok) {
-            throw new Error('Could not load cruise_history.json');
+            throw new Error('Could not load cruise_history_public.json');
         }
 
         const payload = await response.json();
@@ -354,7 +354,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     });
 
     if (cruises.length === 0) {
-        statusMessage.textContent = 'No cruises were found in cruise_history.json.';
+        statusMessage.textContent = 'No cruises were found in cruise_history_public.json.';
         totalDaysChip.textContent = 'Total days at sea: 0';
         container.innerHTML = '';
         return;
@@ -510,6 +510,10 @@ function getVisitedPorts(cruise) {
 }
 
 function getSignificantEntries(cruise) {
+    if (Array.isArray(cruise && cruise.significant_entries)) {
+        return cruise.significant_entries.filter(Boolean).map((entry) => String(entry));
+    }
+
     const preItems = cruise.financials && cruise.financials.pre_cruise_expenses && Array.isArray(cruise.financials.pre_cruise_expenses.items)
         ? cruise.financials.pre_cruise_expenses.items
         : [];
