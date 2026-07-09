@@ -1,0 +1,121 @@
+/* Replaced Catppuccin with a fun, summery motif */
+
+/* Global Variables for the summer palette */
+:root {
+    --summer-bg: #f7fee7;       /* Very light background (White/Creamy off-white) */
+    --summer-text: #3a4d5b;     /* Deep slate blue for main text */
+    --summer-primary: #00bcd4;  /* Bright Turquoise/Teal accent */
+    --summer-secondary: #ffeb3b; /* Sunshine Yellow accent (for buttons, highlights) */
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: var(--summer-bg); 
+    color: var(--summer-text);
+    margin: 0;
+    line-height: 1.6;
+}
+
+/* Utility container */
+.container {
+    max-width: 1200px;
+    padding: 0 40px;
+    margin: 0 auto;
+}
+
+/* --- HERO / BANNER STYLING --- */
+.hero {
+    background: linear-gradient(90deg, #81ecec, var(--summer-primary)), url('https://via.placeholder.com/1600x700/e3f2fd/ffffff?text=Azure+Skyline') center/cover no-repeat;
+    min-height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding-top: 60px;
+}
+
+.family-banner h1 {
+    font-size: 4em;
+    margin-bottom: 5px;
+    color: #ff9800; /* Orange/Sunset color for main title */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.subtitle {
+    font-size: 1.8em;
+    margin-bottom: 3rem;
+    opacity: 0.9;
+}
+
+/* --- SECTIONS AND CARDS --- */
+section {
+    padding: 4rem 0;
+}
+
+h2 {
+    color: var(--summer-primary); /* Turquoise accent for section titles */
+    border-bottom: 3px solid #ffc107; /* Yellow line under title */
+    display: inline-block;
+    padding-bottom: 10px;
+    margin-bottom: 2rem;
+    font-size: 2.2em;
+}
+
+/* General Card Styling - now white/light cream background */
+.card {
+    background-color: #ffffff; 
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Light shadow */
+}
+
+/* --- CRUISE SPECIFIC STYLING --- */
+.cruise-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.cruise-card {
+    border: 2px solid var(--summer-primary);
+    padding: 30px;
+    text-align: left;
+    transition: transform 0.2s, box-shadow 0.2s;
+    border-radius: 10px;
+    background-color: #e0f7fa; /* Very light blue card background */
+}
+
+.cruise-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 188, 212, 0.3); /* Subtle turquoise glow */
+}
+
+/* Cruise type styling */
+.upcoming { border-color: #4caf50; background-color: #e8f5e9; } /* Green accent for upcoming */
+.past { opacity: 0.75; background-color: #ffecb3; border-style: solid;} /* Yellowish for past memories */
+.planning { border-style: dashed; color: #f44336; background-color: #ffebee;} /* Red/pink for planned */
+
+/* Buttons and Links */
+.cta-button, a {
+    display: inline-block;
+    padding: 12px 25px;
+    background-color: var(--summer-secondary); /* Yellow button */
+    color: #3a4d5b;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: background-color 0.2s, transform 0.1s;
+    font-weight: bold;
+}
+
+.cta-button:hover, a:hover {
+    background-color: #ffc107; /* Darker yellow on hover */
+    transform: translateY(-2px);
+}
+
+
+/* Footer Styling */
+footer {
+    background-color: var(--summer-secondary); 
+    color: var(--summer-text);
+    font-size: 1em;
+}

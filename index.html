@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cruise History Planner - Daniel Whicker</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;700&display=swap">
+    <style>
+        :root {
+            --primary-color: #1A4D8C; /* Deep blue, professional */
+            --secondary-color: #FCE4EC; /* Light pink accent */
+            --accent-bg: #E3F2FD; /* Very light blue */
+            --text-color: #333;
+        }
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f7f9;
+            color: var(--text-color);
+        }
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        header h1 {
+            margin: 0;
+            font-size: 1.8em;
+            font-weight: 300;
+        }
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+        h2 {
+            color: var(--primary-color);
+            border-bottom: 2px solid #ddd;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
+        .cruise-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 20px;
+        }
+        .cruise-card {
+            background-color: white;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.2s, box-shadow 0.2s;
+            cursor: pointer;
+            border-left: 5px solid var(--primary-color);
+        }
+        .cruise-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        }
+        .cruise-card h3 {
+            margin-top: 0;
+            color: var(--primary-color);
+            font-size: 1.5em;
+        }
+        .meta-info p {
+            margin: 8px 0;
+        }
+        .meta-info strong {
+            display: inline-block;
+            min-width: 90px;
+        }
+        .duration-badges span {
+            display: inline-block;
+            padding: 5px 10px;
+            margin-right: 10px;
+            border-radius: 4px;
+            font-weight: bold;
+            background-color: var(--accent-bg);
+            color: var(--primary-color);
+        }
+
+        /* Placeholder for details page (if we use JS to swap content) */
+        #detail-view {
+            display: none; /* Hidden by default, shown by script/logic */
+            padding: 30px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>🚢 Cruise Journey Hub</h1>
+    <span>Your Customized Travel Records</span>
+</header>
+
+<div class="container">
+    <h2>Discover Your Journeys</h2>
+    <!-- The cruise cards will be injected here by a script -->
+    <section id="cruise-list-container" class="cruise-list"></section>
+
+    <!-- Detail View Section -->
+    <div id="detail-view">
+        <!-- Content for the selected cruise will load here -->
+    </div>
+</div>
+
+<script>
+// WARNING: This script placeholder requires JSON data injected and populated.
+const CRUISE_DATA = [
+    /* Data population from cronjob/python script goes here */
+];
+
+document.addEventListener('DOMContentLoaded', () => {
+    const container = document.getElementById('cruise-list-container');
+    const detailView = document.getElementById('detail-view');
+
+    if (CRUISE_DATA && CRUISE_DATA.length > 0) {
+        container.innerHTML = ''; // Clear placeholder content
+        CRUISE_DATA.forEach(cruise => {
+            const card = createCardElement(cruise);
+            container.appendChild(card);
+        });
+
+        // Attach event listeners to all cards
+        document.querySelectorAll('.cruise-card').forEach(card => {
+            card.addEventListener('click', (e) => {
+                // Handle click: hide list, show detail view, populate data
+                const cruiseId = e.currentTarget.dataset.cruiseid;
+                displayCruiseDetails(cruiseId);
+            });
+        });
+    } else {
+        container.innerHTML = '<p>No cruise data available yet. Please check the JSON source or run the script to process the history.</p>';
+    }
+});
+
+function createCardElement(cruise) {
+    const card = document.createElement('div');
+    card.className = 'cruise-card';
+    card.dataset.cruiseid = cruise.cruise_id; // Use unique ID for targeting
+    
+    let itineraryHtml = [];
+    let daysAtSeaCount = 0;
+
+    // Calculate duration and build itinerary summary list (simple port/sea day count)
+    if (cruise.itinerary && Array.isArray(cruise.itinerary)) {
+        const uniquePorts = new Set();
+        cruise.itinerary.forEach(day => {
+            if (day.type === 'port' && day.port) {
+                uniquePorts.add(day.port);
+            } else if (day.type === 'sea_day') {
+                daysAtSeaCount++;
+            }
+        });
+
+        itineraryHtml = `<ul>${Array.from(uniquePorts).map(port => `<li>📌 ${port}</li>`).join('')}</ul>`;
+    }
+
+
+    card.innerHTML = `
+        <h3>${cruise.cruise_name || 'Untitled Cruise'}</h3>
+        <div class="meta-info">
+            <p><strong>Cruise Line:</strong> ${cruise.cruise_line || 'N/A'}</p>
+            <p><strong>Ship:</strong> ${cruise.ship || 'Unknown Ship'}</p>
+            <p><strong>Booking #:</strong> ${cruise.booking_number || 'N/A'}</p>
+        </div>
+        <div class="duration-badges">
+            <span>📅 ${cruise.embarkation.date}</span>
+            <span>🏁 ${cruise.disembarkation.date}</span>
+            <span>nights: ${cruise.length_nights || '?'}</span>
+            <span>days at sea: ${daysAtSeaCount}</span>
+        </div>
+        <div class="itinerary-summary">
+            <strong>Key Ports Visited (Sample):</strong>
+            ${itineraryHtml.join('')}
+        </div>
+    `;
+    return card;
+}
+
+function displayCruiseDetails(cruiseId) {
+    const selectedCruise = CRUISE_DATA.find(c => c.cruise_id === cruiseId);
+    if (!selectedCruise) return;
+
+    // 1. Update active view state (List hidden, Detail visible logic would go here in CSS/React/Vue)
+    document.getElementById('cruise-list-container').style.display = 'none';
+    const detailView = document.getElementById('detail-view');
+    detailView.style.display = 'block';
+
+    // 2. Generate detailed content
+    let portsSummaryHtml = `<h4>Port Stops (${new Set(selectedCruise.itinerary.filter(i => i.type === 'port' && i.port).map(i => i.port)).size} unique locations)</h4><p>Found details for ${selectedCruise.itinerary.length} days across the itinerary.</p>`;
+    let excursionsHtml = '';
+
+    // Filter the core ports/significant events found in the JSON.
+    const keyPorts = new Set(selectedCruise.itinerary.filter(i => i.type === 'port' && i.port).map(i => i.port));
+    if (keyPorts.size > 0) {
+        portsSummaryHtml += "<ul>" + Array.from(keyPorts).map(port => `<li>✅ ${port}</li>`).join('') + "</ul>";
+    } else {
+         portsSummaryHtml += "<p>No specific port activity listed in this simple summary module.</p>";
+    }
+
+
+    // Excursions and Notes Summary (pulling from financials or itinerary notes is the best bet)
+    if(selectedCruise.financials && selectedCruise.financials.onboard_expenses.items.length > 0) {
+        excursionsHtml = `<h4>🛍️ Onboard Expenses / Excursions</h4><p>The ledger confirms expenses totaling ${Math.round(parseFloat(JSON.stringify(selectedCruise.financials.onboard_expenses.total)) * 100) / 100)} USD.</p><pre>${JSON.stringify(selectedCruise.financials.onboard_expenses, null, 2)}</pre>`;
+    } else {
+        excursionsHtml = `<h4>✨ Excursion & Expense Summary</h4><p>No detailed onboard expense records found for this journey (${selectedCruise.cruise_id}). Check the 'documents' section or relevant booking pages for confirmation.</p>`;
+    }
+
+
+    detailView.innerHTML = `
+        <h2>${selectedCruise.cruise_name || 'General Cruise Details'}</h2>
+        <p><strong>Ship:</strong> ${selectedCruise.ship}</p>
+        <p><strong>Line:</strong> ${selectedCruise.cruise_line}</p>
+        <hr>
+
+        <h3>📅 Overview</h3>
+        <div style="display: flex; gap: 20px;">
+            <div><b>Dates:</b> ${selectedCruise.embarkation.date} to ${selectedCruise.disembarkation.date}</div>
+            <div><b>Duration:</b> ${selectedCruise.length_nights || '?'} nights (${selectedCruise.length_days_inclusive || '?'})</div>
+        </div>
+
+        <h3 style="margin-top: 20px;">🗺️ Ports & Itinerary</h3>
+        ${portsSummaryHtml}
+
+        <h3 style="margin-top: 20px;">💰 Financial Summary (Pre/Post Cruise)</h3>
+        <p><strong>Total Estimated Price:</strong> ${parseFloat(JSON.stringify(selectedCruise.financials.cruise_price.total_cruise_price)) || 'N/A'} USD</p>
+        ${excursionsHtml}
+    `;
+}
+
+// NOTE: In a real application, the CRUISE_DATA array would be dynamically filled 
+// by fetching or parsing the content of /home/dwhicker/cruise_history.json 
+// using an AJAX request and then calling this script. 
+// For now, I am leaving it as a placeholder comment for logic completeness.
+
+</script></body></html>
