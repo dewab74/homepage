@@ -1,0 +1,3635 @@
+{
+  "metadata": {
+    "generated_at": "2026-07-09T14:05:00",
+    "source_archive": "CruiseHistory.zip",
+    "extraction_method": "Best-effort extraction from uploaded PDFs/HTML/email using embedded text, regex parsing, manual normalization, and web-verified missing-paperwork entries requested by the user.",
+    "currency_default": "USD",
+    "limitations": [
+      "Some historical itinerary arrival/departure times were not present or not reliably extractable and are null.",
+      "Some older cruise price component splits are incomplete; total price is retained when extractable.",
+      "Onboard expenses are only present where a folio/final statement was found.",
+      "The 2024-05-18 family sailing is included from user statement plus web itinerary lookup, with financials unavailable.",
+      "The Oct 2025 travel receipt files are preserved as an unmatched document group because they did not identify a cruise.",
+      "The 2026-11-07 Mariner of the Seas cruise is a future booking sourced from the uploaded booking confirmation email; onboard expenses are unavailable until after sailing.",
+      "Birthdates, card numbers, and other sensitive payment details were intentionally omitted from the JSON export."
+    ],
+    "web_references_used": [
+      {
+        "citation_ref": "turn841942search0",
+        "description": "Royal Caribbean official 5 Night Western Caribbean Cruise from Galveston on Mariner of the Seas itinerary page."
+      },
+      {
+        "citation_ref": "turn841942search6",
+        "description": "iCruise May 18, 2024 Mariner of the Seas itinerary page."
+      }
+    ],
+    "additional_uploaded_sources": [
+      "Cruise Booking Confirmation.eml"
+    ]
+  },
+  "summary": {
+    "actual_cruise_records": 22,
+    "completed_or_started_cruises_as_of_2026_07_09": 20,
+    "future_cruises": 2,
+    "total_nights_completed_cruises": 155,
+    "cruise_line_counts": {
+      "Carnival Cruise Line": 2,
+      "Holland America Line": 9,
+      "Royal Caribbean International": 11
+    },
+    "ship_counts": {
+      "Carnival Conquest": 1,
+      "Carnival Magic": 1,
+      "Independence of the Seas": 1,
+      "Koningsdam": 1,
+      "Liberty of the Seas": 3,
+      "Mariner of the Seas": 4,
+      "Navigator of the Seas": 1,
+      "Nieuw Amsterdam": 3,
+      "Nieuw Statendam": 3,
+      "Oosterdam": 1,
+      "Serenade of the Seas": 1,
+      "Voyager of the Seas": 1,
+      "Westerdam": 1
+    },
+    "cruise_price_records_with_amounts": 19,
+    "cruise_price_total_when_available": 88140.91,
+    "pre_cruise_expense_records_with_amounts": 5,
+    "pre_cruise_expenses_total_when_available": 2707.16,
+    "onboard_expense_records_with_amounts": 8,
+    "onboard_expenses_total_when_available": 9215.63,
+    "grand_total_when_available": 100063.7,
+    "most_visited_ports": [
+      {
+        "port": "Galveston, Texas, US",
+        "visits": 22
+      },
+      {
+        "port": "Cozumel, Mexico",
+        "visits": 12
+      },
+      {
+        "port": "Fort Lauderdale, Florida, US",
+        "visits": 9
+      },
+      {
+        "port": "Falmouth, Jamaica",
+        "visits": 6
+      },
+      {
+        "port": "George Town, Grand Cayman",
+        "visits": 5
+      },
+      {
+        "port": "New Orleans, Louisiana, US",
+        "visits": 4
+      },
+      {
+        "port": "Grand Cayman, Cayman Islands",
+        "visits": 3
+      },
+      {
+        "port": "San Juan, Puerto Rico",
+        "visits": 3
+      },
+      {
+        "port": "St. Thomas, U.S. Virgin Islands",
+        "visits": 3
+      },
+      {
+        "port": "Half Moon Cay, Bahamas",
+        "visits": 3
+      },
+      {
+        "port": "San Diego, California, US",
+        "visits": 3
+      },
+      {
+        "port": "Montego Bay, Jamaica",
+        "visits": 2
+      },
+      {
+        "port": "Roatan, Honduras",
+        "visits": 2
+      },
+      {
+        "port": "Costa Maya, Mexico",
+        "visits": 2
+      },
+      {
+        "port": "Juneau, Alaska, US",
+        "visits": 2
+      },
+      {
+        "port": "Sitka, Alaska, US",
+        "visits": 2
+      },
+      {
+        "port": "Ketchikan, Alaska, US",
+        "visits": 2
+      },
+      {
+        "port": "Puerto Vallarta, Mexico",
+        "visits": 2
+      },
+      {
+        "port": "Huatulco, Mexico",
+        "visits": 2
+      },
+      {
+        "port": "Puerto Chiapas, Mexico",
+        "visits": 2
+      },
+      {
+        "port": "Puerto Costa Maya, Mexico",
+        "visits": 2
+      },
+      {
+        "port": "Key West, Florida, US",
+        "visits": 1
+      },
+      {
+        "port": "Nassau, Bahamas",
+        "visits": 1
+      },
+      {
+        "port": "CocoCay, Bahamas",
+        "visits": 1
+      },
+      {
+        "port": "Hubbard Glacier, Alaska, US",
+        "visits": 1
+      }
+    ]
+  },
+  "cruises": [
+    {
+      "cruise_id": "2010-06-06-carnival-conquest-western-caribbean",
+      "cruise_line": "Carnival Cruise Line",
+      "ship": "Carnival Conquest",
+      "cruise_name": "7 Day Western Caribbean Itinerary",
+      "booking_number": "88P6R9",
+      "embarkation": {
+        "date": "2010-06-06",
+        "port": "Galveston, Texas, US"
+      },
+      "disembarkation": {
+        "date": "2010-06-13",
+        "port": "Galveston, Texas, US"
+      },
+      "cabin": null,
+      "itinerary": [
+        {
+          "port": "Galveston, Texas, US",
+          "arrival": null,
+          "departure": "4:00 PM",
+          "type": "embarkation",
+          "date": "2010-06-06",
+          "day": 1
+        },
+        {
+          "port": "At Sea",
+          "arrival": null,
+          "departure": null,
+          "type": "sea_day",
+          "date": "2010-06-07",
+          "day": 2
+        },
+        {
+          "port": "At Sea",
+          "arrival": null,
+          "departure": null,
+          "type": "sea_day",
+          "date": "2010-06-08",
+          "day": 3
+        },
+        {
+          "port": "Montego Bay, Jamaica",
+          "arrival": "9:00 AM",
+          "departure": "6:00 PM",
+          "type": "port",
+          "date": "2010-06-09",
+          "day": 4
+        },
+        {
+          "port": "Grand Cayman, Cayman Islands",
+          "arrival": "7:00 AM",
+          "departure": "4:00 PM",
+          "type": "tender_port",
+          "date": "2010-06-10",
+          "day": 5
+        },
+        {
+          "port": "Cozumel, Mexico",
+          "arrival": "10:00 AM",
+          "departure": "6:00 PM",
+          "type": "port",
+          "date": "2010-06-11",
+          "day": 6
+        },
+        {
+          "port": "At Sea",
+          "arrival": null,
+          "departure": null,
+          "type": "sea_day",
+          "date": "2010-06-12",
+          "day": 7
+        },
+        {
+          "port": "Galveston, Texas, US",
+          "arrival": "8:00 AM",
+          "departure": null,
+          "type": "disembarkation",
+          "date": "2010-06-13",
+          "day": 8
+        }
+      ],
+      "financials": {
+        "cruise_price": {
+          "currency": "USD",
+          "base_fare": null,
+          "taxes_fees_port_expenses": null,
+          "prepaid_gratuities": null,
+          "travel_insurance_or_cancellation_plan": null,
+          "discounts_or_credits": [],
+          "total_cruise_price": null,
+          "source_document": "something.pdf",
+          "notes": [
+            "No cruise fare total located in extracted 2010 document."
+          ]
+        },
+        "pre_cruise_expenses": {
+          "currency": "USD",
+          "items": [],
+          "total": null,
+          "notes": []
+        },
+        "onboard_expenses": {
+          "currency": "USD",
+          "items": [],
+          "total": null,
+          "notes": []
+        }
+      },
+      "documents": [
+        {
+          "filename": "something.pdf",
+          "document_type": "Carnival final cruise documents"
+        }
+      ],
+      "length_nights": 7,
+      "length_days_inclusive": 8,
+      "passengers": [
+        "Daniel Whicker",
+        "Kelly Whicker"
+      ],
+      "data_quality": {
+        "status": "best_effort",
+        "notes": []
+      },
+      "length_days": 7,
+      "record_status": "completed_or_historical",
+      "record_source": {
+        "type": "document_backed",
+        "documents": [
+          "something.pdf"
+        ]
+      }
+    },
+    {
+      "cruise_id": "2011-04-24-royal-caribbean-voyager-western-caribbean",
+      "cruise_line": "Royal Caribbean International",
+      "ship": "Voyager of the Seas",
+      "cruise_name": "7 Night Western Caribbean Cruise",
+      "booking_number": "4796591",
+      "embarkation": {
+        "date": "2011-04-24",
+        "port": "Galveston, Texas, US"
+      },
+      "disembarkation": {
+        "date": "2011-05-01",
+        "port": "Galveston, Texas, US"
+      },
+      "cabin": {
+        "number": "1298",
+        "category": null
+      },
+      "itinerary": [
+        {
+          "port": "Galveston, Texas, US",
+          "arrival": null,
+          "departure": "5:00 PM",
+          "type": "embarkation",
+          "date": "2011-04-24",
+          "day": 1
+        },
+        {
+          "port": "At Sea",
+          "arrival": null,
+          "departure": null,
+          "type": "sea_day",
+          "date": "2011-04-25",
+          "day": 2
+        },
+        {
+          "port": "Cozumel, Mexico",
+          "arrival": "7:00 AM",
+          "departure": "4:00 PM",
+          "type": "port",
+          "date": "2011-04-26",
+          "day": 3
+        },
+        {
+          "port": "George Town, Grand Cayman",
+          "arrival": "10:00 AM",
+          "departure": "6:00 PM",
+          "type": "tender_port",
+          "date": "2011-04-27",
+          "day": 4
+        },
+        {
+          "port": "Falmouth, Jamaica",
+          "arrival": "8:00 AM",
+          "departure": "5:00 PM",
+          "type": "port",
+          "date": "2011-04-28",
+          "day": 5
+        },
+        {
+          "port": "At Sea",
+          "arrival": null,
+          "departure": null,
+          "type": "sea_day",
+          "date": "2011-04-29",
+          "day": 6
+        },
+        {
+          "port": "At Sea",
+          "arrival": null,
+          "departure": null,
+          "type": "sea_day",
+          "date": "2011-04-30",
+          "day": 7
+        },
+        {
+          "port": "Galveston, Texas, US",
+          "arrival": "7:00 AM",
+          "departure": null,
+          "type": "disembarkation",
+          "date": "2011-05-01",
+          "day": 8
+        }
+      ],
+      "financials": {
+        "cruise_price": {
+          "currency": "USD",
+          "base_fare": null,
+          "taxes_fees_port_expenses": null,
+          "prepaid_gratuities": null,
+          "travel_insurance_or_cancellation_plan": null,
+          "discounts_or_credits": [],
+          "total_cruise_price": null,
+          "source_document": "T75976511.pdf",
+          "notes": [
+            "Cruise documents found; cruise fare receipt not found in archive."
+          ]
+        },
+        "pre_cruise_expenses": {
+          "currency": "USD",
+          "items": [],
+          "total": null,
+          "notes": []
+        },
+        "onboard_expenses": {
+          "currency": "USD",
+          "items": [],
+          "total": null,
+          "notes": []
+        }
+      },
+      "documents": [
+        {
+          "filename": "T75976511.pdf",
+          "document_type": "Royal Caribbean guest ticket booklet"
+        },
+        {
+          "filename": "SetSail Pass.pdf",
+          "document_type": "SetSail pass"
+        },
+        {
+          "filename": "Excursions.pdf",
+          "document_type": "pre-cruise purchases"
+        }
+      ],
+      "length_nights": 7,
+      "length_days_inclusive": 8,
+      "passengers": [
+        "Daniel Whicker",
+        "Kelly Whicker"
+      ],
+      "data_quality": {
+        "status": "best_effort",
+        "notes": []
+      },
+      "length_days": 7,
+      "record_status": "completed_or_historical",
+      "record_source": {
+        "type": "document_backed",
+        "documents": [
+          "T75976511.pdf",
+          "SetSail Pass.pdf",
+          "Excursions.pdf"
+        ]
+      }
+    },
+    {
+      "cruise_id": "2012-08-19-carnival-magic-western-caribbean",
+      "cruise_line": "Carnival Cruise Line",
+      "ship": "Carnival Magic",
+      "cruise_name": "Western Caribbean",
+      "booking_number": "18SLH5",
+      "embarkation": {
+        "date": "2012-08-19",
+        "port": "Galveston, Texas, US"
+      },
+      "disembarkation": {
+        "date": "2012-08-26",
+        "port": "Galveston, Texas, US"
+      },
+      "cabin": {
+        "number": "7287",
+        "category": "GS"
+      },
+      "itinerary": [
+        {
+          "port": "Galveston, Texas, US",
+          "arrival": null,
+          "departure": "4:00 PM",
+          "type": "embarkation",
+          "date": "2012-08-19",
+          "day": 1
+        },
+        {
+          "port": "At Sea",
+          "arrival": null,
+          "departure": null,
+          "type": "sea_day",
+          "date": "2012-08-20",
+          "day": 2
+        },
+        {
+          "port": "At Sea",
+          "arrival": null,
+          "departure": null,
+          "type": "sea_day",
+          "date": "2012-08-21",
+          "day": 3
+        },
+        {
+          "port": "Montego Bay, Jamaica",
+          "arrival": null,
+          "departure": null,
+          "type": "port",
+          "date": "2012-08-22",
+          "day": 4
+        },
+        {
+          "port": "Grand Cayman, Cayman Islands",
+          "arrival": null,
+          "departure": null,
+          "type": "port",
+          "date": "2012-08-23",
+          "day": 5
+        },
+        {
+          "port": "Cozumel, Mexico",
+          "arrival": null,
+          "departure": null,
+          "type": "port",
+          "date": "2012-08-24",
+          "day": 6
+        },
+        {
+          "port": "At Sea",
+          "arrival": null,
+          "departure": null,
+          "type": "sea_day",
+          "date": "2012-08-25",
+          "day": 7
+        },
+        {
+          "port": "Galveston, Texas, US",
+          "arrival": null,
+          "departure": null,
+          "type": "disembarkation",
+          "date": "2012-08-26",
+          "day": 8
+        }
+      ],
+      "financials": {
+        "cruise_price": {
+          "currency": "USD",
+          "base_fare": 3940.0,
+          "taxes_fees_port_expenses": 598.78,
+          "prepaid_gratuities": null,
+          "travel_insurance_or_cancellation_plan": 210.0,
+          "discounts_or_credits": [],
+          "total_cruise_price": 4748.78,
+          "source_document": "2012-08-19 -- Receipt Final.pdf",
+          "notes": []
+        },
+        "pre_cruise_expenses": {
+          "currency": "USD",
+          "items": [],
+          "total": null,
+          "notes": []
+        },
+        "onboard_expenses": {
+          "currency": "USD",
+          "items": [],
+          "total": null,
+          "notes": []
+        }
+      },
+      "documents": [
+        {
+          "filename": "2012-08-19 -- Receipt Final.pdf",
+          "document_type": "cruise receipt"
+        }
+      ],
+      "length_nights": 7,
+      "length_days_inclusive": 8,
+      "passengers": [
+        "Daniel Whicker",
+        "Kelly Whicker"
+      ],
+      "data_quality": {
+        "status": "best_effort",
+        "notes": []
+      },
+      "length_days": 7,
+      "record_status": "completed_or_historical",
+      "record_source": {
+        "type": "document_backed",
+        "documents": [
+          "2012-08-19 -- Receipt Final.pdf"
+        ]
+      }
+    },
+    {
+      "cruise_id": "2013-04-07-royal-caribbean-mariner-western-caribbean",
+      "cruise_line": "Royal Caribbean International",
+      "ship": "Mariner of the Seas",
+      "cruise_name": "Western Caribbean",
+      "booking_number": "7488976",
+      "embarkation": {
+        "date": "2013-04-07",
+        "port": "Galveston, Texas, US"
+      },
+      "disembarkation": {
+        "date": "2013-04-14",
+        "port": "Galveston, Texas, US"
+      },
+      "cabin": {
+        "number": "1248",
+        "category": "GS"
+      },
+      "itinerary": [
+        {
+          "port": "Galveston, Texas, US",
+          "arrival": null,
+          "departure": null,
+          "type": "embarkation",
+          "date": "2013-04-07",
+          "day": 1
+        },
+        {
+          "port": "At Sea",
+          "arrival": null,
+          "departure": null,
+          "type": "sea_day",
+          "date": "2013-04-08",
+          "day": 2
+        },
+        {
+          "port": "At Sea",
+          "arrival": null,
+          "departure": null,
+          "type": "sea_day",
+          "date": "2013-04-09",
+          "day": 3
+        },
+        {
+          "port": "Falmouth, Jamaica",
+          "arrival": null,
+          "departure": null,
+          "type": "port",
+          "date": "2013-04-10",
+          "day": 4
+        },
+        {
+          "port": "George Town, Grand Cayman",
+          "arrival": null,
+          "departure": null,
+          "type": "tender_port",
+          "date": "2013-04-11",
+          "day": 5
+        },
+        {
+          "port": "Cozumel, Mexico",
+          "arrival": null,
+          "departure": null,
+          "type": "port",
+          "date": "2013-04-12",
+          "day": 6
+        },
+        {
+          "port": "At Sea",
+          "arrival": null,
+          "departure": null,
+          "type": "sea_day",
+          "date": "2013-04-13",
+          "day": 7
+        },
+        {
+          "port": "Galveston, Texas, US",
+          "arrival": null,
+          "departure": null,
+          "type": "disembarkation",
+          "date": "2013-04-14",
+          "day": 8
+        }
+      ],
+      "financials": {
+        "cruise_price": {
+          "currency": "USD",
+          "base_fare": 3448.0,
+          "taxes_fees_port_expenses": 709.28,
+          "prepaid_gratuities": null,
+          "travel_insurance_or_cancellation_plan": 210.0,
+          "discounts_or_credits": [],
+          "total_cruise_price": 4367.28,
+          "source_document": "2013-01-27 -- Receipt.pdf",
+          "notes": []
+        },
+        "pre_cruise_expenses": {
+          "currency": "USD",
+          "items": [],
+          "total": null,
+          "notes": []
+        },
+        "onboard_expenses": {
+          "currency": "USD",
+          "items": [],
+          "total": null,
+          "notes": []
+        }
+      },
+      "documents": [
+        {
+          "filename": "2013-01-27 -- Receipt.pdf",
+          "document_type": "cruise receipt"
+        }
+      ],
+      "length_nights": 7,
+      "length_days_inclusive": 8,
+      "passengers": [
+        "Daniel Whicker",
+        "Kelly Whicker"
+      ],
+      "data_quality": {
+        "status": "best_effort",
+        "notes": []
+      },
+      "length_days": 7,
+      "record_status": "completed_or_historical",
+      "record_source": {
+        "type": "document_backed",
+        "documents": [
+          "2013-01-27 -- Receipt.pdf"
+        ]
+      }
+    },
+    {
+      "cruise_id": "2014-05-11-royal-caribbean-navigator-western-caribbean",
+      "cruise_line": "Royal Caribbean International",
+      "ship": "Navigator of the Seas",
+      "cruise_name": "Western Caribbean",
+      "booking_number": "5998857",
+      "embarkation": {
+        "date": "2014-05-11",
+        "port": "Galveston, Texas, US"
+      },
+      "disembarkation": {
+        "date": "2014-05-18",
+        "port": "Galveston, Texas, US"
+      },
+      "cabin": {
+        "number": "1330",
+        "category": "OS"
+      },
+      "itinerary": [
+        {
+          "port": "Galveston, Texas, US",
+          "arrival": null,
+          "departure": null,
+          "type": "embarkation",
+          "date": "2014-05-11",
+          "day": 1
+        },
+        {
+          "port": "At Sea",
+          "arrival": null,
+          "departure": null,
+          "type": "sea_day",
+          "date": "2014-05-12",
+          "day": 2
+        },
+        {
+          "port": "At Sea",
+          "arrival": null,
+          "departure": null,
+          "type": "sea_day",
+          "date": "2014-05-13",
+          "day": 3
+        },
+        {
+          "port": "Falmouth, Jamaica",
+          "arrival": null,
+          "departure": null,
+          "type": "port",
+          "date": "2014-05-14",
+          "day": 4
+        },
+        {
+          "port": "George Town, Grand Cayman",
+          "arrival": null,
+          "departure": null,
+          "type": "tender_port",
+          "date": "2014-05-15",
+          "day": 5
+        },
+        {
+          "port": "Cozumel, Mexico",
+          "arrival": null,
+          "departure": null,
+          "type": "port",
+          "date": "2014-05-16",
+          "day": 6
+        },
+        {
+          "port": "At Sea",
+          "arrival": null,
+          "departure": null,
+          "type": "sea_day",
+          "date": "2014-05-17",
+          "day": 7
+        },
+        {
+          "port": "Galveston, Texas, US",
+          "arrival": null,
+          "departure": null,
+          "type": "disembarkation",
+          "date": "2014-05-18",
+          "day": 8
+        }
+      ],
+      "financials": {
+        "cruise_price": {
+          "currency": "USD",
+          "base_fare": 5308.0,
+          "taxes_fees_port_expenses": 550.58,
+          "prepaid_gratuities": null,
+          "travel_insurance_or_cancellation_plan": 278.0,
+          "discounts_or_credits": [],
+          "total_cruise_price": 6336.08,
+          "source_document": "2013-11-21 -- Receipt Final.pdf",
+          "notes": []
+        },
+        "pre_cruise_expenses": {
+          "currency": "USD",
+          "items": [
+            {
+              "date": "2014-05-15",
+              "category": "shore_excursion",
+              "description": "Exclusive Jamaica Sandals Resort Day Pass for 2",
+              "amount": null,
+              "currency": "USD",
+              "source_document": "2014-01-30 -- Sandals Shore Excursion E-Ticket and Meeting Instructions (Updated).pdf"
+            }
+          ],
+          "total": null,
+          "notes": [
+            "Excursion ticket found, but total price was not reliably extracted."
+          ]
+        },
+        "onboard_expenses": {
+          "currency": "USD",
+          "items": [],
+          "total": 1208.37,
+          "source_document": "2014-05-19 -- Navigaor Final Folio Summary.pdf",
+          "notes": []
+        }
+      },
+      "documents": [
+        {
+          "filename": "2013-11-21 -- Receipt Final.pdf",
+          "document_type": "cruise receipt"
+        },
+        {
+          "filename": "2014-05-19 -- Navigaor Final Folio Summary.pdf",
+          "document_type": "onboard folio"
+        }
+      ],
+      "length_nights": 7,
+      "length_days_inclusive": 8,
+      "passengers": [
+        "Daniel Whicker",
+        "Kelly Whicker"
+      ],
+      "data_quality": {
+        "status": "best_effort",
+        "notes": []
+      },
+      "length_days": 7,
+      "record_status": "completed_or_historical",
+      "record_source": {
+        "type": "document_backed",
+        "documents": [
+          "2013-11-21 -- Receipt Final.pdf",
+          "2014-05-19 -- Navigaor Final Folio Summary.pdf"
+        ]
+      }
+    },
+    {
+      "cruise_id": "2015-02-21-royal-caribbean-serenade-bahamas",
+      "cruise_line": "Royal Caribbean International",
+      "ship": "Serenade of the Seas",
+      "cruise_name": "7 Night Bahamas",
+      "booking_number": "5565461",
+      "embarkation": {
+        "date": "2015-02-21",
+        "port": "New Orleans, Louisiana, US"
+      },
+      "disembarkation": {
+        "date": "2015-02-28",
+        "port": "New Orleans, Louisiana, US"
+      },
+      "cabin": {
+        "number": "1556",
+        "category": "RS"
+      },
+      "itinerary": [
+        {
+          "port": "New Orleans, Louisiana, US",
+          "arrival": null,
+          "departure": "4:00 PM",
+          "type": "embarkation",
+          "date": "2015-02-21",
+          "day": 1
+        },
+        {
+          "port": "At Sea",
+          "arrival": null,
+          "departure": null,
+          "type": "sea_day",
+          "date": "2015-02-22",
+          "day": 2
+        },
+        {
+          "port": "Key West, Florida, US",
+          "arrival": "11:00 AM",
+          "departure": "5:00 PM",
+          "type": "port",
+          "date": "2015-02-23",
+          "day": 3
+        },
+        {
+          "port": "Nassau, Bahamas",
+          "arrival": "1:00 PM",
+          "departure": "11:59 PM",
+          "type": "port",
+          "date": "2015-02-24",
+          "day": 4
+        },
+        {
+          "port": "CocoCay, Bahamas",
+          "arrival": "8:00 AM",
+          "departure": "5:00 PM",
+          "type": "tender_port",
+          "date": "2015-02-25",
+          "day": 5
+        },
+        {
+          "port": "At Sea",
+          "arrival": null,
+          "departure": null,
+          "type": "sea_day",
+          "date": "2015-02-26",
+          "day": 6
+        },
+        {
+          "port": "At Sea",
+          "arrival": null,
+          "departure": null,
+          "type": "sea_day",
+          "date": "2015-02-27",
+          "day": 7
+        },
+        {
+          "port": "New Orleans, Louisiana, US",
+          "arrival": "7:00 AM",
+          "departure": null,
+          "type": "disembarkation",
+          "date": "2015-02-28",
+          "day": 8
+        }
+      ],
+      "financials": {
+        "cruise_price": {
+          "currency": "USD",
+          "base_fare": 5908.0,
+          "taxes_fees_port_expenses": 383.04,
+          "prepaid_gratuities": null,
+          "travel_insurance_or_cancellation_plan": 294.0,
+          "discounts_or_credits": [],
+          "total_cruise_price": 6585.04,
+          "source_document": "2014-11-29 -- Final Receipt.pdf",
+          "notes": []
+        },
+        "pre_cruise_expenses": {
+          "currency": "USD",
+          "items": [],
+          "total": null,
+          "notes": []
+        },
+        "onboard_expenses": {
+          "currency": "USD",
+          "items": [],
+          "total": null,
+          "notes": []
+        }
+      },
+      "documents": [
+        {
+          "filename": "2014-11-29 -- Final Receipt.pdf",
+          "document_type": "cruise receipt"
+        },
+        {
+          "filename": "T148759909.pdf",
+          "document_type": "guest ticket booklet"
+        },
+        {
+          "filename": "Itinerary.pdf",
+          "document_type": "itinerary"
+        }
+      ],
+      "length_nights": 7,
+      "length_days_inclusive": 8,
+      "passengers": [
+        "Daniel Whicker",
+        "Kelly Whicker"
+      ],
+      "data_quality": {
+        "status": "best_effort",
+        "notes": []
+      },
+      "length_days": 7,
+      "record_status": "completed_or_historical",
+      "record_source": {
+        "type": "document_backed",
+        "documents": [
+          "2014-11-29 -- Final Receipt.pdf",
+          "T148759909.pdf",
+          "Itinerary.pdf"
+        ]
+      }
+    },
+    {
+      "cruise_id": "2016-03-20-royal-caribbean-liberty-western-caribbean",
+      "cruise_line": "Royal Caribbean International",
+      "ship": "Liberty of the Seas",
+      "cruise_name": "7 Night Western Caribbean Cruise",
+      "booking_number": "2272631",
+      "embarkation": {
+        "date": "2016-03-20",
+        "port": "Galveston, Texas, US"
+      },
+      "disembarkation": {
+        "date": "2016-03-27",
+        "port": "Galveston, Texas, US"
+      },
+      "cabin": {
+        "number": "1340",
+        "category": "OS"
+      },
+      "itinerary": [
+        {
+          "port": "Galveston, Texas, US",
+          "arrival": null,
+          "departure": "4:30 PM",
+          "type": "embarkation",
+          "date": "2016-03-20",
+          "day": 1
+        },
+        {
+          "port": "At Sea",
+          "arrival": null,
+          "departure": null,
+          "type": "sea_day",
+          "date": "2016-03-21",
+          "day": 2
+        },
+        {
+          "port": "At Sea",
+          "arrival": null,
+          "departure": null,
+          "type": "sea_day",
+          "date": "2016-03-22",
+          "day": 3
+        },
+        {
+          "port": "Falmouth, Jamaica",
+          "arrival": "9:00 AM",
+          "departure": "6:00 PM",
+          "type": "port",
+          "date": "2016-03-23",
+          "day": 4
+        },
+        {
+          "port": "George Town, Grand Cayman",
+          "arrival": "7:00 AM",
+          "departure": "4:00 PM",
+          "type": "tender_port",
+          "date": "2016-03-24",
+          "day": 5
+        },
+        {
+          "port": "Cozumel, Mexico",
+          "arrival": "9:00 AM",
+          "departure": "6:00 PM",
+          "type": "port",
+          "date": "2016-03-25",
+          "day": 6
+        },
+        {
+          "port": "At Sea",
+          "arrival": null,
+          "departure": null,
+          "type": "sea_day",
+          "date": "2016-03-26",
+          "day": 7
+        },
+        {
+          "port": "Galveston, Texas, US",
+          "arrival": "6:30 AM",
+          "departure": null,
+          "type": "disembarkation",
+          "date": "2016-03-27",
+          "day": 8
+        }
+      ],
+      "financials": {
+        "cruise_price": {
+          "currency": "USD",
+          "base_fare": 5128.0,
+          "taxes_fees_port_expenses": 196.48,
+          "prepaid_gratuities": null,
+          "travel_insurance_or_cancellation_plan": 243.0,
+          "discounts_or_credits": [],
+          "total_cruise_price": 5567.48,
+          "source_document": "2015-12-31 -– Final Receipt.pdf",
+          "notes": []
+        },
+        "onboard_expenses": {
+          "currency": "USD",
+          "items": [],
+          "total": 759.98,
+          "source_document": "2016-03-27 -- Onboard Receipt.pdf",
+          "notes": []
+        },
+        "pre_cruise_expenses": {
+          "currency": "USD",
+          "items": [],
+          "total": null,
+          "notes": []
+        }
+      },
+      "documents": [
+        {
+          "filename": "2015-12-31 -– Final Receipt.pdf",
+          "document_type": "cruise receipt"
+        },
+        {
+          "filename": "2016-02-02 -- Guest Ticket Booklet -- T174399119.pdf",
+          "document_type": "guest ticket booklet"
+        },
+        {
+          "filename": "2016-03-27 -- Onboard Receipt.pdf",
+          "document_type": "onboard folio"
+        }
+      ],
+      "length_nights": 7,
+      "length_days_inclusive": 8,
+      "passengers": [
+        "Daniel Whicker",
+        "Kelly Whicker"
+      ],
+      "data_quality": {
+        "status": "best_effort",
+        "notes": []
+      },
+      "length_days": 7,
+      "record_status": "completed_or_historical",
+      "record_source": {
+        "type": "document_backed",
+        "documents": [
+          "2015-12-31 -– Final Receipt.pdf",
+          "2016-02-02 -- Guest Ticket Booklet -- T174399119.pdf",
+          "2016-03-27 -- Onboard Receipt.pdf"
+        ]
+      }
+    },
+    {
+      "cruise_id": "2018-04-22-royal-caribbean-liberty-western-caribbean",
+      "cruise_line": "Royal Caribbean International",
+      "ship": "Liberty of the Seas",
+      "cruise_name": "7 Night Western Caribbean Cruise",
+      "booking_number": "4888101",
+      "embarkation": {
+        "date": "2018-04-22",
+        "port": "Galveston, Texas, US"
+      },
+      "disembarkation": {
+        "date": "2018-04-29",
+        "port": "Galveston, Texas, US"
+      },
+      "cabin": {
+        "number": "1286",
+        "category": "GS"
+      },
+      "itinerary": [
+        {
+          "port": "Galveston, Texas, US",
+          "arrival": null,
+          "departure": null,
+          "type": "embarkation",
+          "date": "2018-04-22",
+          "day": 1
+        },
+        {
+          "port": "At Sea",
+          "arrival": null,
+          "departure": null,
+          "type": "sea_day",
+          "date": "2018-04-23",
+          "day": 2
+        },
+        {
+          "port": "At Sea",
+          "arrival": null,
+          "departure": null,
+          "type": "sea_day",
+          "date": "2018-04-24",
+          "day": 3
+        },
+        {
+          "port": "Roatan, Honduras",
+          "arrival": null,
+          "departure": null,
+          "type": "port",
+          "date": "2018-04-25",
+          "day": 4
+        },
+        {
+          "port": "Costa Maya, Mexico",
+          "arrival": null,
+          "departure": null,
+          "type": "port",
+          "date": "2018-04-26",
+          "day": 5
+        },
+        {
+          "port": "Cozumel, Mexico",
+          "arrival": null,
+          "departure": null,
+          "type": "port",
+          "date": "2018-04-27",
+          "day": 6
+        },
+        {
+          "port": "At Sea",
+          "arrival": null,
+          "departure": null,
+          "type": "sea_day",
+          "date": "2018-04-28",
+          "day": 7
+        },
+        {
+          "port": "Galveston, Texas, US",
+          "arrival": null,
+          "departure": null,
+          "type": "disembarkation",
+          "date": "2018-04-29",
+          "day": 8
+        }
+      ],
+      "financials": {
+        "cruise_price": {
+          "currency": "USD",
+          "base_fare": 3988.0,
+          "taxes_fees_port_expenses": 165.0,
+          "prepaid_gratuities": null,
+          "travel_insurance_or_cancellation_plan": 220.0,
+          "discounts_or_credits": [],
+          "total_cruise_price": 4373.0,
+          "source_document": "2018-01-12 -- Final Purchase Receipt.pdf",
+          "notes": []
+        },
+        "onboard_expenses": {
+          "currency": "USD",
+          "items": [],
+          "total": 788.45,
+          "source_document": "2018-04-29 -- On Board Receipt.pdf",
+          "notes": []
+        },
+        "pre_cruise_expenses": {
+          "currency": "USD",
+          "items": [],
+          "total": null,
+          "notes": []
+        }
+      },
+      "documents": [
+        {
+          "filename": "2018-01-12 -- Final Purchase Receipt.pdf",
+          "document_type": "cruise receipt"
+        },
+        {
+          "filename": "2018-04-29 -- On Board Receipt.pdf",
+          "document_type": "onboard folio"
+        }
+      ],
+      "length_nights": 7,
+      "length_days_inclusive": 8,
+      "passengers": [
+        "Daniel Whicker",
+        "Kelly Whicker"
+      ],
+      "data_quality": {
+        "status": "best_effort",
+        "notes": []
+      },
+      "length_days": 7,
+      "record_status": "completed_or_historical",
+      "record_source": {
+        "type": "document_backed",
+        "documents": [
+          "2018-01-12 -- Final Purchase Receipt.pdf",
+          "2018-04-29 -- On Board Receipt.pdf"
+        ]
+      }
+    },
+    {
+      "cruise_id": "2019-06-02-holland-america-oosterdam-alaska",
+      "cruise_line": "Holland America Line",
+      "ship": "Oosterdam",
+      "cruise_name": "7 Nights Alaska round trip Seattle",
+      "booking_number": "WHDVWG",
+      "embarkation": {
+        "date": "2019-06-02",
+        "port": "Seattle, Washington, US"
+      },
+      "disembarkation": {
+        "date": "2019-06-09",
+        "port": "Seattle, Washington, US"
+      },
+      "cabin": {
+        "number": "6166",
+        "category": null
+      },
+      "itinerary": [
+        {
+          "port": "Seattle, Washington, US",
+          "arrival": null,
+          "departure": null,
+          "type": "embarkation",
+          "date": "2019-06-02",
+          "day": 1
+        },
+        {
+          "port": "Puget Sound / At Sea",
+          "arrival": null,
+          "departure": null,
+          "type": "scenic_or_sea_day",
+          "date": "2019-06-03",
+          "day": 2
+        },
+        {
+          "port": "Juneau, Alaska, US",
+          "arrival": null,
+          "departure": null,
+          "type": "port",
+          "date": "2019-06-04",
+          "day": 3
+        },
+        {
+          "port": "Hubbard Glacier, Alaska, US",
+          "arrival": null,
+          "departure": null,
+          "type": "scenic_cruising",
+          "date": "2019-06-05",
+          "day": 4
+        },
+        {
+          "port": "Sitka, Alaska, US",
+          "arrival": null,
+          "departure": null,
+          "type": "port",
+          "date": "2019-06-06",
+          "day": 5
+        },
+        {
+          "port": "Ketchikan, Alaska, US",
+          "arrival": null,
+          "departure": null,
+          "type": "port",
+          "date": "2019-06-07",
+          "day": 6
+        },
+        {
+          "port": "Victoria, British Columbia, Canada",
+          "arrival": null,
+          "departure": null,
+          "type": "port",
+          "date": "2019-06-08",
+          "day": 7
+        },
+        {
+          "port": "Seattle, Washington, US",
+          "arrival": null,
+          "departure": null,
+          "type": "disembarkation",
+          "date": "2019-06-09",
+          "day": 8
+        }
+      ],
+      "financials": {
+        "cruise_price": {
+          "currency": "USD",
+          "base_fare": null,
+          "taxes_fees_port_expenses": null,
+          "prepaid_gratuities": null,
+          "travel_insurance_or_cancellation_plan": null,
+          "discounts_or_credits": [],
+          "total_cruise_price": 5778.0,
+          "source_document": "2019-02-19 -- Paid in Full.pdf",
+          "notes": []
+        },
+        "pre_cruise_expenses": {
+          "currency": "USD",
+          "items": [
+            {
+              "date": null,
+              "category": "shore_excursion",
+              "description": "Whale watching shore excursion",
+              "amount": 419.9,
+              "currency": "USD",
+              "source_document": "2019-04-26 -– Excursion Receipt -- Whale Watching.pdf"
+            }
+          ],
+          "total": 419.9,
+          "notes": []
+        },
+        "onboard_expenses": {
+          "currency": "USD",
+          "items": [],
+          "total": 597.74,
+          "source_document": "2019-06-09 -- On Board Receipt.pdf",
+          "notes": []
+        }
+      },
+      "documents": [
+        {
+          "filename": "2019-02-19 -- Paid in Full.pdf",
+          "document_type": "Costco paid-in-full package receipt"
+        },
+        {
+          "filename": "2019-04-26 -– Excursion Receipt -- Whale Watching.pdf",
+          "document_type": "shore excursion receipt"
+        },
+        {
+          "filename": "2019-06-09 -- On Board Receipt.pdf",
+          "document_type": "onboard statement"
+        }
+      ],
+      "length_nights": 7,
+      "length_days_inclusive": 8,
+      "passengers": [
+        "Daniel Whicker",
+        "Kelly Whicker"
+      ],
+      "data_quality": {
+        "status": "best_effort",
+        "notes": []
+      },
+      "length_days": 7,
+      "record_status": "completed_or_historical",
+      "record_source": {
+        "type": "document_backed",
+        "documents": [
+          "2019-02-19 -- Paid in Full.pdf",
+          "2019-04-26 -– Excursion Receipt -- Whale Watching.pdf",
+          "2019-06-09 -- On Board Receipt.pdf"
+        ]
+      }
+    },
+    {
+      "cruise_id": "2020-01-11-holland-america-nieuw-amsterdam-eastern-caribbean",
+      "cruise_line": "Holland America Line",
+      "ship": "Nieuw Amsterdam",
+      "cruise_name": "7-Day Eastern Caribbean",
+      "booking_number": "CN3DMN",
+      "embarkation": {
+        "date": "2020-01-11",
+        "port": "Fort Lauderdale, Florida, US"
+      },
+      "disembarkation": {
+        "date": "2020-01-18",
+        "port": "Fort Lauderdale, Florida, US"
+      },
+      "cabin": {
+        "number": "7045",
+        "category": "SA"
+      },
+      "itinerary": [
+        {
+          "port": "Fort Lauderdale, Florida, US",
+          "arrival": null,
+          "departure": "5:00 PM",
+          "type": "embarkation",
+          "date": "2020-01-11",
+          "day": 1
+        },
+        {
+          "port": "At Sea",
+          "arrival": null,
+          "departure": null,
+          "type": "sea_day",
+          "date": "2020-01-12",
+          "day": 2
+        },
+        {
+          "port": "Grand Turk, Turks and Caicos",
+          "arrival": "8:00 AM",
+          "departure": "3:00 PM",
+          "type": "port",
+          "date": "2020-01-13",
+          "day": 3
+        },
+        {
+          "port": "San Juan, Puerto Rico",
+          "arrival": "1:00 PM",
+          "departure": "11:00 PM",
+          "type": "port",
+          "date": "2020-01-14",
+          "day": 4
+        },
+        {
+          "port": "St. Thomas, U.S. Virgin Islands",
+          "arrival": "8:00 AM",
+          "departure": "5:00 PM",
+          "type": "port",
+          "date": "2020-01-15",
+          "day": 5
+        },
+        {
+          "port": "At Sea",
+          "arrival": null,
+          "departure": null,
+          "type": "sea_day",
+          "date": "2020-01-16",
+          "day": 6
+        },
+        {
+          "port": "Half Moon Cay, Bahamas",
+          "arrival": "8:00 AM",
+          "departure": "3:00 PM",
+          "type": "tender_port",
+          "date": "2020-01-17",
+          "day": 7
+        },
+        {
+          "port": "Fort Lauderdale, Florida, US",
+          "arrival": "7:00 AM",
+          "departure": null,
+          "type": "disembarkation",
+          "date": "2020-01-18",
+          "day": 8
+        }
+      ],
+      "financials": {
+        "cruise_price": {
+          "currency": "USD",
+          "base_fare": 4104.0,
+          "taxes_fees_port_expenses": 357.12,
+          "prepaid_gratuities": null,
+          "travel_insurance_or_cancellation_plan": 558.0,
+          "discounts_or_credits": [],
+          "total_cruise_price": 5437.12,
+          "source_document": "Guest_HAL_CN3DMN_BC_EN_37935245.pdf",
+          "notes": [
+            "HAL document also lists Packages total of $418.00."
+          ]
+        },
+        "pre_cruise_expenses": {
+          "currency": "USD",
+          "items": [
+            {
+              "date": "2020-01-18",
+              "category": "hotel_or_transfer",
+              "description": "Post-cruise Harbor Beach Marriott Resort and transfers listed in HAL itinerary; price not separately extracted.",
+              "amount": null,
+              "currency": "USD",
+              "source_document": "Guest_HAL_CN3DMN_BC_EN_37935245.pdf"
+            },
+            {
+              "date": null,
+              "category": "beach_villa",
+              "description": "Beach villa confirmation found; price not reliably extracted.",
+              "amount": null,
+              "currency": "USD",
+              "source_document": "Confirmation of Beach Villa.pdf"
+            }
+          ],
+          "total": null,
+          "notes": []
+        },
+        "onboard_expenses": {
+          "currency": "USD",
+          "items": [],
+          "total": 1519.35,
+          "source_document": "2020-01-18 -- On Board Receipt.pdf",
+          "notes": []
+        }
+      },
+      "documents": [
+        {
+          "filename": "Guest_HAL_CN3DMN_BC_EN_37935245.pdf",
+          "document_type": "booking confirmation"
+        },
+        {
+          "filename": "Confirmation of Beach Villa.pdf",
+          "document_type": "pre-cruise purchase"
+        },
+        {
+          "filename": "2020-01-18 -- On Board Receipt.pdf",
+          "document_type": "onboard statement"
+        }
+      ],
+      "length_nights": 7,
+      "length_days_inclusive": 8,
+      "passengers": [
+        "Daniel Whicker",
+        "Kelly Whicker"
+      ],
+      "data_quality": {
+        "status": "best_effort",
+        "notes": []
+      },
+      "length_days": 7,
+      "record_status": "completed_or_historical",
+      "record_source": {
+        "type": "document_backed",
+        "documents": [
+          "Guest_HAL_CN3DMN_BC_EN_37935245.pdf",
+          "Confirmation of Beach Villa.pdf",
+          "2020-01-18 -- On Board Receipt.pdf"
+        ]
+      }
+    },
+    {
+      "cruise_id": "2021-09-19-royal-caribbean-independence-western-caribbean",
+      "cruise_line": "Royal Caribbean International",
+      "ship": "Independence of the Seas",
+      "cruise_name": "8 Night Western Caribbean",
+      "booking_number": "6843813",
+      "embarkation": {
+        "date": "2021-09-19",
+        "port": "Galveston, Texas, US"
+      },
+      "disembarkation": {
+        "date": "2021-09-27",
+        "port": "Galveston, Texas, US"
+      },
+      "cabin": {
+        "number": "1340",
+        "category": "OS"
+      },
+      "itinerary": [
+        {
+          "port": "Galveston, Texas, US",
+          "arrival": null,
+          "departure": null,
+          "type": "embarkation",
+          "date": "2021-09-19",
+          "day": 1
+        },
+        {
+          "port": "At Sea",
+          "arrival": null,
+          "departure": null,
+          "type": "sea_day",
+          "date": "2021-09-20",
+          "day": 2
+        },
+        {
+          "port": "Cozumel, Mexico",
+          "arrival": null,
+          "departure": null,
+          "type": "port",
+          "date": "2021-09-21",
+          "day": 3
+        },
+        {
+          "port": "George Town, Grand Cayman",
+          "arrival": null,
+          "departure": null,
+          "type": "port",
+          "date": "2021-09-22",
+          "day": 4
+        },
+        {
+          "port": "Falmouth, Jamaica",
+          "arrival": null,
+          "departure": null,
+          "type": "port",
+          "date": "2021-09-23",
+          "day": 5
+        },
+        {
+          "port": "At Sea",
+          "arrival": null,
+          "departure": null,
+          "type": "sea_day",
+          "date": "2021-09-24",
+          "day": 6
+        },
+        {
+          "port": "At Sea",
+          "arrival": null,
+          "departure": null,
+          "type": "sea_day",
+          "date": "2021-09-25",
+          "day": 7
+        },
+        {
+          "port": "At Sea",
+          "arrival": null,
+          "departure": null,
+          "type": "sea_day",
+          "date": "2021-09-26",
+          "day": 8
+        },
+        {
+          "port": "Galveston, Texas, US",
+          "arrival": null,
+          "departure": null,
+          "type": "disembarkation",
+          "date": "2021-09-27",
+          "day": 9
+        }
+      ],
+      "financials": {
+        "cruise_price": {
+          "currency": "USD",
+          "base_fare": null,
+          "taxes_fees_port_expenses": null,
+          "prepaid_gratuities": null,
+          "travel_insurance_or_cancellation_plan": null,
+          "discounts_or_credits": [],
+          "total_cruise_price": 4081.52,
+          "source_document": "2021-07-01 -– Receipt.pdf",
+          "notes": []
+        },
+        "pre_cruise_expenses": {
+          "currency": "USD",
+          "items": [
+            {
+              "date": null,
+              "category": "cruise_planner",
+              "description": "Royal Caribbean Cruise Planner order history total paid",
+              "amount": 471.96,
+              "currency": "USD",
+              "source_document": "2021-09-10 -– Cruise Planner - Order History.pdf"
+            }
+          ],
+          "total": 471.96,
+          "notes": []
+        },
+        "onboard_expenses": {
+          "currency": "USD",
+          "items": [],
+          "total": 1168.92,
+          "source_document": "2021-09-29 -- Final Invoice.pdf",
+          "notes": []
+        }
+      },
+      "documents": [
+        {
+          "filename": "2021-07-01 -– Receipt.pdf",
+          "document_type": "cruise receipt"
+        },
+        {
+          "filename": "2021-09-10 -– Cruise Planner - Order History.pdf",
+          "document_type": "pre-cruise planner order history"
+        },
+        {
+          "filename": "2021-09-29 -- Final Invoice.pdf",
+          "document_type": "onboard statement"
+        }
+      ],
+      "length_nights": 8,
+      "length_days_inclusive": 9,
+      "passengers": [
+        "Daniel Whicker",
+        "Kelly Whicker"
+      ],
+      "data_quality": {
+        "status": "best_effort",
+        "notes": []
+      },
+      "length_days": 8,
+      "record_status": "completed_or_historical",
+      "record_source": {
+        "type": "document_backed",
+        "documents": [
+          "2021-07-01 -– Receipt.pdf",
+          "2021-09-10 -– Cruise Planner - Order History.pdf",
+          "2021-09-29 -- Final Invoice.pdf"
+        ]
+      }
+    },
+    {
+      "cruise_id": "2022-04-17-holland-america-nieuw-statendam-passage-to-spain",
+      "cruise_line": "Holland America Line",
+      "ship": "Nieuw Statendam",
+      "cruise_name": "14-Day Passage To Spain",
+      "booking_number": "XRWG5M",
+      "embarkation": {
+        "date": "2022-04-17",
+        "port": "Fort Lauderdale, Florida, US"
+      },
+      "disembarkation": {
+        "date": "2022-05-01",
+        "port": "Barcelona, Spain"
+      },
+      "cabin": {
+        "number": "6129",
+        "category": "A"
+      },
+      "itinerary": [
+        {
+          "port": "Fort Lauderdale, Florida, US",
+          "arrival": null,
+          "departure": "4:00 PM",
+          "type": "embarkation",
+          "date": "2022-04-17",
+          "day": 1
+        },
+        {
+          "port": "At Sea",
+          "arrival": null,
+          "departure": null,
+          "type": "sea_day",
+          "date": "2022-04-18",
+          "day": 2
+        },
+        {
+          "port": "At Sea",
+          "arrival": null,
+          "departure": null,
+          "type": "sea_day",
+          "date": "2022-04-19",
+          "day": 3
+        },
+        {
+          "port": "At Sea",
+          "arrival": null,
+          "departure": null,
+          "type": "sea_day",
+          "date": "2022-04-20",
+          "day": 4
+        },
+        {
+          "port": "At Sea",
+          "arrival": null,
+          "departure": null,
+          "type": "sea_day",
+          "date": "2022-04-21",
+          "day": 5
+        },
+        {
+          "port": "At Sea",
+          "arrival": null,
+          "departure": null,
+          "type": "sea_day",
+          "date": "2022-04-22",
+          "day": 6
+        },
+        {
+          "port": "At Sea",
+          "arrival": null,
+          "departure": null,
+          "type": "sea_day",
+          "date": "2022-04-23",
+          "day": 7
+        },
+        {
+          "port": "Ponta Delgada, Sao Miguel, Azores, Portugal",
+          "arrival": "10:00 AM",
+          "departure": "11:00 PM",
+          "type": "port",
+          "date": "2022-04-24",
+          "day": 8
+        },
+        {
+          "port": "At Sea",
+          "arrival": null,
+          "departure": null,
+          "type": "sea_day",
+          "date": "2022-04-25",
+          "day": 9
+        },
+        {
+          "port": "At Sea",
+          "arrival": null,
+          "departure": null,
+          "type": "sea_day",
+          "date": "2022-04-26",
+          "day": 10
+        },
+        {
+          "port": "Cadiz (Seville), Spain",
+          "arrival": "8:00 AM",
+          "departure": "11:00 PM",
+          "type": "port",
+          "date": "2022-04-27",
+          "day": 11
+        },
+        {
+          "port": "Gibraltar",
+          "arrival": "8:00 AM",
+          "departure": "5:00 PM",
+          "type": "port",
+          "date": "2022-04-28",
+          "day": 12
+        },
+        {
+          "port": "Malaga, Spain",
+          "arrival": "7:00 AM",
+          "departure": "5:00 PM",
+          "type": "port",
+          "date": "2022-04-29",
+          "day": 13
+        },
+        {
+          "port": "Alicante, Spain",
+          "arrival": "9:00 AM",
+          "departure": "4:00 PM",
+          "type": "port",
+          "date": "2022-04-30",
+          "day": 14
+        },
+        {
+          "port": "Barcelona, Spain",
+          "arrival": "7:00 AM",
+          "departure": null,
+          "type": "disembarkation",
+          "date": "2022-05-01",
+          "day": 15
+        }
+      ],
+      "financials": {
+        "cruise_price": {
+          "currency": "USD",
+          "base_fare": 3618.0,
+          "taxes_fees_port_expenses": 260.0,
+          "prepaid_gratuities": null,
+          "travel_insurance_or_cancellation_plan": 478.0,
+          "discounts_or_credits": [],
+          "total_cruise_price": 4356.0,
+          "source_document": "Guest_HAL_XRWG5M_DC_EN_42433334.pdf",
+          "notes": []
+        },
+        "pre_cruise_expenses": {
+          "currency": "USD",
+          "items": [
+            {
+              "date": null,
+              "category": "onboard_extras_prepaid",
+              "description": "Thermal Suite and Thalassotherapy / onboard extras purchase",
+              "amount": 1171.3,
+              "currency": "USD",
+              "source_document": "2021-11-22 -– Onboard Extras.pdf"
+            }
+          ],
+          "total": 1171.3,
+          "notes": []
+        },
+        "onboard_expenses": {
+          "currency": "USD",
+          "items": [],
+          "total": 2723.43,
+          "source_document": "2022-05-01 -- Final Statement.pdf",
+          "notes": [
+            "Total inferred from final credit-card settlement line because statement balance due is $0.00."
+          ]
+        }
+      },
+      "documents": [
+        {
+          "filename": "Guest_HAL_XRWG5M_DC_EN_42433334.pdf",
+          "document_type": "booking confirmation"
+        },
+        {
+          "filename": "2021-11-22 -– Onboard Extras.pdf",
+          "document_type": "pre-cruise onboard extras"
+        },
+        {
+          "filename": "2022-05-01 -- Final Statement.pdf",
+          "document_type": "onboard statement"
+        }
+      ],
+      "length_nights": 14,
+      "length_days_inclusive": 15,
+      "passengers": [
+        "Daniel Whicker",
+        "Kelly Whicker"
+      ],
+      "data_quality": {
+        "status": "best_effort",
+        "notes": []
+      },
+      "length_days": 14,
+      "record_status": "completed_or_historical",
+      "record_source": {
+        "type": "document_backed",
+        "documents": [
+          "Guest_HAL_XRWG5M_DC_EN_42433334.pdf",
+          "2021-11-22 -– Onboard Extras.pdf",
+          "2022-05-01 -- Final Statement.pdf"
+        ]
+      }
+    },
+    {
+      "cruise_id": "2022-09-18-royal-caribbean-liberty-western-caribbean",
+      "cruise_line": "Royal Caribbean International",
+      "ship": "Liberty of the Seas",
+      "cruise_name": "7 Night Western Caribbean",
+      "booking_number": "2859356",
+      "embarkation": {
+        "date": "2022-09-18",
+        "port": "Galveston, Texas, US"
+      },
+      "disembarkation": {
+        "date": "2022-09-25",
+        "port": "Galveston, Texas, US"
+      },
+      "cabin": {
+        "number": "1334",
+        "category": null
+      },
+      "itinerary": [
+        {
+          "port": "Galveston, Texas, US",
+          "arrival": null,
+          "departure": null,
+          "type": "embarkation",
+          "date": "2022-09-18",
+          "day": 1
+        },
+        {
+          "port": "At Sea",
+          "arrival": null,
+          "departure": null,
+          "type": "sea_day",
+          "date": "2022-09-19",
+          "day": 2
+        },
+        {
+          "port": "At Sea",
+          "arrival": null,
+          "departure": null,
+          "type": "sea_day",
+          "date": "2022-09-20",
+          "day": 3
+        },
+        {
+          "port": "Roatan, Honduras",
+          "arrival": null,
+          "departure": null,
+          "type": "port",
+          "date": "2022-09-21",
+          "day": 4
+        },
+        {
+          "port": "Costa Maya, Mexico",
+          "arrival": null,
+          "departure": null,
+          "type": "port",
+          "date": "2022-09-22",
+          "day": 5
+        },
+        {
+          "port": "Cozumel, Mexico",
+          "arrival": null,
+          "departure": null,
+          "type": "port",
+          "date": "2022-09-23",
+          "day": 6
+        },
+        {
+          "port": "At Sea",
+          "arrival": null,
+          "departure": null,
+          "type": "sea_day",
+          "date": "2022-09-24",
+          "day": 7
+        },
+        {
+          "port": "Galveston, Texas, US",
+          "arrival": null,
+          "departure": null,
+          "type": "disembarkation",
+          "date": "2022-09-25",
+          "day": 8
+        }
+      ],
+      "financials": {
+        "cruise_price": {
+          "currency": "USD",
+          "base_fare": null,
+          "taxes_fees_port_expenses": null,
+          "prepaid_gratuities": null,
+          "travel_insurance_or_cancellation_plan": null,
+          "discounts_or_credits": [],
+          "total_cruise_price": 4060.85,
+          "source_document": "2022-06-13 -- Receipt -- Paid in Full.pdf",
+          "notes": [
+            "Receipt includes future cruise credit and payment history; component split not fully normalized."
+          ]
+        },
+        "onboard_expenses": {
+          "currency": "USD",
+          "items": [],
+          "total": 449.39,
+          "source_document": "Cruise Statement.pdf",
+          "notes": []
+        },
+        "pre_cruise_expenses": {
+          "currency": "USD",
+          "items": [],
+          "total": null,
+          "notes": []
+        }
+      },
+      "documents": [
+        {
+          "filename": "2022-06-13 -- Receipt -- Paid in Full.pdf",
+          "document_type": "cruise receipt"
+        },
+        {
+          "filename": "Cruise Statement.pdf",
+          "document_type": "onboard statement"
+        }
+      ],
+      "length_nights": 7,
+      "length_days_inclusive": 8,
+      "passengers": [
+        "Daniel Whicker",
+        "Kelly Whicker"
+      ],
+      "data_quality": {
+        "status": "best_effort",
+        "notes": []
+      },
+      "length_days": 7,
+      "record_status": "completed_or_historical",
+      "record_source": {
+        "type": "document_backed",
+        "documents": [
+          "2022-06-13 -- Receipt -- Paid in Full.pdf",
+          "Cruise Statement.pdf"
+        ]
+      }
+    },
+    {
+      "cruise_id": "2023-01-14-holland-america-nieuw-statendam-eastern-caribbean",
+      "cruise_line": "Holland America Line",
+      "ship": "Nieuw Statendam",
+      "cruise_name": "7-Day Eastern Caribbean",
+      "booking_number": "XMMM8T",
+      "embarkation": {
+        "date": "2023-01-14",
+        "port": "Fort Lauderdale, Florida, US"
+      },
+      "disembarkation": {
+        "date": "2023-01-21",
+        "port": "Fort Lauderdale, Florida, US"
+      },
+      "cabin": {
+        "number": "6114",
+        "category": null
+      },
+      "itinerary": [
+        {
+          "port": "Fort Lauderdale, Florida, US",
+          "arrival": null,
+          "departure": null,
+          "type": "embarkation",
+          "date": "2023-01-14",
+          "day": 1
+        },
+        {
+          "port": "At Sea",
+          "arrival": null,
+          "departure": null,
+          "type": "sea_day",
+          "date": "2023-01-15",
+          "day": 2
+        },
+        {
+          "port": "At Sea",
+          "arrival": null,
+          "departure": null,
+          "type": "sea_day",
+          "date": "2023-01-16",
+          "day": 3
+        },
+        {
+          "port": "San Juan, Puerto Rico",
+          "arrival": null,
+          "departure": null,
+          "type": "port",
+          "date": "2023-01-17",
+          "day": 4
+        },
+        {
+          "port": "St. Thomas, U.S. Virgin Islands",
+          "arrival": null,
+          "departure": null,
+          "type": "port",
+          "date": "2023-01-18",
+          "day": 5
+        },
+        {
+          "port": "At Sea",
+          "arrival": null,
+          "departure": null,
+          "type": "sea_day",
+          "date": "2023-01-19",
+          "day": 6
+        },
+        {
+          "port": "Half Moon Cay, Bahamas",
+          "arrival": null,
+          "departure": null,
+          "type": "tender_port",
+          "date": "2023-01-20",
+          "day": 7
+        },
+        {
+          "port": "Fort Lauderdale, Florida, US",
+          "arrival": null,
+          "departure": null,
+          "type": "disembarkation",
+          "date": "2023-01-21",
+          "day": 8
+        }
+      ],
+      "financials": {
+        "cruise_price": {
+          "currency": "USD",
+          "base_fare": null,
+          "taxes_fees_port_expenses": null,
+          "prepaid_gratuities": null,
+          "travel_insurance_or_cancellation_plan": null,
+          "discounts_or_credits": [],
+          "total_cruise_price": 2706.0,
+          "source_document": "HAL_XMMM8T_BC_EN-Guest-1.pdf",
+          "notes": []
+        },
+        "pre_cruise_expenses": {
+          "currency": "USD",
+          "items": [],
+          "total": null,
+          "notes": []
+        },
+        "onboard_expenses": {
+          "currency": "USD",
+          "items": [],
+          "total": null,
+          "notes": []
+        }
+      },
+      "documents": [
+        {
+          "filename": "HAL_XMMM8T_BC_EN-Guest-1.pdf",
+          "document_type": "booking confirmation"
+        }
+      ],
+      "length_nights": 7,
+      "length_days_inclusive": 8,
+      "passengers": [
+        "Daniel Whicker",
+        "Kelly Whicker"
+      ],
+      "data_quality": {
+        "status": "best_effort",
+        "notes": []
+      },
+      "length_days": 7,
+      "record_status": "completed_or_historical",
+      "record_source": {
+        "type": "document_backed",
+        "documents": [
+          "HAL_XMMM8T_BC_EN-Guest-1.pdf"
+        ]
+      }
+    },
+    {
+      "cruise_id": "2023-06-18-holland-america-westerdam-alaska",
+      "cruise_line": "Holland America Line",
+      "ship": "Westerdam",
+      "cruise_name": "7-Day Alaska",
+      "booking_number": "XX6M5C",
+      "embarkation": {
+        "date": "2023-06-18",
+        "port": "Seattle, Washington, US"
+      },
+      "disembarkation": {
+        "date": "2023-06-25",
+        "port": "Seattle, Washington, US"
+      },
+      "cabin": {
+        "number": "7089",
+        "category": null
+      },
+      "itinerary": [
+        {
+          "port": "Seattle, Washington, US",
+          "arrival": null,
+          "departure": null,
+          "type": "embarkation",
+          "date": "2023-06-18",
+          "day": 1
+        },
+        {
+          "port": "At Sea",
+          "arrival": null,
+          "departure": null,
+          "type": "sea_day",
+          "date": "2023-06-19",
+          "day": 2
+        },
+        {
+          "port": "Juneau, Alaska, US",
+          "arrival": null,
+          "departure": null,
+          "type": "port",
+          "date": "2023-06-20",
+          "day": 3
+        },
+        {
+          "port": "Glacier Bay, Alaska, US",
+          "arrival": null,
+          "departure": null,
+          "type": "scenic_cruising",
+          "date": "2023-06-21",
+          "day": 4
+        },
+        {
+          "port": "Icy Strait Point, Alaska, US",
+          "arrival": null,
+          "departure": null,
+          "type": "port",
+          "date": "2023-06-22",
+          "day": 5
+        },
+        {
+          "port": "Sitka, Alaska, US",
+          "arrival": null,
+          "departure": null,
+          "type": "port",
+          "date": "2023-06-23",
+          "day": 6
+        },
+        {
+          "port": "Ketchikan, Alaska, US",
+          "arrival": null,
+          "departure": null,
+          "type": "port",
+          "date": "2023-06-24",
+          "day": 7
+        },
+        {
+          "port": "Seattle, Washington, US",
+          "arrival": null,
+          "departure": null,
+          "type": "disembarkation",
+          "date": "2023-06-25",
+          "day": 8
+        }
+      ],
+      "financials": {
+        "cruise_price": {
+          "currency": "USD",
+          "base_fare": 3198.0,
+          "taxes_fees_port_expenses": 580.0,
+          "prepaid_gratuities": null,
+          "travel_insurance_or_cancellation_plan": 418.0,
+          "discounts_or_credits": [],
+          "total_cruise_price": 4196.0,
+          "source_document": "HAL_XX6M5C_BC_EN-Guest-1.pdf",
+          "notes": []
+        },
+        "pre_cruise_expenses": {
+          "currency": "USD",
+          "items": [
+            {
+              "date": null,
+              "category": "spa_dining",
+              "description": "Couples Aroma Stone Therapy purchase",
+              "amount": 399.0,
+              "currency": "USD",
+              "source_document": "Confirmation of Your Holland America Line Purchases-2.pdf"
+            },
+            {
+              "date": null,
+              "category": "specialty_dining",
+              "description": "Pinnacle Grill Dinner - likely promotional or prepaid at zero cost",
+              "amount": 0.0,
+              "currency": "USD",
+              "source_document": "Confirmation of Your Holland America Line Purchases.pdf"
+            }
+          ],
+          "total": 399.0,
+          "notes": []
+        },
+        "onboard_expenses": {
+          "currency": "USD",
+          "items": [],
+          "total": null,
+          "notes": []
+        }
+      },
+      "documents": [
+        {
+          "filename": "HAL_XX6M5C_BC_EN-Guest-1.pdf",
+          "document_type": "booking confirmation"
+        },
+        {
+          "filename": "Confirmation of Your Holland America Line Purchases.pdf",
+          "document_type": "pre-cruise purchase receipts"
+        }
+      ],
+      "length_nights": 7,
+      "length_days_inclusive": 8,
+      "passengers": [
+        "Daniel Whicker",
+        "Kelly Whicker"
+      ],
+      "data_quality": {
+        "status": "best_effort",
+        "notes": []
+      },
+      "length_days": 7,
+      "record_status": "completed_or_historical",
+      "record_source": {
+        "type": "document_backed",
+        "documents": [
+          "HAL_XX6M5C_BC_EN-Guest-1.pdf",
+          "Confirmation of Your Holland America Line Purchases.pdf"
+        ]
+      }
+    },
+    {
+      "cruise_id": "2023-12-05-holland-america-koningsdam-mexico",
+      "cruise_line": "Holland America Line",
+      "ship": "Koningsdam",
+      "cruise_name": "11-Day Mexico",
+      "booking_number": "2JVMCM",
+      "embarkation": {
+        "date": "2023-12-05",
+        "port": "San Diego, California, US"
+      },
+      "disembarkation": {
+        "date": "2023-12-16",
+        "port": "San Diego, California, US"
+      },
+      "cabin": {
+        "number": "4098",
+        "category": null
+      },
+      "itinerary": [
+        {
+          "port": "San Diego, California, US",
+          "arrival": null,
+          "departure": null,
+          "type": "embarkation",
+          "date": "2023-12-05",
+          "day": 1
+        },
+        {
+          "port": "At Sea",
+          "arrival": null,
+          "departure": null,
+          "type": "sea_day",
+          "date": "2023-12-06",
+          "day": 2
+        },
+        {
+          "port": "Cabo San Lucas, Mexico",
+          "arrival": null,
+          "departure": null,
+          "type": "port",
+          "date": "2023-12-07",
+          "day": 3
+        },
+        {
+          "port": "Mazatlan, Mexico",
+          "arrival": null,
+          "departure": null,
+          "type": "port",
+          "date": "2023-12-08",
+          "day": 4
+        },
+        {
+          "port": "Puerto Vallarta, Mexico",
+          "arrival": null,
+          "departure": null,
+          "type": "port",
+          "date": "2023-12-09",
+          "day": 5
+        },
+        {
+          "port": "At Sea",
+          "arrival": null,
+          "departure": null,
+          "type": "sea_day",
+          "date": "2023-12-10",
+          "day": 6
+        },
+        {
+          "port": "Huatulco, Mexico",
+          "arrival": null,
+          "departure": null,
+          "type": "port",
+          "date": "2023-12-11",
+          "day": 7
+        },
+        {
+          "port": "Puerto Chiapas, Mexico",
+          "arrival": null,
+          "departure": null,
+          "type": "port",
+          "date": "2023-12-12",
+          "day": 8
+        },
+        {
+          "port": "At Sea",
+          "arrival": null,
+          "departure": null,
+          "type": "sea_day",
+          "date": "2023-12-13",
+          "day": 9
+        },
+        {
+          "port": "At Sea",
+          "arrival": null,
+          "departure": null,
+          "type": "sea_day",
+          "date": "2023-12-14",
+          "day": 10
+        },
+        {
+          "port": "Ensenada, Mexico",
+          "arrival": null,
+          "departure": null,
+          "type": "port",
+          "date": "2023-12-15",
+          "day": 11
+        },
+        {
+          "port": "San Diego, California, US",
+          "arrival": null,
+          "departure": null,
+          "type": "disembarkation",
+          "date": "2023-12-16",
+          "day": 12
+        }
+      ],
+      "financials": {
+        "cruise_price": {
+          "currency": "USD",
+          "base_fare": null,
+          "taxes_fees_port_expenses": null,
+          "prepaid_gratuities": null,
+          "travel_insurance_or_cancellation_plan": null,
+          "discounts_or_credits": [],
+          "total_cruise_price": 5060.0,
+          "source_document": "HAL_2JVMCM_BC_EN-Guest-4.pdf",
+          "notes": []
+        },
+        "pre_cruise_expenses": {
+          "currency": "USD",
+          "items": [],
+          "total": null,
+          "notes": []
+        },
+        "onboard_expenses": {
+          "currency": "USD",
+          "items": [],
+          "total": null,
+          "notes": []
+        }
+      },
+      "documents": [
+        {
+          "filename": "HAL_2JVMCM_BC_EN-Guest-4.pdf",
+          "document_type": "booking confirmation"
+        }
+      ],
+      "length_nights": 11,
+      "length_days_inclusive": 12,
+      "passengers": [
+        "Daniel Whicker",
+        "Kelly Whicker"
+      ],
+      "data_quality": {
+        "status": "best_effort",
+        "notes": []
+      },
+      "length_days": 11,
+      "record_status": "completed_or_historical",
+      "record_source": {
+        "type": "document_backed",
+        "documents": [
+          "HAL_2JVMCM_BC_EN-Guest-4.pdf"
+        ]
+      }
+    },
+    {
+      "cruise_id": "2024-04-07-holland-america-nieuw-statendam-transatlantic",
+      "cruise_line": "Holland America Line",
+      "ship": "Nieuw Statendam",
+      "cruise_name": "14-Day Transatlantic / Europe",
+      "booking_number": "2K5NXK",
+      "embarkation": {
+        "date": "2024-04-07",
+        "port": "Fort Lauderdale, Florida, US"
+      },
+      "disembarkation": {
+        "date": "2024-04-21",
+        "port": "Rotterdam, Netherlands"
+      },
+      "cabin": {
+        "number": "6144",
+        "category": null
+      },
+      "itinerary": [
+        {
+          "port": "Fort Lauderdale, Florida, US",
+          "arrival": null,
+          "departure": null,
+          "type": "embarkation",
+          "date": "2024-04-07",
+          "day": 1
+        },
+        {
+          "port": "At Sea",
+          "arrival": null,
+          "departure": null,
+          "type": "sea_day",
+          "date": "2024-04-08",
+          "day": 2
+        },
+        {
+          "port": "At Sea",
+          "arrival": null,
+          "departure": null,
+          "type": "sea_day",
+          "date": "2024-04-09",
+          "day": 3
+        },
+        {
+          "port": "At Sea",
+          "arrival": null,
+          "departure": null,
+          "type": "sea_day",
+          "date": "2024-04-10",
+          "day": 4
+        },
+        {
+          "port": "At Sea",
+          "arrival": null,
+          "departure": null,
+          "type": "sea_day",
+          "date": "2024-04-11",
+          "day": 5
+        },
+        {
+          "port": "At Sea",
+          "arrival": null,
+          "departure": null,
+          "type": "sea_day",
+          "date": "2024-04-12",
+          "day": 6
+        },
+        {
+          "port": "At Sea",
+          "arrival": null,
+          "departure": null,
+          "type": "sea_day",
+          "date": "2024-04-13",
+          "day": 7
+        },
+        {
+          "port": "Ponta Delgada, Azores, Portugal",
+          "arrival": null,
+          "departure": null,
+          "type": "port",
+          "date": "2024-04-14",
+          "day": 8
+        },
+        {
+          "port": "At Sea",
+          "arrival": null,
+          "departure": null,
+          "type": "sea_day",
+          "date": "2024-04-15",
+          "day": 9
+        },
+        {
+          "port": "At Sea",
+          "arrival": null,
+          "departure": null,
+          "type": "sea_day",
+          "date": "2024-04-16",
+          "day": 10
+        },
+        {
+          "port": "Cobh (Cork), Ireland",
+          "arrival": null,
+          "departure": null,
+          "type": "port",
+          "date": "2024-04-17",
+          "day": 11
+        },
+        {
+          "port": "Dover, England, UK",
+          "arrival": null,
+          "departure": null,
+          "type": "port",
+          "date": "2024-04-18",
+          "day": 12
+        },
+        {
+          "port": "At Sea",
+          "arrival": null,
+          "departure": null,
+          "type": "sea_day",
+          "date": "2024-04-19",
+          "day": 13
+        },
+        {
+          "port": "Amsterdam/IJmuiden or Rotterdam area, Netherlands",
+          "arrival": null,
+          "departure": null,
+          "type": "port",
+          "date": "2024-04-20",
+          "day": 14
+        },
+        {
+          "port": "Rotterdam, Netherlands",
+          "arrival": null,
+          "departure": null,
+          "type": "disembarkation",
+          "date": "2024-04-21",
+          "day": 15
+        }
+      ],
+      "financials": {
+        "cruise_price": {
+          "currency": "USD",
+          "base_fare": null,
+          "taxes_fees_port_expenses": null,
+          "prepaid_gratuities": null,
+          "travel_insurance_or_cancellation_plan": null,
+          "discounts_or_credits": [],
+          "total_cruise_price": 5919.24,
+          "source_document": "HAL_2K5NXK_BC_EN-Guest -- Paid in Full.pdf",
+          "notes": []
+        },
+        "pre_cruise_expenses": {
+          "currency": "USD",
+          "items": [
+            {
+              "date": null,
+              "category": "admission_or_excursion",
+              "description": "Keukenhof tickets; amount not reliably extracted from ticket PDF.",
+              "amount": null,
+              "currency": "USD",
+              "source_document": "Keukenhof TIckets - 2024-03-17.pdf"
+            }
+          ],
+          "total": null,
+          "notes": []
+        },
+        "onboard_expenses": {
+          "currency": "USD",
+          "items": [],
+          "total": null,
+          "notes": []
+        }
+      },
+      "documents": [
+        {
+          "filename": "HAL_2K5NXK_BC_EN-Guest -- Paid in Full.pdf",
+          "document_type": "booking confirmation"
+        },
+        {
+          "filename": "Keukenhof TIckets - 2024-03-17.pdf",
+          "document_type": "pre-cruise/post-cruise ticket"
+        }
+      ],
+      "length_nights": 14,
+      "length_days_inclusive": 15,
+      "passengers": [
+        "Daniel Whicker",
+        "Kelly Whicker"
+      ],
+      "data_quality": {
+        "status": "best_effort",
+        "notes": []
+      },
+      "length_days": 14,
+      "record_status": "completed_or_historical",
+      "record_source": {
+        "type": "document_backed",
+        "documents": [
+          "HAL_2K5NXK_BC_EN-Guest -- Paid in Full.pdf",
+          "Keukenhof TIckets - 2024-03-17.pdf"
+        ]
+      }
+    },
+    {
+      "cruise_id": "2024-05-18-royal-caribbean-mariner-family-western-caribbean",
+      "cruise_line": "Royal Caribbean International",
+      "ship": "Mariner of the Seas",
+      "cruise_name": "5 Night Western Caribbean Cruise",
+      "booking_number": null,
+      "trip_label": "Family sailing",
+      "embarkation": {
+        "date": "2024-05-18",
+        "port": "Galveston, Texas, US"
+      },
+      "disembarkation": {
+        "date": "2024-05-23",
+        "port": "Galveston, Texas, US"
+      },
+      "cabin": null,
+      "itinerary": [
+        {
+          "port": "Galveston, Texas, US",
+          "arrival": null,
+          "departure": "4:00 PM",
+          "type": "embarkation",
+          "date": "2024-05-18",
+          "day": 1
+        },
+        {
+          "port": "At Sea",
+          "arrival": null,
+          "departure": null,
+          "type": "sea_day",
+          "date": "2024-05-19",
+          "day": 2
+        },
+        {
+          "port": "Puerto Costa Maya, Mexico",
+          "arrival": "12:00 PM",
+          "departure": "7:00 PM",
+          "type": "port",
+          "date": "2024-05-20",
+          "day": 3
+        },
+        {
+          "port": "Cozumel, Mexico",
+          "arrival": null,
+          "departure": null,
+          "type": "port",
+          "date": "2024-05-21",
+          "day": 4
+        },
+        {
+          "port": "At Sea",
+          "arrival": null,
+          "departure": null,
+          "type": "sea_day",
+          "date": "2024-05-22",
+          "day": 5
+        },
+        {
+          "port": "Galveston, Texas, US",
+          "arrival": null,
+          "departure": null,
+          "type": "disembarkation",
+          "date": "2024-05-23",
+          "day": 6
+        }
+      ],
+      "financials": {
+        "cruise_price": {
+          "currency": "USD",
+          "base_fare": null,
+          "taxes_fees_port_expenses": null,
+          "prepaid_gratuities": null,
+          "travel_insurance_or_cancellation_plan": null,
+          "discounts_or_credits": [],
+          "total_cruise_price": null,
+          "source_document": "web + user supplied; no personal paperwork",
+          "notes": [
+            "User stated this sailing existed and was similar to the 2024-09-07 sailing. Itinerary is based on Royal Caribbean/third-party itinerary pattern for Mariner 5-night Western Caribbean from Galveston: Galveston, sea day, Costa Maya, Cozumel, sea day, Galveston. Financials unavailable."
+          ]
+        },
+        "pre_cruise_expenses": {
+          "currency": "USD",
+          "items": [],
+          "total": null,
+          "notes": []
+        },
+        "onboard_expenses": {
+          "currency": "USD",
+          "items": [],
+          "total": null,
+          "notes": []
+        }
+      },
+      "documents": [
+        {
+          "filename": null,
+          "document_type": "user-supplied missing-paperwork cruise plus web itinerary lookup",
+          "references": [
+            "Royal Caribbean itinerary page for 5 Night Western Caribbean from Galveston on Mariner of the Seas",
+            "CruiseCheap listing for the adjacent May 13, 2024 Mariner 5-night sailing showing the same Costa Maya/Cozumel pattern"
+          ]
+        }
+      ],
+      "data_quality": {
+        "status": "partial_web_sourced",
+        "notes": [
+          "No user paperwork available. Exact day 4 Cozumel times were not confirmed from personal documents.",
+          "The exact traveled itinerary may differ if Royal Caribbean changed the schedule after departure; no personal paperwork was provided for this sailing."
+        ]
+      },
+      "length_nights": 5,
+      "length_days_inclusive": 6,
+      "passengers": [
+        "Daniel Whicker",
+        "Kelly Whicker"
+      ],
+      "length_days": 5,
+      "record_status": "completed_or_historical",
+      "record_source": {
+        "type": "user_statement_plus_web_verified_itinerary",
+        "documents": [],
+        "web_sources": [
+          {
+            "description": "Royal Caribbean itinerary page for 5 Night Western Caribbean Cruise from Galveston on Mariner of the Seas",
+            "url": "https://www.royalcaribbean.com/itinerary/5-night-western-caribbean-cruise-from-galveston-on-mariner-MA05W679"
+          },
+          {
+            "description": "iCruise page for May 18, 2024 Mariner of the Seas 5-night Western Caribbean itinerary",
+            "url": "https://m.icruise.com/itineraries/5-night-western-caribbean-cruise_mariner-of-the-seas_5-18-2024.html"
+          }
+        ]
+      }
+    },
+    {
+      "cruise_id": "2024-09-07-royal-caribbean-mariner-western-caribbean",
+      "cruise_line": "Royal Caribbean International",
+      "ship": "Mariner of the Seas",
+      "cruise_name": "5 Night Western Caribbean",
+      "booking_number": "2672283",
+      "embarkation": {
+        "date": "2024-09-07",
+        "port": "Galveston, Texas, US"
+      },
+      "disembarkation": {
+        "date": "2024-09-12",
+        "port": "Galveston, Texas, US"
+      },
+      "cabin": null,
+      "itinerary": [
+        {
+          "port": "Galveston, Texas, US",
+          "arrival": null,
+          "departure": null,
+          "type": "embarkation",
+          "date": "2024-09-07",
+          "day": 1
+        },
+        {
+          "port": "At Sea",
+          "arrival": null,
+          "departure": null,
+          "type": "sea_day",
+          "date": "2024-09-08",
+          "day": 2
+        },
+        {
+          "port": "Puerto Costa Maya, Mexico",
+          "arrival": null,
+          "departure": null,
+          "type": "port",
+          "date": "2024-09-09",
+          "day": 3
+        },
+        {
+          "port": "Cozumel, Mexico",
+          "arrival": null,
+          "departure": null,
+          "type": "port",
+          "date": "2024-09-10",
+          "day": 4
+        },
+        {
+          "port": "At Sea",
+          "arrival": null,
+          "departure": null,
+          "type": "sea_day",
+          "date": "2024-09-11",
+          "day": 5
+        },
+        {
+          "port": "Galveston, Texas, US",
+          "arrival": null,
+          "departure": null,
+          "type": "disembarkation",
+          "date": "2024-09-12",
+          "day": 6
+        }
+      ],
+      "financials": {
+        "cruise_price": {
+          "currency": "USD",
+          "base_fare": null,
+          "taxes_fees_port_expenses": null,
+          "prepaid_gratuities": null,
+          "travel_insurance_or_cancellation_plan": null,
+          "discounts_or_credits": [],
+          "total_cruise_price": 3339.52,
+          "source_document": "2024-05-31 -– Pain-in-Full -- Ours.pdf",
+          "notes": [
+            "Reprice and receipt documents found; component split not fully normalized."
+          ]
+        },
+        "pre_cruise_expenses": {
+          "currency": "USD",
+          "items": [],
+          "total": null,
+          "notes": []
+        },
+        "onboard_expenses": {
+          "currency": "USD",
+          "items": [],
+          "total": null,
+          "notes": []
+        }
+      },
+      "documents": [
+        {
+          "filename": "Daniel and Kelly -- Cruise Receipt 2023-11-17.pdf",
+          "document_type": "initial cruise receipt"
+        },
+        {
+          "filename": "2024-05-31 -– Pain-in-Full -- Ours.pdf",
+          "document_type": "paid-in-full receipt"
+        },
+        {
+          "filename": "2024-09-15 -- Reprice Num 2.pdf",
+          "document_type": "reprice document"
+        }
+      ],
+      "length_nights": 5,
+      "length_days_inclusive": 6,
+      "passengers": [
+        "Daniel Whicker",
+        "Kelly Whicker"
+      ],
+      "data_quality": {
+        "status": "best_effort",
+        "notes": []
+      },
+      "length_days": 5,
+      "record_status": "completed_or_historical",
+      "record_source": {
+        "type": "document_backed",
+        "documents": [
+          "Daniel and Kelly -- Cruise Receipt 2023-11-17.pdf",
+          "2024-05-31 -– Pain-in-Full -- Ours.pdf",
+          "2024-09-15 -- Reprice Num 2.pdf"
+        ]
+      }
+    },
+    {
+      "cruise_id": "2025-04-06-holland-america-nieuw-amsterdam-eastern-caribbean",
+      "cruise_line": "Holland America Line",
+      "ship": "Nieuw Amsterdam",
+      "cruise_name": "7-Day Eastern Caribbean",
+      "booking_number": "3Q4GMV",
+      "embarkation": {
+        "date": "2025-04-06",
+        "port": "Fort Lauderdale, Florida, US"
+      },
+      "disembarkation": {
+        "date": "2025-04-13",
+        "port": "Fort Lauderdale, Florida, US"
+      },
+      "cabin": {
+        "number": "8100",
+        "category": null
+      },
+      "itinerary": [
+        {
+          "port": "Fort Lauderdale, Florida, US",
+          "arrival": null,
+          "departure": "4:00 PM",
+          "type": "embarkation",
+          "date": "2025-04-06",
+          "day": 1
+        },
+        {
+          "port": "At Sea",
+          "arrival": null,
+          "departure": null,
+          "type": "sea_day",
+          "date": "2025-04-07",
+          "day": 2
+        },
+        {
+          "port": "Amber Cove, Dominican Republic",
+          "arrival": "9:00 AM",
+          "departure": "6:00 PM",
+          "type": "port",
+          "date": "2025-04-08",
+          "day": 3
+        },
+        {
+          "port": "San Juan, Puerto Rico",
+          "arrival": "1:00 PM",
+          "departure": "10:00 PM",
+          "type": "port",
+          "date": "2025-04-09",
+          "day": 4
+        },
+        {
+          "port": "St. Thomas, U.S. Virgin Islands",
+          "arrival": "7:00 AM",
+          "departure": "4:00 PM",
+          "type": "port",
+          "date": "2025-04-10",
+          "day": 5
+        },
+        {
+          "port": "At Sea",
+          "arrival": null,
+          "departure": null,
+          "type": "sea_day",
+          "date": "2025-04-11",
+          "day": 6
+        },
+        {
+          "port": "Half Moon Cay, Bahamas",
+          "arrival": "8:00 AM",
+          "departure": "3:00 PM",
+          "type": "tender_port",
+          "date": "2025-04-12",
+          "day": 7
+        },
+        {
+          "port": "Fort Lauderdale, Florida, US",
+          "arrival": "7:00 AM",
+          "departure": null,
+          "type": "disembarkation",
+          "date": "2025-04-13",
+          "day": 8
+        }
+      ],
+      "financials": {
+        "cruise_price": {
+          "currency": "USD",
+          "base_fare": 2400.0,
+          "taxes_fees_port_expenses": 230.0,
+          "prepaid_gratuities": null,
+          "travel_insurance_or_cancellation_plan": 298.0,
+          "discounts_or_credits": [],
+          "total_cruise_price": 2698.0,
+          "source_document": "HAL_3Q4GMV_BC_EN-Guest-fully-paid.pdf",
+          "notes": []
+        },
+        "pre_cruise_expenses": {
+          "currency": "USD",
+          "items": [],
+          "total": null,
+          "notes": []
+        },
+        "onboard_expenses": {
+          "currency": "USD",
+          "items": [],
+          "total": null,
+          "notes": []
+        }
+      },
+      "documents": [
+        {
+          "filename": "HAL_3Q4GMV_BC_EN-Guest-fully-paid.pdf",
+          "document_type": "booking confirmation"
+        }
+      ],
+      "length_nights": 7,
+      "length_days_inclusive": 8,
+      "passengers": [
+        "Daniel Whicker",
+        "Kelly Whicker"
+      ],
+      "data_quality": {
+        "status": "best_effort",
+        "notes": []
+      },
+      "length_days": 7,
+      "record_status": "completed_or_historical",
+      "record_source": {
+        "type": "document_backed",
+        "documents": [
+          "HAL_3Q4GMV_BC_EN-Guest-fully-paid.pdf"
+        ]
+      }
+    },
+    {
+      "cruise_id": "2026-10-02-holland-america-nieuw-amsterdam-panama-canal",
+      "cruise_line": "Holland America Line",
+      "ship": "Nieuw Amsterdam",
+      "cruise_name": "16-Day Panama Canal",
+      "booking_number": "4WCD2W",
+      "embarkation": {
+        "date": "2026-10-02",
+        "port": "San Diego, California, US"
+      },
+      "disembarkation": {
+        "date": "2026-10-18",
+        "port": "Fort Lauderdale, Florida, US"
+      },
+      "cabin": {
+        "number": "7000N",
+        "category": "D"
+      },
+      "itinerary": [
+        {
+          "port": "San Diego, California, US",
+          "arrival": null,
+          "departure": "4:00 PM",
+          "type": "embarkation",
+          "date": "2026-10-02",
+          "day": 1
+        },
+        {
+          "port": "At Sea",
+          "arrival": null,
+          "departure": null,
+          "type": "sea_day",
+          "date": "2026-10-03",
+          "day": 2
+        },
+        {
+          "port": "At Sea",
+          "arrival": null,
+          "departure": null,
+          "type": "sea_day",
+          "date": "2026-10-04",
+          "day": 3
+        },
+        {
+          "port": "Puerto Vallarta, Mexico",
+          "arrival": "8:00 AM",
+          "departure": "5:00 PM",
+          "type": "port",
+          "date": "2026-10-05",
+          "day": 4
+        },
+        {
+          "port": "At Sea",
+          "arrival": null,
+          "departure": null,
+          "type": "sea_day",
+          "date": "2026-10-06",
+          "day": 5
+        },
+        {
+          "port": "Huatulco, Mexico",
+          "arrival": "10:00 AM",
+          "departure": "5:00 PM",
+          "type": "port",
+          "date": "2026-10-07",
+          "day": 6
+        },
+        {
+          "port": "Puerto Chiapas, Mexico",
+          "arrival": "8:00 AM",
+          "departure": "5:00 PM",
+          "type": "port",
+          "date": "2026-10-08",
+          "day": 7
+        },
+        {
+          "port": "Puerto Quetzal, Guatemala",
+          "arrival": "6:00 AM",
+          "departure": "8:00 PM",
+          "type": "port",
+          "date": "2026-10-09",
+          "day": 8
+        },
+        {
+          "port": "Acajutla, El Salvador",
+          "arrival": "7:00 AM",
+          "departure": "5:00 PM",
+          "type": "port",
+          "date": "2026-10-10",
+          "day": 9
+        },
+        {
+          "port": "At Sea",
+          "arrival": null,
+          "departure": null,
+          "type": "sea_day",
+          "date": "2026-10-11",
+          "day": 10
+        },
+        {
+          "port": "At Sea",
+          "arrival": null,
+          "departure": null,
+          "type": "sea_day",
+          "date": "2026-10-12",
+          "day": 11
+        },
+        {
+          "port": "Panama Canal transit: Balboa to Cristobal",
+          "arrival": "5:00 AM",
+          "departure": "7:00 PM",
+          "type": "scenic_cruising",
+          "date": "2026-10-13",
+          "day": 12
+        },
+        {
+          "port": "Cartagena, Colombia",
+          "arrival": "12:00 PM",
+          "departure": "6:00 PM",
+          "type": "port",
+          "date": "2026-10-14",
+          "day": 13
+        },
+        {
+          "port": "At Sea",
+          "arrival": null,
+          "departure": null,
+          "type": "sea_day",
+          "date": "2026-10-15",
+          "day": 14
+        },
+        {
+          "port": "At Sea",
+          "arrival": null,
+          "departure": null,
+          "type": "sea_day",
+          "date": "2026-10-16",
+          "day": 15
+        },
+        {
+          "port": "RelaxAway Half Moon Cay, Bahamas",
+          "arrival": "8:00 AM",
+          "departure": "2:00 PM",
+          "type": "tender_port",
+          "date": "2026-10-17",
+          "day": 16
+        },
+        {
+          "port": "Fort Lauderdale, Florida, US",
+          "arrival": "7:00 AM",
+          "departure": null,
+          "type": "disembarkation",
+          "date": "2026-10-18",
+          "day": 17
+        }
+      ],
+      "financials": {
+        "cruise_price": {
+          "currency": "USD",
+          "base_fare": 4180.0,
+          "taxes_fees_port_expenses": 1080.0,
+          "prepaid_gratuities": null,
+          "travel_insurance_or_cancellation_plan": 478.0,
+          "discounts_or_credits": [],
+          "total_cruise_price": 4658.0,
+          "source_document": "HAL_4WCD2W_BC_EN-Guest.pdf",
+          "notes": [
+            "HAL includes required taxes/fees and expenses in cruise fare; both included and required fee fields are preserved in source document."
+          ]
+        },
+        "pre_cruise_expenses": {
+          "currency": "USD",
+          "items": [],
+          "total": null,
+          "notes": []
+        },
+        "onboard_expenses": {
+          "currency": "USD",
+          "items": [],
+          "total": null,
+          "notes": []
+        }
+      },
+      "documents": [
+        {
+          "filename": "HAL_4WCD2W_BC_EN-Guest.pdf",
+          "document_type": "booking confirmation"
+        }
+      ],
+      "length_nights": 16,
+      "length_days_inclusive": 17,
+      "passengers": [
+        "Daniel Whicker",
+        "Kelly Whicker"
+      ],
+      "data_quality": {
+        "status": "best_effort",
+        "notes": []
+      },
+      "length_days": 16,
+      "record_status": "future",
+      "record_source": {
+        "type": "document_backed",
+        "documents": [
+          "HAL_4WCD2W_BC_EN-Guest.pdf"
+        ]
+      }
+    },
+    {
+      "cruise_id": "2026-11-07-royal-caribbean-mariner-western-caribbean",
+      "record_status": "future",
+      "record_source": {
+        "type": "document_backed_future_booking",
+        "documents": [
+          "Cruise Booking Confirmation.eml"
+        ],
+        "notes": [
+          "Uploaded email booking confirmation from USAA Explore Cruise Travel / membertravelprivileges.com."
+        ]
+      },
+      "cruise_line": "Royal Caribbean International",
+      "ship": "Mariner of the Seas",
+      "cruise_name": "7 Night Western Caribbean Cruise",
+      "destination": "Caribbean, Western",
+      "booking_number": "8879882",
+      "agency_booking_id": "CRBK3818575",
+      "member_id": "ECT06598DSZ",
+      "booking_date": "2025-09-15",
+      "vacation_consultant": "Trina Das",
+      "embarkation": {
+        "date": "2026-11-07",
+        "port": "New Orleans, Louisiana, US"
+      },
+      "disembarkation": {
+        "date": "2026-11-14",
+        "port": "New Orleans, Louisiana, US"
+      },
+      "cabin": {
+        "number": "6392",
+        "category": "JT"
+      },
+      "dining_preference": "Traditional",
+      "passengers": [
+        "Daniel Whicker",
+        "Kelly Whicker"
+      ],
+      "itinerary": [
+        {
+          "port": "New Orleans, Louisiana, US",
+          "arrival": null,
+          "departure": "4:00 PM",
+          "type": "embarkation",
+          "date": "2026-11-07",
+          "day": 1
+        },
+        {
+          "port": "At Sea",
+          "arrival": null,
+          "departure": null,
+          "type": "sea_day",
+          "date": "2026-11-08",
+          "day": 2
+        },
+        {
+          "port": "Cozumel, Mexico",
+          "arrival": "7:00 AM",
+          "departure": "4:00 PM",
+          "type": "port",
+          "date": "2026-11-09",
+          "day": 3
+        },
+        {
+          "port": "Grand Cayman, Cayman Islands",
+          "arrival": "9:30 AM",
+          "departure": "6:00 PM",
+          "type": "tender_port",
+          "date": "2026-11-10",
+          "day": 4
+        },
+        {
+          "port": "Falmouth, Jamaica",
+          "arrival": "8:00 AM",
+          "departure": "5:00 PM",
+          "type": "port",
+          "date": "2026-11-11",
+          "day": 5
+        },
+        {
+          "port": "At Sea",
+          "arrival": null,
+          "departure": null,
+          "type": "sea_day",
+          "date": "2026-11-12",
+          "day": 6
+        },
+        {
+          "port": "At Sea",
+          "arrival": null,
+          "departure": null,
+          "type": "sea_day",
+          "date": "2026-11-13",
+          "day": 7
+        },
+        {
+          "port": "New Orleans, Louisiana, US",
+          "arrival": "6:00 AM",
+          "departure": null,
+          "type": "disembarkation",
+          "date": "2026-11-14",
+          "day": 8
+        }
+      ],
+      "financials": {
+        "cruise_price": {
+          "currency": "USD",
+          "base_fare": 3217.0,
+          "taxes_fees_port_expenses": 324.0,
+          "package_fees": 259.0,
+          "prepaid_gratuities": null,
+          "travel_insurance_or_cancellation_plan": 245.0,
+          "discounts_or_credits": [],
+          "total_cruise_price": 3873.0,
+          "source_document": "Cruise Booking Confirmation.eml",
+          "notes": [
+            "Subtotal before travel points was $4,045.00.",
+            "Travel points applied: $172.00.",
+            "Total after travel points: $3,873.00.",
+            "Payment received at email generation: $3,481.72; balance due: $391.28 due 2026-07-30.",
+            "Insurance policy number 250915USAA0183; coverage listed as $3,628.00."
+          ]
+        },
+        "pre_cruise_expenses": {
+          "currency": "USD",
+          "items": [
+            {
+              "date": "2025-09-15",
+              "category": "travel_insurance",
+              "description": "Travel insurance USAAP24 for both passengers",
+              "amount": 245.0,
+              "currency": "USD",
+              "source_document": "Cruise Booking Confirmation.eml"
+            }
+          ],
+          "total": 245.0,
+          "notes": [
+            "Insurance is also included in cruise_price total; do not double-count if calculating all-in cost from cruise_price."
+          ]
+        },
+        "onboard_expenses": {
+          "currency": "USD",
+          "items": [],
+          "total": null,
+          "notes": [
+            "Future sailing; no onboard folio available yet."
+          ]
+        },
+        "payments": {
+          "currency": "USD",
+          "items": [
+            {
+              "date": "2025-09-15",
+              "paid_to": "Our Vacation Center",
+              "amount": 236.72,
+              "status": "Processed"
+            },
+            {
+              "date": "2025-09-15",
+              "paid_to": "Cruise Line",
+              "amount": 500.0,
+              "status": "Processed"
+            },
+            {
+              "date": "2025-09-15",
+              "paid_to": "Insurance Company",
+              "amount": 245.0,
+              "status": "Processed"
+            },
+            {
+              "date": "2025-11-03",
+              "paid_to": "Cruise Line",
+              "amount": 300.0,
+              "status": "Processed"
+            },
+            {
+              "date": "2025-12-02",
+              "paid_to": "Cruise Line",
+              "amount": 300.0,
+              "status": "Processed"
+            },
+            {
+              "date": "2026-01-15",
+              "paid_to": "Cruise Line",
+              "amount": 300.0,
+              "status": "Processed"
+            },
+            {
+              "date": "2026-02-01",
+              "paid_to": "Cruise Line",
+              "amount": 300.0,
+              "status": "Processed"
+            },
+            {
+              "date": "2026-03-02",
+              "paid_to": "Cruise Line",
+              "amount": 300.0,
+              "status": "Processed"
+            },
+            {
+              "date": "2026-04-01",
+              "paid_to": "Cruise Line",
+              "amount": 300.0,
+              "status": "Processed"
+            },
+            {
+              "date": "2026-05-02",
+              "paid_to": "Cruise Line",
+              "amount": 300.0,
+              "status": "Processed"
+            },
+            {
+              "date": "2026-06-01",
+              "paid_to": "Cruise Line",
+              "amount": 400.0,
+              "status": "Processed"
+            },
+            {
+              "date": "2026-07-30",
+              "paid_to": "Cruise Line",
+              "amount": 391.28,
+              "status": "Pending"
+            }
+          ],
+          "payment_received_at_confirmation": 3481.72,
+          "balance_due": 391.28,
+          "balance_due_date": "2026-07-30"
+        }
+      },
+      "documents": [
+        {
+          "filename": "Cruise Booking Confirmation.eml",
+          "document_type": "future cruise booking confirmation email"
+        }
+      ],
+      "data_quality": {
+        "status": "document_backed_future_booking",
+        "notes": [
+          "Birthdates and card details were intentionally not included in this JSON export."
+        ]
+      },
+      "length_nights": 7,
+      "length_days_inclusive": 8,
+      "length_days": 7
+    }
+  ]
+}
