@@ -1,0 +1,80 @@
+{
+  "Carnival Conquest": {
+    "local_image": "./assets/ships-clean/carnival-conquest-clean.webp",
+    "source_kind": "wikipedia",
+    "source_title": "Carnival Conquest",
+    "source_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/Carnival_Conquest_%28ship%2C_2002%29_docked_in_Celebration_Key_%28February_2026%29.jpg/3840px-Carnival_Conquest_%28ship%2C_2002%29_docked_in_Celebration_Key_%28February_2026%29.jpg"
+  },
+  "Carnival Magic": {
+    "local_image": "./assets/ships-clean/carnival-magic-clean.webp",
+    "source_kind": "wikipedia",
+    "source_title": "Carnival Magic",
+    "source_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Carnival_Magic_Jan_22_2023.jpg/3840px-Carnival_Magic_Jan_22_2023.jpg"
+  },
+  "Independence of the Seas": {
+    "local_image": "./assets/ships-clean/independence-of-the-seas-clean.webp",
+    "source_kind": "fallback_local_profile",
+    "source_title": "local_fallback",
+    "source_url": "./assets/ships/independence-of-the-seas.webp"
+  },
+  "Koningsdam": {
+    "local_image": "./assets/ships-clean/koningsdam-clean.webp",
+    "source_kind": "wikipedia",
+    "source_title": "MS Koningsdam",
+    "source_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/Koningsdam_%2827606053523%29.jpg/3840px-Koningsdam_%2827606053523%29.jpg"
+  },
+  "Liberty of the Seas": {
+    "local_image": "./assets/ships-clean/liberty-of-the-seas-clean.webp",
+    "source_kind": "fallback_local_profile",
+    "source_title": "local_fallback",
+    "source_url": "./assets/ships/liberty-of-the-seas.webp"
+  },
+  "Mariner of the Seas": {
+    "local_image": "./assets/ships-clean/mariner-of-the-seas-clean.webp",
+    "source_kind": "fallback_local_profile",
+    "source_title": "local_fallback",
+    "source_url": "./assets/ships/mariner-of-the-seas.webp"
+  },
+  "Navigator of the Seas": {
+    "local_image": "./assets/ships-clean/navigator-of-the-seas-clean.webp",
+    "source_kind": "fallback_local_profile",
+    "source_title": "local_fallback",
+    "source_url": "./assets/ships/navigator-of-the-seas.webp"
+  },
+  "Nieuw Amsterdam": {
+    "local_image": "./assets/ships-clean/nieuw-amsterdam-clean.webp",
+    "source_kind": "fallback_local_profile",
+    "source_title": "local_fallback",
+    "source_url": "./assets/ships/nieuw-amsterdam.webp"
+  },
+  "Nieuw Statendam": {
+    "local_image": "./assets/ships-clean/nieuw-statendam-clean.webp",
+    "source_kind": "fallback_local_profile",
+    "source_title": "local_fallback",
+    "source_url": "./assets/ships/nieuw-statendam.webp"
+  },
+  "Oosterdam": {
+    "local_image": "./assets/ships-clean/oosterdam-clean.webp",
+    "source_kind": "fallback_local_profile",
+    "source_title": "local_fallback",
+    "source_url": "./assets/ships/oosterdam.webp"
+  },
+  "Serenade of the Seas": {
+    "local_image": "./assets/ships-clean/serenade-of-the-seas-clean.webp",
+    "source_kind": "fallback_local_profile",
+    "source_title": "local_fallback",
+    "source_url": "./assets/ships/serenade-of-the-seas.webp"
+  },
+  "Voyager of the Seas": {
+    "local_image": "./assets/ships-clean/voyager-of-the-seas-clean.webp",
+    "source_kind": "fallback_local_profile",
+    "source_title": "local_fallback",
+    "source_url": "./assets/ships/voyager-of-the-seas.webp"
+  },
+  "Westerdam": {
+    "local_image": "./assets/ships-clean/westerdam-clean.webp",
+    "source_kind": "fallback_local_profile",
+    "source_title": "local_fallback",
+    "source_url": "./assets/ships/westerdam.webp"
+  }
+}
