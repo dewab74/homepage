@@ -6,10 +6,12 @@
       "ship": "Carnival Conquest",
       "cruise_name": "7 Day Western Caribbean Itinerary",
       "embarkation": {
-        "date": "2010-06-06"
+        "date": "2010-06-06",
+        "port": "Galveston, Texas, US"
       },
       "disembarkation": {
-        "date": "2010-06-13"
+        "date": "2010-06-13",
+        "port": "Galveston, Texas, US"
       },
       "length_nights": 7,
       "cabin": null,
@@ -47,10 +49,12 @@
       "ship": "Voyager of the Seas",
       "cruise_name": "7 Night Western Caribbean Cruise",
       "embarkation": {
-        "date": "2011-04-24"
+        "date": "2011-04-24",
+        "port": "Galveston, Texas, US"
       },
       "disembarkation": {
-        "date": "2011-05-01"
+        "date": "2011-05-01",
+        "port": "Galveston, Texas, US"
       },
       "length_nights": 7,
       "cabin": null,
@@ -88,15 +92,15 @@
       "ship": "Carnival Magic",
       "cruise_name": "Western Caribbean",
       "embarkation": {
-        "date": "2012-08-19"
+        "date": "2012-08-19",
+        "port": "Galveston, Texas, US"
       },
       "disembarkation": {
-        "date": "2012-08-26"
+        "date": "2012-08-26",
+        "port": "Galveston, Texas, US"
       },
       "length_nights": 7,
-      "cabin": {
-        "category": "GS"
-      },
+      "cabin": null,
       "itinerary": [
         {
           "port": "At Sea",
@@ -107,12 +111,12 @@
           "type": "sea_day"
         },
         {
-          "port": "Montego Bay, Jamaica",
+          "port": "Mahogany Bay, Isla Roatan, Honduras",
           "type": "port"
         },
         {
-          "port": "Grand Cayman, Cayman Islands",
-          "type": "port"
+          "port": "Belize City, Belize",
+          "type": "tender_port"
         },
         {
           "port": "Cozumel, Mexico",
@@ -123,7 +127,13 @@
           "type": "sea_day"
         }
       ],
-      "significant_entries": []
+      "significant_entries": [
+        "North Lights Wine [wine] ($42.49)",
+        "Redfrog Pub [bar] ($7.28)",
+        "Beach Bar [bar] ($8.98)",
+        "In-Cabin Beverage [beverage] ($15.69)",
+        "Spotlight Lounge [bar] ($3.45)"
+      ]
     },
     {
       "cruise_id": "2013-04-07-royal-caribbean-mariner-western-caribbean",
@@ -131,15 +141,15 @@
       "ship": "Mariner of the Seas",
       "cruise_name": "Western Caribbean",
       "embarkation": {
-        "date": "2013-04-07"
+        "date": "2013-04-07",
+        "port": "Galveston, Texas, US"
       },
       "disembarkation": {
-        "date": "2013-04-14"
+        "date": "2013-04-14",
+        "port": "Galveston, Texas, US"
       },
       "length_nights": 7,
-      "cabin": {
-        "category": "GS"
-      },
+      "cabin": null,
       "itinerary": [
         {
           "port": "At Sea",
@@ -150,11 +160,11 @@
           "type": "sea_day"
         },
         {
-          "port": "Falmouth, Jamaica",
+          "port": "Roatan, Honduras",
           "type": "port"
         },
         {
-          "port": "George Town, Grand Cayman",
+          "port": "Belize City, Belize",
           "type": "tender_port"
         },
         {
@@ -174,15 +184,15 @@
       "ship": "Navigator of the Seas",
       "cruise_name": "Western Caribbean",
       "embarkation": {
-        "date": "2014-05-11"
+        "date": "2014-05-11",
+        "port": "Galveston, Texas, US"
       },
       "disembarkation": {
-        "date": "2014-05-18"
+        "date": "2014-05-18",
+        "port": "Galveston, Texas, US"
       },
       "length_nights": 7,
-      "cabin": {
-        "category": "OS"
-      },
+      "cabin": null,
       "itinerary": [
         {
           "port": "At Sea",
@@ -210,7 +220,10 @@
         }
       ],
       "significant_entries": [
-        "Exclusive Jamaica Sandals Resort Day Pass for 2"
+        "Exclusive Jamaica Sandals Resort Day Pass for 2 [shore excursion]",
+        "Cosmopolitan Club [bar] ($92.77)",
+        "Vintages Wine Bar [wine] ($16.65)",
+        "Casino Bar [bar] ($80.51)"
       ]
     },
     {
@@ -219,15 +232,15 @@
       "ship": "Serenade of the Seas",
       "cruise_name": "7 Night Bahamas",
       "embarkation": {
-        "date": "2015-02-21"
+        "date": "2015-02-21",
+        "port": "New Orleans, Louisiana, US"
       },
       "disembarkation": {
-        "date": "2015-02-28"
+        "date": "2015-02-28",
+        "port": "New Orleans, Louisiana, US"
       },
       "length_nights": 7,
-      "cabin": {
-        "category": "RS"
-      },
+      "cabin": null,
       "itinerary": [
         {
           "port": "At Sea",
@@ -262,15 +275,15 @@
       "ship": "Liberty of the Seas",
       "cruise_name": "7 Night Western Caribbean Cruise",
       "embarkation": {
-        "date": "2016-03-20"
+        "date": "2016-03-20",
+        "port": "Galveston, Texas, US"
       },
       "disembarkation": {
-        "date": "2016-03-27"
+        "date": "2016-03-27",
+        "port": "Galveston, Texas, US"
       },
       "length_nights": 7,
-      "cabin": {
-        "category": "OS"
-      },
+      "cabin": null,
       "itinerary": [
         {
           "port": "At Sea",
@@ -297,7 +310,12 @@
           "type": "sea_day"
         }
       ],
-      "significant_entries": []
+      "significant_entries": [
+        "Olive or Twist (martini bar) [bar] ($90.43)",
+        "Boleros Tequila Bar [bar] ($25.01)",
+        "Solarium Bar [bar] ($17.82)",
+        "Casino Bar [bar] ($38.40)"
+      ]
     },
     {
       "cruise_id": "2018-04-22-royal-caribbean-liberty-western-caribbean",
@@ -305,15 +323,15 @@
       "ship": "Liberty of the Seas",
       "cruise_name": "7 Night Western Caribbean Cruise",
       "embarkation": {
-        "date": "2018-04-22"
+        "date": "2018-04-22",
+        "port": "Galveston, Texas, US"
       },
       "disembarkation": {
-        "date": "2018-04-29"
+        "date": "2018-04-29",
+        "port": "Galveston, Texas, US"
       },
       "length_nights": 7,
-      "cabin": {
-        "category": "GS"
-      },
+      "cabin": null,
       "itinerary": [
         {
           "port": "At Sea",
@@ -340,7 +358,13 @@
           "type": "sea_day"
         }
       ],
-      "significant_entries": []
+      "significant_entries": [
+        "Olive or Twist (martini bar) [bar] ($50.32)",
+        "Casino Bar [bar] ($18.00)",
+        "Plaza Bar [bar] ($7.67)",
+        "Sky Bar [bar] ($15.16)",
+        "Solarium Bar [bar] ($15.16)"
+      ]
     },
     {
       "cruise_id": "2019-06-02-holland-america-oosterdam-alaska",
@@ -348,10 +372,12 @@
       "ship": "Oosterdam",
       "cruise_name": "7 Nights Alaska round trip Seattle",
       "embarkation": {
-        "date": "2019-06-02"
+        "date": "2019-06-02",
+        "port": "Seattle, Washington, US"
       },
       "disembarkation": {
-        "date": "2019-06-09"
+        "date": "2019-06-09",
+        "port": "Seattle, Washington, US"
       },
       "length_nights": 7,
       "cabin": null,
@@ -374,7 +400,20 @@
         }
       ],
       "significant_entries": [
-        "Whale watching shore excursion"
+        "Whale watching shore excursion [shore excursion] ($419.90)",
+        "Prepaid Spa [spa] ($-219.00)",
+        "Gift Orders - Onboard Packages [shopping] ($-100.00)",
+        "C.R. Misc. Onboard [misc] ($-450.00)",
+        "Internet Cafe [internet] ($0.00)",
+        "Signature Shops [shopping] ($565.63)",
+        "Explorations Cafe [dining] ($219.00)",
+        "Operations Sr. V.P. [misc] ($-10.00)",
+        "Misc. - Bath Amenities COS [misc] ($289.30)",
+        "Canaletto Restaurant [dining] ($30.00)",
+        "Stateroom Beverage [bar] ($15.53)",
+        "Photo & Video [photo] ($-27.95)",
+        "Food/Messing [misc] ($100.00)",
+        "Cash Pay to Purser [cash out] ($77.72)"
       ]
     },
     {
@@ -383,15 +422,15 @@
       "ship": "Nieuw Amsterdam",
       "cruise_name": "7-Day Eastern Caribbean",
       "embarkation": {
-        "date": "2020-01-11"
+        "date": "2020-01-11",
+        "port": "Fort Lauderdale, Florida, US"
       },
       "disembarkation": {
-        "date": "2020-01-18"
+        "date": "2020-01-18",
+        "port": "Fort Lauderdale, Florida, US"
       },
       "length_nights": 7,
-      "cabin": {
-        "category": "SA"
-      },
+      "cabin": null,
       "itinerary": [
         {
           "port": "At Sea",
@@ -419,8 +458,23 @@
         }
       ],
       "significant_entries": [
-        "Beach villa confirmation found; price not reliably extracted.",
-        "Post-cruise Harbor Beach Marriott Resort and transfers listed in HAL itinerary; price not separately extracted."
+        "Post-cruise Harbor Beach Marriott Resort and transfers listed in HAL itinerary; price not separately extracted. [hotel or transfer]",
+        "Beach villa confirmation found; price not reliably extracted. [beach villa]",
+        "Tax [tax adjustment] ($12.30)",
+        "Ocean Bar [bar] ($232.85)",
+        "Casino/Bingo [casino] ($171.50)",
+        "Gallery Bar [bar] ($56.35)",
+        "Upper Dining Room [dining] ($47.73)",
+        "Tamarind [dining] ($57.50)",
+        "Tamarind Restaurant [dining] ($50.00)",
+        "Dufry Gift Shop [shopping] ($89.50)",
+        "Taxes, Fees and Port Expenses Adjustment [tax adjustment] ($-41.24)",
+        "Mini Bar [bar] ($37.38)",
+        "Promo Credits (Not Valid For Casino Or Cash) [casino] ($-100.00)",
+        "Shore Excursions [shore excursion] ($500.00)",
+        "Pinnacle Bar [bar] ($35.08)",
+        "Pinnacle Grill [dining] ($78.00)",
+        "Photo & Video [photo] ($79.90)"
       ]
     },
     {
@@ -429,15 +483,15 @@
       "ship": "Independence of the Seas",
       "cruise_name": "8 Night Western Caribbean",
       "embarkation": {
-        "date": "2021-09-19"
+        "date": "2021-09-19",
+        "port": "Galveston, Texas, US"
       },
       "disembarkation": {
-        "date": "2021-09-27"
+        "date": "2021-09-27",
+        "port": "Galveston, Texas, US"
       },
       "length_nights": 8,
-      "cabin": {
-        "category": "OS"
-      },
+      "cabin": null,
       "itinerary": [
         {
           "port": "At Sea",
@@ -448,16 +502,16 @@
           "type": "port"
         },
         {
-          "port": "George Town, Grand Cayman",
+          "port": "Puerto Costa Maya, Mexico",
           "type": "port"
         },
         {
-          "port": "Falmouth, Jamaica",
+          "port": "Roatan, Honduras",
           "type": "port"
         },
         {
-          "port": "At Sea",
-          "type": "sea_day"
+          "port": "Belize City, Belize",
+          "type": "tender_port"
         },
         {
           "port": "At Sea",
@@ -469,7 +523,10 @@
         }
       ],
       "significant_entries": [
-        "Royal Caribbean Cruise Planner order history total paid"
+        "Royal Caribbean Cruise Planner order history total paid [cruise planner] ($471.96)",
+        "Playmakers (sports bar) [bar] ($34.00)",
+        "Dining Room beverage [beverage] ($10.62)",
+        "Stateroom Service beverage [beverage] ($16.52)"
       ]
     },
     {
@@ -478,15 +535,15 @@
       "ship": "Nieuw Statendam",
       "cruise_name": "14-Day Passage To Spain",
       "embarkation": {
-        "date": "2022-04-17"
+        "date": "2022-04-17",
+        "port": "Fort Lauderdale, Florida, US"
       },
       "disembarkation": {
-        "date": "2022-05-01"
+        "date": "2022-05-01",
+        "port": "Barcelona, Spain"
       },
       "length_nights": 14,
-      "cabin": {
-        "category": "A"
-      },
+      "cabin": null,
       "itinerary": [
         {
           "port": "At Sea",
@@ -542,7 +599,12 @@
         }
       ],
       "significant_entries": [
-        "Thermal Suite and Thalassotherapy / onboard extras purchase"
+        "Thermal Suite and Thalassotherapy / onboard extras purchase [onboard extras prepaid] ($1171.30)",
+        "Sea View Bar [bar] ($34.52)",
+        "Panorama Bar [bar] ($34.53)",
+        "Ocean Bar [bar] ($50.16)",
+        "Billboard (piano bar) [bar] ($122.67)",
+        "Club Orange lounge package [lounge package] ($133.36)"
       ]
     },
     {
@@ -551,10 +613,12 @@
       "ship": "Liberty of the Seas",
       "cruise_name": "7 Night Western Caribbean",
       "embarkation": {
-        "date": "2022-09-18"
+        "date": "2022-09-18",
+        "port": "Galveston, Texas, US"
       },
       "disembarkation": {
-        "date": "2022-09-25"
+        "date": "2022-09-25",
+        "port": "Galveston, Texas, US"
       },
       "length_nights": 7,
       "cabin": null,
@@ -592,28 +656,30 @@
       "ship": "Nieuw Statendam",
       "cruise_name": "7-Day Eastern Caribbean",
       "embarkation": {
-        "date": "2023-01-14"
+        "date": "2023-01-14",
+        "port": "Fort Lauderdale, Florida, US"
       },
       "disembarkation": {
-        "date": "2023-01-21"
+        "date": "2023-01-21",
+        "port": "Fort Lauderdale, Florida, US"
       },
       "length_nights": 7,
       "cabin": null,
       "itinerary": [
         {
-          "port": "At Sea",
-          "type": "sea_day"
-        },
-        {
-          "port": "At Sea",
-          "type": "sea_day"
-        },
-        {
-          "port": "San Juan, Puerto Rico",
+          "port": "Nassau, Bahamas",
           "type": "port"
         },
         {
-          "port": "St. Thomas, U.S. Virgin Islands",
+          "port": "At Sea",
+          "type": "sea_day"
+        },
+        {
+          "port": "Amber Cove, Dominican Republic",
+          "type": "port"
+        },
+        {
+          "port": "Grand Turk, Turks and Caicos",
           "type": "port"
         },
         {
@@ -625,7 +691,15 @@
           "type": "tender_port"
         }
       ],
-      "significant_entries": []
+      "significant_entries": [
+        "Gelato [dining] ($7.08)",
+        "Internet Cafe [internet] ($60.00)",
+        "Promo Dining Package Credit [promo credit] ($0.00)",
+        "Mini Bar (Loyalty discount applied) [bar] ($2.32)",
+        "Taxes, Fees and Port Expenses Adjustment [tax adjustment] ($-25.48)",
+        "Photo & Video (Loyalty discount applied) [photo] ($0.00)",
+        "Casino/Bingo [casino] ($400.00)"
+      ]
     },
     {
       "cruise_id": "2023-06-18-holland-america-westerdam-alaska",
@@ -633,10 +707,12 @@
       "ship": "Westerdam",
       "cruise_name": "7-Day Alaska",
       "embarkation": {
-        "date": "2023-06-18"
+        "date": "2023-06-18",
+        "port": "Seattle, Washington, US"
       },
       "disembarkation": {
-        "date": "2023-06-25"
+        "date": "2023-06-25",
+        "port": "Seattle, Washington, US"
       },
       "length_nights": 7,
       "cabin": null,
@@ -650,21 +726,37 @@
           "type": "port"
         },
         {
-          "port": "Icy Strait Point, Alaska, US",
-          "type": "port"
-        },
-        {
           "port": "Sitka, Alaska, US",
           "type": "port"
         },
         {
           "port": "Ketchikan, Alaska, US",
           "type": "port"
+        },
+        {
+          "port": "Victoria, British Columbia, Canada",
+          "type": "port"
         }
       ],
       "significant_entries": [
-        "Couples Aroma Stone Therapy purchase",
-        "Pinnacle Grill Dinner - likely promotional or prepaid at zero cost"
+        "Couples Aroma Stone Therapy purchase [spa dining] ($399.00)",
+        "Pinnacle Grill Dinner - likely promotional or prepaid at zero cost [specialty dining] ($0.00)",
+        "Prebooked Gifts and Amenities [prepaid gift package] ($-400.00)",
+        "Prepaid Spa [spa] ($-399.00)",
+        "Internet Cafe [internet] ($110.00)",
+        "Ocean Bar [bar] ($9.44)",
+        "Upper Dining Room [dining] ($7.08)",
+        "Greenhouse Spa & Salon [spa] ($470.82)",
+        "Gallery Bar [bar] ($5.90)",
+        "Sea View Bar [bar] ($3.54)",
+        "Tax [tax adjustment] ($3.81)",
+        "Casino/Bingo [casino] ($1000.00)",
+        "Main Dining Room [dining] ($14.16)",
+        "Pinnacle Bar [bar] ($2.36)",
+        "Promo Dining Package Credit [promo credit] ($0.00)",
+        "Taxes, Fees and Port Expenses Adjustment [tax adjustment] ($-48.46)",
+        "Photo & Video [photo] ($19.99)",
+        "Signature Shops [shopping] ($13.44)"
       ]
     },
     {
@@ -673,10 +765,12 @@
       "ship": "Koningsdam",
       "cruise_name": "11-Day Mexico",
       "embarkation": {
-        "date": "2023-12-05"
+        "date": "2023-12-05",
+        "port": "San Diego, California, US"
       },
       "disembarkation": {
-        "date": "2023-12-16"
+        "date": "2023-12-16",
+        "port": "San Diego, California, US"
       },
       "length_nights": 11,
       "cabin": null,
@@ -686,11 +780,11 @@
           "type": "sea_day"
         },
         {
-          "port": "Cabo San Lucas, Mexico",
-          "type": "port"
+          "port": "At Sea",
+          "type": "sea_day"
         },
         {
-          "port": "Mazatlan, Mexico",
+          "port": "Manzanillo, Mexico",
           "type": "port"
         },
         {
@@ -698,15 +792,7 @@
           "type": "port"
         },
         {
-          "port": "At Sea",
-          "type": "sea_day"
-        },
-        {
-          "port": "Huatulco, Mexico",
-          "type": "port"
-        },
-        {
-          "port": "Puerto Chiapas, Mexico",
+          "port": "Mazatlan, Mexico",
           "type": "port"
         },
         {
@@ -714,15 +800,43 @@
           "type": "sea_day"
         },
         {
-          "port": "At Sea",
-          "type": "sea_day"
+          "port": "Pichilingue (La Paz), Mexico",
+          "type": "port"
         },
         {
-          "port": "Ensenada, Mexico",
-          "type": "port"
+          "port": "Loreto, Mexico",
+          "type": "tender_port"
+        },
+        {
+          "port": "Cabo San Lucas, Mexico",
+          "type": "tender_port"
+        },
+        {
+          "port": "At Sea",
+          "type": "sea_day"
         }
       ],
-      "significant_entries": []
+      "significant_entries": [
+        "Prepaid Spa [spa] ($-299.00)",
+        "Promo Credits (Not Valid For Casino Or Cash) [casino] ($-150.00)",
+        "Internet Cafe [internet] ($160.00)",
+        "Shorex Promo Credit [promo credit] ($0.00)",
+        "Tax [tax adjustment] ($1.27)",
+        "Signature Shops [shopping] ($38.32)",
+        "Greenhouse Spa & Salon [spa] ($352.82)",
+        "Upper Dining Room [dining] ($5.90)",
+        "Casino/Bingo [casino] ($1200.00)",
+        "Ocean Bar [bar] ($9.44)",
+        "Panorama Bar [bar] ($1.18)",
+        "Sea View Bar [bar] ($4.72)",
+        "Laundry [laundry] ($75.00)",
+        "Promo Dining Package Credit [promo credit] ($0.00)",
+        "B.B. Kings Blues Club [dining] ($1.18)",
+        "Tamarind [dining] ($1.18)",
+        "Gelato [dining] ($9.70)",
+        "Sel De Mer Bar [bar] ($1.77)",
+        "Sel De Mer [dining] ($129.80)"
+      ]
     },
     {
       "cruise_id": "2024-04-07-holland-america-nieuw-statendam-transatlantic",
@@ -730,10 +844,12 @@
       "ship": "Nieuw Statendam",
       "cruise_name": "14-Day Transatlantic / Europe",
       "embarkation": {
-        "date": "2024-04-07"
+        "date": "2024-04-07",
+        "port": "Fort Lauderdale, Florida, US"
       },
       "disembarkation": {
-        "date": "2024-04-21"
+        "date": "2024-04-21",
+        "port": "Rotterdam, Netherlands"
       },
       "length_nights": 14,
       "cabin": null,
@@ -747,24 +863,24 @@
           "type": "sea_day"
         },
         {
-          "port": "At Sea",
-          "type": "sea_day"
-        },
-        {
-          "port": "At Sea",
-          "type": "sea_day"
-        },
-        {
-          "port": "At Sea",
-          "type": "sea_day"
-        },
-        {
-          "port": "At Sea",
-          "type": "sea_day"
-        },
-        {
-          "port": "Ponta Delgada, Azores, Portugal",
+          "port": "Kings Wharf, Bermuda",
           "type": "port"
+        },
+        {
+          "port": "At Sea",
+          "type": "sea_day"
+        },
+        {
+          "port": "At Sea",
+          "type": "sea_day"
+        },
+        {
+          "port": "At Sea",
+          "type": "sea_day"
+        },
+        {
+          "port": "At Sea",
+          "type": "sea_day"
         },
         {
           "port": "At Sea",
@@ -779,20 +895,24 @@
           "type": "port"
         },
         {
-          "port": "Dover, England, UK",
+          "port": "St Peter Port, Guernsey",
+          "type": "tender_port"
+        },
+        {
+          "port": "Le Havre (Paris), France",
           "type": "port"
         },
         {
-          "port": "At Sea",
-          "type": "sea_day"
-        },
-        {
-          "port": "Amsterdam/IJmuiden or Rotterdam area, Netherlands",
+          "port": "Dover (London), England, UK",
           "type": "port"
         }
       ],
       "significant_entries": [
-        "Keukenhof tickets; amount not reliably extracted from ticket PDF."
+        "Keukenhof tickets; amount not reliably extracted from ticket PDF. [admission or excursion]",
+        "Shorex Promo Credit [promo credit] ($0.00)",
+        "Marketing Promo [promo credit] ($0.00)",
+        "Tamarind Restaurant [dining] ($0.00)",
+        "Promo Dining Package Credit [promo credit] ($0.00)"
       ]
     },
     {
@@ -801,10 +921,12 @@
       "ship": "Mariner of the Seas",
       "cruise_name": "5 Night Western Caribbean Cruise",
       "embarkation": {
-        "date": "2024-05-18"
+        "date": "2024-05-18",
+        "port": "Galveston, Texas, US"
       },
       "disembarkation": {
-        "date": "2024-05-23"
+        "date": "2024-05-23",
+        "port": "Galveston, Texas, US"
       },
       "length_nights": 5,
       "cabin": null,
@@ -826,7 +948,11 @@
           "type": "sea_day"
         }
       ],
-      "significant_entries": []
+      "significant_entries": [
+        "Classic Soda Package [soda package] ($117.80)",
+        "Izumi Hibachi specialty dining [dining] ($421.12)",
+        "WiFi + spa/massage bundle [wifi spa] ($603.91)"
+      ]
     },
     {
       "cruise_id": "2024-09-07-royal-caribbean-mariner-western-caribbean",
@@ -834,10 +960,12 @@
       "ship": "Mariner of the Seas",
       "cruise_name": "5 Night Western Caribbean",
       "embarkation": {
-        "date": "2024-09-07"
+        "date": "2024-09-07",
+        "port": "Galveston, Texas, US"
       },
       "disembarkation": {
-        "date": "2024-09-12"
+        "date": "2024-09-12",
+        "port": "Galveston, Texas, US"
       },
       "length_nights": 5,
       "cabin": null,
@@ -867,10 +995,12 @@
       "ship": "Nieuw Amsterdam",
       "cruise_name": "7-Day Eastern Caribbean",
       "embarkation": {
-        "date": "2025-04-06"
+        "date": "2025-04-06",
+        "port": "Fort Lauderdale, Florida, US"
       },
       "disembarkation": {
-        "date": "2025-04-13"
+        "date": "2025-04-13",
+        "port": "Fort Lauderdale, Florida, US"
       },
       "length_nights": 7,
       "cabin": null,
@@ -900,7 +1030,88 @@
           "type": "tender_port"
         }
       ],
-      "significant_entries": []
+      "significant_entries": [
+        "Prebooked Gifts and Amenities [prepaid gift package] ($-200.00)",
+        "Shorex Promo Credit [promo credit] ($0.00)",
+        "Prepaid Spa [spa] ($-292.00)",
+        "Greenhouse Spa & Salon [spa] ($913.38)",
+        "Pinnacle Bar [bar] ($3.54)",
+        "Promo Dining Package Credit [promo credit] ($0.00)",
+        "Billboard [bar] ($3.54)",
+        "Signature Shops [shopping] ($27.90)",
+        "Laundry [laundry] ($25.00)",
+        "Ocean Bar [bar] ($2.36)"
+      ]
+    },
+    {
+      "cruise_id": "2025-10-19-royal-caribbean-explorer-transatlantic",
+      "cruise_line": "Royal Caribbean International",
+      "ship": "Explorer of the Seas",
+      "cruise_name": "13 Night Spain & Canary Islands Transatlantic",
+      "embarkation": {
+        "date": "2025-10-19",
+        "port": "Lisbon, Portugal"
+      },
+      "disembarkation": {
+        "date": "2025-11-01",
+        "port": "Port Canaveral, Florida, US"
+      },
+      "length_nights": 13,
+      "cabin": null,
+      "itinerary": [
+        {
+          "port": "Cadiz (Seville), Spain",
+          "type": "port"
+        },
+        {
+          "port": "At Sea",
+          "type": "sea_day"
+        },
+        {
+          "port": "Lanzarote, Canary Islands, Spain",
+          "type": "port"
+        },
+        {
+          "port": "Las Palmas, Gran Canaria, Canary Islands, Spain",
+          "type": "port"
+        },
+        {
+          "port": "Tenerife, Canary Islands, Spain",
+          "type": "port"
+        },
+        {
+          "port": "At Sea",
+          "type": "sea_day"
+        },
+        {
+          "port": "At Sea",
+          "type": "sea_day"
+        },
+        {
+          "port": "At Sea",
+          "type": "sea_day"
+        },
+        {
+          "port": "At Sea",
+          "type": "sea_day"
+        },
+        {
+          "port": "At Sea",
+          "type": "sea_day"
+        },
+        {
+          "port": "At Sea",
+          "type": "sea_day"
+        },
+        {
+          "port": "At Sea",
+          "type": "sea_day"
+        }
+      ],
+      "significant_entries": [
+        "Pre-cruise hotel, Pestana Rua Augusta, Lisbon (3 nights, Oct 16-19 2025) [hotel] ($801.00)",
+        "VOOM Surf+Stream WiFi package, 2 devices [wifi] ($415.87)"
+      ]
     },
     {
       "cruise_id": "2026-10-02-holland-america-nieuw-amsterdam-panama-canal",
@@ -908,15 +1119,15 @@
       "ship": "Nieuw Amsterdam",
       "cruise_name": "16-Day Panama Canal",
       "embarkation": {
-        "date": "2026-10-02"
+        "date": "2026-10-02",
+        "port": "San Diego, California, US"
       },
       "disembarkation": {
-        "date": "2026-10-18"
+        "date": "2026-10-18",
+        "port": "Fort Lauderdale, Florida, US"
       },
       "length_nights": 16,
-      "cabin": {
-        "category": "D"
-      },
+      "cabin": null,
       "itinerary": [
         {
           "port": "At Sea",
@@ -983,15 +1194,15 @@
       "ship": "Mariner of the Seas",
       "cruise_name": "7 Night Western Caribbean Cruise",
       "embarkation": {
-        "date": "2026-11-07"
+        "date": "2026-11-07",
+        "port": "New Orleans, Louisiana, US"
       },
       "disembarkation": {
-        "date": "2026-11-14"
+        "date": "2026-11-14",
+        "port": "New Orleans, Louisiana, US"
       },
       "length_nights": 7,
-      "cabin": {
-        "category": "JT"
-      },
+      "cabin": null,
       "itinerary": [
         {
           "port": "At Sea",

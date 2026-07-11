@@ -3,838 +3,199 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cruise History Planner - Daniel Whicker</title>
+    <title>Bifrost - Daniel Whicker</title>
+    <meta name="description" content="Daniel Whicker's personal site — Bifrost.">
+    <link rel="icon" href="./bifrost-berkano-logo.svg" type="image/svg+xml">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap">
+    <link rel="stylesheet" href="./styles.css">
     <style>
-        :root {
-            --primary-color: #1a4d8c;
-            --accent-bg: #e3f2fd;
-            --text-color: #24303a;
-            --muted-text: #5e6c7a;
-            --overlay: rgba(17, 31, 48, 0.66);
+        .hero {
+            padding: 56px 0 40px;
         }
 
-        * {
-            box-sizing: border-box;
+        .eyebrow {
+            margin: 0 0 12px;
+            color: var(--mauve);
+            font-size: 0.86rem;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
         }
 
-        body {
-            font-family: 'Roboto', sans-serif;
+        h1 {
             margin: 0;
-            padding: 0;
-            background: radial-gradient(circle at 12% 18%, #ebf5ff 0%, #f4f7f9 45%, #edf3f7 100%);
-            color: var(--text-color);
-        }
-
-        header {
-            background-color: var(--primary-color);
-            color: #ffffff;
-            padding: 20px 40px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        }
-
-        header h1 {
-            margin: 0;
-            font-size: 1.8em;
+            font-size: clamp(2.2rem, 5vw, 3.4rem);
+            line-height: 1.05;
             font-weight: 300;
         }
 
-        header span {
-            color: #dce8f7;
+        .tagline {
+            max-width: 620px;
+            margin: 18px 0 28px;
+            color: var(--muted);
+            font-size: clamp(1.05rem, 1.6vw, 1.2rem);
+            line-height: 1.6;
         }
 
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: 40px auto;
-            padding: 20px;
-        }
-
-        h2 {
-            color: var(--primary-color);
-            border-bottom: 2px solid #ddd;
-            padding-bottom: 10px;
-            margin-bottom: 30px;
-        }
-
-        .status-message {
-            margin: 10px 0 30px;
-            color: var(--muted-text);
-            min-height: 22px;
-        }
-
-        .top-chips {
+        .actions {
             display: flex;
             flex-wrap: wrap;
-            gap: 10px;
-            margin: 0 0 14px;
+            gap: 12px;
         }
 
-        .summary-chip {
-            display: inline-block;
-            padding: 7px 12px;
-            border-radius: 999px;
-            background: #dff1ff;
-            color: #113a66;
+        section.block {
+            padding: 32px 0;
+            border-top: 1px solid var(--line);
+        }
+
+        section.block h2 {
+            margin: 0 0 16px;
+            font-size: 1.4rem;
             font-weight: 700;
-            border: 1px solid #b9ddff;
         }
 
-        .cruise-list {
+        .about p {
+            max-width: 680px;
+            color: var(--ink);
+            line-height: 1.7;
+        }
+
+        .links-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
-            margin-top: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 14px;
         }
 
-        .cruise-card {
-            background-color: #ffffff;
-            padding: 25px;
-            border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-            transition: transform 0.2s, box-shadow 0.2s;
-            cursor: pointer;
-            border-left: 5px solid var(--primary-color);
+        .link-card {
             display: flex;
             flex-direction: column;
+            gap: 4px;
+            padding: 16px 18px;
+            border-radius: var(--radius);
+            background: var(--surface);
+            border: 1px solid var(--line);
+            text-decoration: none;
+            color: var(--ink);
+            transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
         }
 
-        .cruise-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        .link-card:hover,
+        .link-card:focus-visible {
+            transform: translateY(-2px);
+            border-color: var(--lavender);
+            box-shadow: 0 10px 24px rgba(30, 30, 46, 0.08);
         }
 
-        .cruise-card:focus-visible {
-            outline: 3px solid #78b6ff;
-            outline-offset: 3px;
-        }
-
-        .cruise-card h3 {
-            margin-top: 0;
-            margin-bottom: 14px;
-            color: var(--primary-color);
-            font-size: 1.2em;
-        }
-
-        .ship-photo-wrap {
-            margin-bottom: 12px;
-            width: 100%;
-            min-height: 128px;
-            max-height: 148px;
-            border-radius: 8px;
-            overflow: hidden;
-            background: #edf4fc;
-            border: 1px solid #d4e4f4;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .ship-photo {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-            object-position: center;
-            display: block;
-            background: linear-gradient(180deg, #f8fbff 0%, #edf4fc 100%);
-        }
-
-        .ship-photo-fallback {
-            color: #5e6c7a;
-            font-size: 0.9rem;
-            padding: 8px;
-            text-align: center;
-        }
-
-        .meta-info p {
-            margin: 6px 0;
-        }
-
-        .meta-info strong {
-            display: inline-block;
-            min-width: 112px;
-        }
-
-        .duration-badges span {
-            display: inline-block;
-            padding: 5px 10px;
-            margin-right: 8px;
-            margin-bottom: 8px;
-            border-radius: 4px;
+        .link-card-title {
             font-weight: 700;
-            background-color: var(--accent-bg);
-            color: var(--primary-color);
         }
 
-        .subtle {
-            color: var(--muted-text);
-            font-size: 0.95em;
+        .link-card-desc {
+            color: var(--muted);
+            font-size: 0.92rem;
         }
 
-        .modal {
-            position: fixed;
-            inset: 0;
-            display: none;
-            align-items: center;
-            justify-content: center;
-            padding: 24px;
-            background: var(--overlay);
-            z-index: 99;
-        }
-
-        .modal.show {
+        .feature-card {
             display: flex;
-        }
-
-        .modal-card {
-            width: min(960px, 100%);
-            max-height: 88vh;
-            overflow-y: auto;
-            background-color: #ffffff;
-            border-radius: 12px;
-            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
-            padding: 26px;
-            position: relative;
-        }
-
-        .modal-close {
-            position: absolute;
-            top: 12px;
-            right: 12px;
-            border: 0;
-            border-radius: 6px;
-            background: #e6edf5;
-            color: #27496d;
-            padding: 8px 10px;
-            cursor: pointer;
-            font-size: 0.95rem;
-        }
-
-        .modal-close:hover {
-            background: #d7e4f2;
-        }
-
-        .detail-header {
-            padding-right: 80px;
-            margin-bottom: 16px;
-        }
-
-        .detail-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
             gap: 18px;
+            padding: 22px;
+            border-radius: var(--radius);
+            background: var(--surface);
+            border: 1px solid var(--line);
         }
 
-        .detail-section {
-            border: 1px solid #dde7f3;
-            border-radius: 10px;
-            padding: 14px;
-            background: #f8fbff;
-        }
-
-        .detail-section h4 {
-            margin: 4px 0 10px;
-            color: var(--primary-color);
-        }
-
-        .detail-list {
+        .feature-card p {
             margin: 0;
-            padding-left: 18px;
+            max-width: 520px;
+            color: var(--muted);
+            line-height: 1.6;
         }
 
-        .detail-list li {
-            margin-bottom: 6px;
-        }
+        @media (max-width: 600px) {
+            .hero {
+                padding: 36px 0 28px;
+                text-align: center;
+            }
 
-        @media (max-width: 720px) {
-            header {
-                padding: 18px;
+            .tagline {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .actions {
+                justify-content: center;
+            }
+
+            .about {
+                text-align: center;
+            }
+
+            .about p {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .feature-card {
                 flex-direction: column;
-                align-items: flex-start;
-                gap: 8px;
-            }
-
-            .container {
-                width: 94%;
-                margin: 20px auto;
-                padding: 8px;
-            }
-
-            .ship-photo-wrap {
-                min-height: 116px;
-                max-height: 132px;
-            }
-
-            .modal {
-                padding: 10px;
-            }
-
-            .modal-card {
-                padding: 18px;
+                text-align: center;
             }
         }
     </style>
 </head>
 <body>
-<header>
-    <h1>Cruise Journey Hub</h1>
-    <span>Your Customized Travel Records</span>
+<header class="site-header">
+    <div class="site-header-inner">
+        <a class="brand" href="./index.html">
+            <img class="brand-logo" src="./bifrost-berkano-logo.svg" alt="Bifrost logo">
+            <span class="brand-name">Bifrost</span>
+        </a>
+        <nav class="site-nav" aria-label="Primary">
+            <a href="./index.html" aria-current="page">Home</a>
+            <a href="./history.html">Cruise History</a>
+        </nav>
+    </div>
 </header>
 
-<div class="container">
-    <h2>Discover Your Journeys</h2>
-    <div class="top-chips">
-        <span id="total-days-at-sea-chip" class="summary-chip">Total days at sea: --</span>
-    </div>
-    <p id="status-message" class="status-message">Loading cruise history...</p>
-    <section id="cruise-list-container" class="cruise-list"></section>
-</div>
-
-<div id="sailing-modal" class="modal" aria-hidden="true">
-    <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="detail-title">
-        <button id="close-modal-btn" class="modal-close" type="button" aria-label="Close details">Close</button>
-        <div id="modal-content"></div>
-    </div>
-</div>
-
-<script>
-const DATA_URL = './cruise_history_public.json';
-const shipPhotoCache = new Map();
-const SHIP_PHOTO_CACHE_KEY = 'ship-photo-cache-v5';
-const CRUISE_DECKPLANS_PROFILE_MAP = {
-    'carnival conquest': './assets/ships-clean/carnival-conquest-clean.webp',
-    'carnival magic': './assets/ships-clean/carnival-magic-clean.webp',
-    'independence of the seas': './assets/ships-clean/independence-of-the-seas-clean.webp',
-    'koningsdam': './assets/ships-clean/koningsdam-clean.webp',
-    'liberty of the seas': './assets/ships-clean/liberty-of-the-seas-clean.webp',
-    'mariner of the seas': './assets/ships-clean/mariner-of-the-seas-clean.webp',
-    'navigator of the seas': './assets/ships-clean/navigator-of-the-seas-clean.webp',
-    'nieuw amsterdam': './assets/ships-clean/nieuw-amsterdam-clean.webp',
-    'nieuw statendam': './assets/ships-clean/nieuw-statendam-clean.webp',
-    'oosterdam': './assets/ships-clean/oosterdam-clean.webp',
-    'serenade of the seas': './assets/ships-clean/serenade-of-the-seas-clean.webp',
-    'voyager of the seas': './assets/ships-clean/voyager-of-the-seas-clean.webp',
-    'westerdam': './assets/ships-clean/westerdam-clean.webp'
-};
-
-document.addEventListener('DOMContentLoaded', async () => {
-    const container = document.getElementById('cruise-list-container');
-    const statusMessage = document.getElementById('status-message');
-    const totalDaysChip = document.getElementById('total-days-at-sea-chip');
-
-    const modal = document.getElementById('sailing-modal');
-    const modalContent = document.getElementById('modal-content');
-    const closeModalBtn = document.getElementById('close-modal-btn');
-
-    let cruises = [];
-    loadShipPhotoCache();
-
-    try {
-        const response = await fetch(DATA_URL);
-        if (!response.ok) {
-            throw new Error('Could not load cruise_history_public.json');
-        }
-
-        const payload = await response.json();
-        cruises = Array.isArray(payload.cruises) ? payload.cruises : [];
-    } catch (error) {
-        statusMessage.textContent = 'Unable to load cruise data automatically. If opened as a local file, run a local web server or deploy to static hosting so JSON fetch works.';
-        container.innerHTML = '';
-        return;
-    }
-
-    cruises.sort((a, b) => {
-        const left = (a.embarkation && a.embarkation.date) || '';
-        const right = (b.embarkation && b.embarkation.date) || '';
-        return right.localeCompare(left);
-    });
-
-    if (cruises.length === 0) {
-        statusMessage.textContent = 'No cruises were found in cruise_history_public.json.';
-        totalDaysChip.textContent = 'Total days at sea: 0';
-        container.innerHTML = '';
-        return;
-    }
-
-    const totalDaysAtSea = cruises.reduce((sum, cruise) => sum + getDaysAtSea(cruise), 0);
-    totalDaysChip.textContent = 'Total days at sea: ' + totalDaysAtSea;
-
-    statusMessage.textContent = 'Click any sailing card for cabin, ports, and significant excursion details.';
-    container.innerHTML = '';
-
-    cruises.forEach((cruise) => {
-        const card = createCardElement(cruise);
-        card.addEventListener('click', () => openCruiseModal(cruise));
-        card.addEventListener('keydown', (event) => {
-            if (event.key === 'Enter' || event.key === ' ') {
-                event.preventDefault();
-                openCruiseModal(cruise);
-            }
-        });
-        container.appendChild(card);
-        attachShipPhoto(card, cruise);
-    });
-
-    closeModalBtn.addEventListener('click', closeModal);
-    modal.addEventListener('click', (event) => {
-        if (event.target === modal) {
-            closeModal();
-        }
-    });
-
-    document.addEventListener('keydown', (event) => {
-        if (event.key === 'Escape' && modal.classList.contains('show')) {
-            closeModal();
-        }
-    });
-
-    function openCruiseModal(cruise) {
-        modalContent.innerHTML = buildCruiseDetailHtml(cruise);
-        modal.classList.add('show');
-        modal.setAttribute('aria-hidden', 'false');
-    }
-
-    function closeModal() {
-        modal.classList.remove('show');
-        modal.setAttribute('aria-hidden', 'true');
-    }
-});
-
-function createCardElement(cruise) {
-    const card = document.createElement('article');
-    card.className = 'cruise-card';
-    card.tabIndex = 0;
-    card.setAttribute('role', 'button');
-    card.setAttribute('aria-label', 'Open details for ' + (cruise.cruise_name || 'this cruise'));
-
-    const embarkDate = formatDate(cruise.embarkation && cruise.embarkation.date);
-    const disembarkDate = formatDate(cruise.disembarkation && cruise.disembarkation.date);
-    const sailDateRange = embarkDate + ' to ' + disembarkDate;
-    const uniquePorts = getVisitedPorts(cruise);
-    const previewPorts = uniquePorts.slice(0, 3);
-    const remainingPortCount = uniquePorts.length > 3 ? uniquePorts.length - 3 : 0;
-
-    card.innerHTML = `
-        <div class="ship-photo-wrap">
-            <img class="ship-photo" alt="" loading="lazy" referrerpolicy="no-referrer" hidden>
-            <div class="ship-photo-fallback">Finding photo for ${escapeHtml(cruise.ship || 'ship')}...</div>
+<main>
+    <section class="hero container">
+        <p class="eyebrow">Personal site</p>
+        <h1>Daniel Whicker</h1>
+        <p class="tagline">Welcome to Bifrost — my personal corner of the web. This is where I keep notes, projects, and a few family records.</p>
+        <div class="actions">
+            <a class="btn btn-primary" href="mailto:dwhicker@bifrost.cc">Email me</a>
+            <a class="btn btn-ghost" href="./history.html">View Cruise History</a>
         </div>
-        <h3>${escapeHtml(cruise.cruise_name || 'Untitled Cruise')}</h3>
-        <div class="meta-info">
-            <p><strong>Ship:</strong> ${escapeHtml(cruise.ship || 'Unknown Ship')}</p>
-            <p><strong>Cruise Line:</strong> ${escapeHtml(cruise.cruise_line || 'N/A')}</p>
-            <p><strong>Sail Dates:</strong> ${sailDateRange}</p>
+    </section>
+
+    <section class="block about container">
+        <h2>About</h2>
+        <p>I'm Daniel. This site is a work in progress — a home for whatever I'm building, writing, or keeping track of. More to come.</p>
+    </section>
+
+    <section class="block links container">
+        <h2>Links</h2>
+        <div class="links-grid">
+            <a class="link-card" href="mailto:dwhicker@bifrost.cc">
+                <span class="link-card-title">Email</span>
+                <span class="link-card-desc">dwhicker@bifrost.cc</span>
+            </a>
+            <!-- Add more link cards here as needed, e.g. GitHub, LinkedIn, resume -->
         </div>
-        <div class="duration-badges">
-            <span>${toSafeText(cruise.length_nights, '?')} nights</span>
+    </section>
+
+    <section class="block container">
+        <h2>Cruise History</h2>
+        <div class="feature-card">
+            <p>A record of our family's cruise voyages — ships, ports, and itineraries over the years.</p>
+            <a class="btn btn-ghost" href="./history.html">Browse cruise history &rarr;</a>
         </div>
-        <div>
-            <p class="subtle"><strong>Ports visited:</strong> ${previewPorts.map(escapeHtml).join(', ') || 'Not listed'}</p>
-            ${remainingPortCount > 0 ? `<p class="subtle">+${remainingPortCount} more port stop(s)</p>` : ''}
-        </div>
-    `;
+    </section>
+</main>
 
-    return card;
-}
-
-function buildCruiseDetailHtml(cruise) {
-    const embarkDate = formatDate(cruise.embarkation && cruise.embarkation.date);
-    const disembarkDate = formatDate(cruise.disembarkation && cruise.disembarkation.date);
-    const daysAtSeaCount = getDaysAtSea(cruise);
-    const ports = getVisitedPorts(cruise);
-
-    const cabinCategory = cruise.cabin && cruise.cabin.category ? cruise.cabin.category : 'Unknown';
-    const cabinNumber = cruise.cabin && cruise.cabin.number ? cruise.cabin.number : 'Unknown';
-
-    const significantEntries = getSignificantEntries(cruise);
-    const portsHtml = ports.length
-        ? `<ul class="detail-list">${ports.map((port) => `<li>${escapeHtml(port)}</li>`).join('')}</ul>`
-        : '<p class="subtle">No port call details were recorded.</p>';
-
-    const significantHtml = significantEntries.length
-        ? `<ul class="detail-list">${significantEntries.map((entry) => `<li>${escapeHtml(entry)}</li>`).join('')}</ul>`
-        : '<p class="subtle">No significant excursions or prebooked extras were recorded.</p>';
-
-    return `
-        <div class="detail-header">
-            <h2 id="detail-title">${escapeHtml(cruise.cruise_name || 'Cruise Details')}</h2>
-            <p><strong>Ship:</strong> ${escapeHtml(cruise.ship || 'Unknown Ship')} | <strong>Cruise Line:</strong> ${escapeHtml(cruise.cruise_line || 'N/A')}</p>
-            <p><strong>Dates:</strong> ${embarkDate} to ${disembarkDate}</p>
-            <p><strong>Duration:</strong> ${toSafeText(cruise.length_nights, '?')} nights | <strong>Days at sea:</strong> ${daysAtSeaCount}</p>
-        </div>
-
-        <div class="detail-grid">
-            <section class="detail-section">
-                <h4>Cabin</h4>
-                <p><strong>Class:</strong> ${escapeHtml(cabinCategory)}</p>
-                <p><strong>Number:</strong> ${escapeHtml(cabinNumber)}</p>
-            </section>
-
-            <section class="detail-section">
-                <h4>Ports Visited (${ports.length})</h4>
-                ${portsHtml}
-            </section>
-
-            <section class="detail-section">
-                <h4>Significant Excursions and Extras</h4>
-                ${significantHtml}
-            </section>
-        </div>
-    `;
-}
-
-function countDaysAtSea(cruise) {
-    const itinerary = Array.isArray(cruise.itinerary) ? cruise.itinerary : [];
-    return itinerary.filter((stop) => stop && stop.type === 'sea_day').length;
-}
-
-function getDaysAtSea(cruise) {
-    if (Number.isFinite(cruise && cruise.length_nights)) {
-        return cruise.length_nights;
-    }
-
-    return countDaysAtSea(cruise);
-}
-
-function getVisitedPorts(cruise) {
-    const itinerary = Array.isArray(cruise.itinerary) ? cruise.itinerary : [];
-    const ports = itinerary
-        .filter((stop) => stop && (stop.type === 'port' || stop.type === 'tender_port') && stop.port)
-        .map((stop) => stop.port);
-
-    return Array.from(new Set(ports));
-}
-
-function getSignificantEntries(cruise) {
-    if (Array.isArray(cruise && cruise.significant_entries)) {
-        return cruise.significant_entries.filter(Boolean).map((entry) => String(entry));
-    }
-
-    const preItems = cruise.financials && cruise.financials.pre_cruise_expenses && Array.isArray(cruise.financials.pre_cruise_expenses.items)
-        ? cruise.financials.pre_cruise_expenses.items
-        : [];
-    const onboardItems = cruise.financials && cruise.financials.onboard_expenses && Array.isArray(cruise.financials.onboard_expenses.items)
-        ? cruise.financials.onboard_expenses.items
-        : [];
-
-    const allItems = preItems.concat(onboardItems);
-    const excludedCategories = new Set([
-        'travel_insurance',
-        'drink_package',
-        'drink_packages',
-        'beverage_package',
-        'beverage_packages',
-        'gratuities',
-        'prepaid_gratuities'
-    ]);
-    const excludedDescriptionPattern = /(travel insurance|drink package|drink packages|beverage package|beverage packages|gratuities|gratuity)/i;
-
-    return allItems
-        .map((item) => {
-            const description = item && item.description ? item.description : null;
-            if (!description) {
-                return null;
-            }
-
-            const rawCategory = item && item.category ? String(item.category) : '';
-            const normalizedCategory = rawCategory.trim().toLowerCase();
-            if (excludedCategories.has(normalizedCategory) || excludedDescriptionPattern.test(description)) {
-                return null;
-            }
-
-            const category = rawCategory ? rawCategory.replace(/_/g, ' ') : 'extra';
-            const amount = Number.isFinite(item.amount) ? ` ($${item.amount.toFixed(2)})` : '';
-            return `${description} [${category}]${amount}`;
-        })
-        .filter(Boolean);
-}
-
-function formatDate(dateText) {
-    if (!dateText) {
-        return 'Unknown date';
-    }
-
-    const date = new Date(dateText + 'T00:00:00');
-    if (Number.isNaN(date.getTime())) {
-        return dateText;
-    }
-
-    return date.toLocaleDateString('en-US', {
-        year: 'numeric',
-        month: 'short',
-        day: 'numeric'
-    });
-}
-
-function toSafeText(value, fallback) {
-    return value === null || value === undefined || value === '' ? fallback : String(value);
-}
-
-function escapeHtml(value) {
-    const text = String(value);
-    return text
-        .replace(/&/g, '&amp;')
-        .replace(/</g, '&lt;')
-        .replace(/>/g, '&gt;')
-        .replace(/"/g, '&quot;')
-        .replace(/'/g, '&#039;');
-}
-
-async function attachShipPhoto(card, cruise) {
-    const img = card.querySelector('.ship-photo');
-    const fallback = card.querySelector('.ship-photo-fallback');
-    if (!img || !fallback) {
-        return;
-    }
-
-    const photoUrl = await fetchShipPhotoUrl(cruise.ship, cruise.cruise_line);
-    if (!photoUrl) {
-        fallback.textContent = 'Photo unavailable';
-        return;
-    }
-
-    img.src = photoUrl;
-    img.alt = 'Photo of ' + (cruise.ship || 'the ship');
-    img.onload = () => {
-        img.hidden = false;
-        fallback.hidden = true;
-    };
-    img.onerror = () => {
-        img.hidden = true;
-        fallback.hidden = false;
-        fallback.textContent = 'Photo unavailable';
-    };
-}
-
-async function fetchShipPhotoUrl(shipName, cruiseLine) {
-    const cacheKey = (shipName || '').trim().toLowerCase();
-    if (!cacheKey) {
-        return null;
-    }
-
-    if (shipPhotoCache.has(cacheKey)) {
-        return shipPhotoCache.get(cacheKey);
-    }
-
-    const cruiseDeckPlansUrl = getCruiseDeckPlansProfileUrl(shipName);
-    if (cruiseDeckPlansUrl) {
-        shipPhotoCache.set(cacheKey, cruiseDeckPlansUrl);
-        saveShipPhotoCache();
-        return cruiseDeckPlansUrl;
-    }
-
-    const commonsQueries = buildCommonsSearchQueries(shipName, cruiseLine);
-    for (const query of commonsQueries) {
-        const photo = await fetchCommonsPhotoUrl(query);
-        if (photo) {
-            shipPhotoCache.set(cacheKey, photo);
-            saveShipPhotoCache();
-            return photo;
-        }
-    }
-
-    const candidates = buildWikipediaTitleCandidates(shipName, cruiseLine);
-    for (const title of candidates) {
-        const summary = await fetchWikipediaSummary(title);
-        const photo = extractWikipediaPhotoUrl(summary);
-        if (photo) {
-            shipPhotoCache.set(cacheKey, photo);
-            saveShipPhotoCache();
-            return photo;
-        }
-    }
-
-    const searchTitle = await searchWikipediaTitle(shipName + ' cruise ship');
-    if (searchTitle) {
-        const summary = await fetchWikipediaSummary(searchTitle);
-        const photo = extractWikipediaPhotoUrl(summary);
-        if (photo) {
-            shipPhotoCache.set(cacheKey, photo);
-            saveShipPhotoCache();
-            return photo;
-        }
-    }
-
-    shipPhotoCache.set(cacheKey, null);
-    saveShipPhotoCache();
-    return null;
-}
-
-function getCruiseDeckPlansProfileUrl(shipName) {
-    const key = String(shipName || '').trim().toLowerCase();
-    if (!key) {
-        return null;
-    }
-
-    if (CRUISE_DECKPLANS_PROFILE_MAP[key]) {
-        return CRUISE_DECKPLANS_PROFILE_MAP[key];
-    }
-
-    const slug = String(shipName || '')
-        .trim()
-        .replace(/\s+/g, '-')
-        .replace(/[^A-Za-z0-9-]/g, '');
-    if (!slug) {
-        return null;
-    }
-
-    return 'https://www.cruisedeckplans.com/assets/profiles/' + slug + '-profile.webp';
-}
-
-function buildCommonsSearchQueries(shipName, cruiseLine) {
-    const cleanShip = String(shipName || '').trim();
-    const cleanLine = String(cruiseLine || '').trim();
-    if (!cleanShip) {
-        return [];
-    }
-
-    const queries = [
-        '"' + cleanShip + '" cruise ship',
-        '"' + cleanShip + '" ship'
-    ];
-
-    if (cleanLine) {
-        queries.push('"' + cleanShip + '" "' + cleanLine + '"');
-    }
-
-    if (!/^MS\s+/i.test(cleanShip)) {
-        queries.push('"MS ' + cleanShip + '" cruise ship');
-    }
-
-    return Array.from(new Set(queries));
-}
-
-async function fetchCommonsPhotoUrl(query) {
-    try {
-        const params = new URLSearchParams({
-            action: 'query',
-            generator: 'search',
-            gsrsearch: query,
-            gsrnamespace: '6',
-            gsrlimit: '1',
-            prop: 'imageinfo',
-            iiprop: 'url',
-            iiurlwidth: '900',
-            format: 'json',
-            origin: '*'
-        });
-
-        const url = 'https://commons.wikimedia.org/w/api.php?' + params.toString();
-        const response = await fetch(url);
-        if (!response.ok) {
-            return null;
-        }
-
-        const payload = await response.json();
-        const pages = payload && payload.query && payload.query.pages ? payload.query.pages : null;
-        if (!pages) {
-            return null;
-        }
-
-        const values = Object.values(pages);
-        for (const page of values) {
-            const info = page && Array.isArray(page.imageinfo) ? page.imageinfo[0] : null;
-            if (info && info.thumburl) {
-                return info.thumburl;
-            }
-        }
-        return null;
-    } catch (error) {
-        return null;
-    }
-}
-
-function loadShipPhotoCache() {
-    try {
-        const raw = localStorage.getItem(SHIP_PHOTO_CACHE_KEY);
-        if (!raw) {
-            return;
-        }
-
-        const parsed = JSON.parse(raw);
-        if (!parsed || typeof parsed !== 'object') {
-            return;
-        }
-
-        Object.entries(parsed).forEach(([key, value]) => {
-            shipPhotoCache.set(key, value);
-        });
-    } catch (error) {
-        // Ignore storage errors and continue with in-memory cache only.
-    }
-}
-
-function saveShipPhotoCache() {
-    try {
-        const payload = Object.fromEntries(shipPhotoCache.entries());
-        localStorage.setItem(SHIP_PHOTO_CACHE_KEY, JSON.stringify(payload));
-    } catch (error) {
-        // Ignore storage write failures (quota/private mode).
-    }
-}
-
-function buildWikipediaTitleCandidates(shipName, cruiseLine) {
-    const clean = String(shipName || '').trim();
-    if (!clean) {
-        return [];
-    }
-
-    const candidates = [clean, clean + ' (ship)'];
-    if (/holland america/i.test(cruiseLine || '')) {
-        candidates.unshift('MS ' + clean);
-    }
-    return Array.from(new Set(candidates));
-}
-
-async function fetchWikipediaSummary(title) {
-    try {
-        const encoded = encodeURIComponent(title);
-        const response = await fetch('https://en.wikipedia.org/api/rest_v1/page/summary/' + encoded);
-        if (!response.ok) {
-            return null;
-        }
-        return response.json();
-    } catch (error) {
-        return null;
-    }
-}
-
-function extractWikipediaPhotoUrl(summary) {
-    if (!summary || typeof summary !== 'object') {
-        return null;
-    }
-
-    if (summary.thumbnail && summary.thumbnail.source) {
-        return summary.thumbnail.source;
-    }
-    if (summary.originalimage && summary.originalimage.source) {
-        return summary.originalimage.source;
-    }
-    return null;
-}
-
-async function searchWikipediaTitle(query) {
-    try {
-        const encoded = encodeURIComponent(query);
-        const url = 'https://en.wikipedia.org/w/api.php?action=query&list=search&srsearch=' + encoded + '&format=json&origin=*';
-        const response = await fetch(url);
-        if (!response.ok) {
-            return null;
-        }
-
-        const payload = await response.json();
-        const first = payload && payload.query && Array.isArray(payload.query.search)
-            ? payload.query.search[0]
-            : null;
-        return first && first.title ? first.title : null;
-    } catch (error) {
-        return null;
-    }
-}
-</script>
+<footer class="site-footer">&copy; 2026 Daniel Whicker &middot; Bifrost</footer>
 </body>
 </html>

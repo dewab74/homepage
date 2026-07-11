@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+     viewBox="0 0 512 512"
+     role="img"
+     aria-labelledby="title desc">
+  <title id="title">Bifrost Berkano Logo</title>
+  <desc id="desc">A circular Catppuccin-inspired technology logo featuring the Elder Futhark Berkano rune.</desc>
+
+  <!--
+    Catppuccin Mocha-inspired palette
+    Base:      #1e1e2e
+    Lavender:  #b4befe
+    Sapphire:  #74c7ec
+    Teal:      #94e2d5
+    Peach:     #fab387
+    Mauve:     #cba6f7
+  -->
+
+  <!-- Outer segmented ring -->
+  <g fill="none"
+     stroke="#1e1e2e"
+     stroke-width="34"
+     stroke-linecap="butt">
+    <path d="M256 54
+             A202 202 0 0 1 438 168" />
+    <path d="M458 256
+             A202 202 0 0 1 344 438" />
+    <path d="M256 458
+             A202 202 0 0 1 74 344" />
+    <path d="M54 256
+             A202 202 0 0 1 168 74" />
+  </g>
+
+  <!-- Cardinal accent nodes -->
+  <circle cx="256" cy="54" r="24" fill="#b4befe"/>
+  <circle cx="458" cy="256" r="24" fill="#94e2d5"/>
+  <circle cx="256" cy="458" r="24" fill="#fab387"/>
+  <circle cx="54" cy="256" r="24" fill="#74c7ec"/>
+
+  <!-- Inner orbital arcs -->
+  <g fill="none"
+     stroke-width="10"
+     stroke-linecap="round">
+    <path d="M191 119 A148 148 0 0 1 235 108" stroke="#74c7ec"/>
+    <path d="M277 108 A148 148 0 0 1 321 119" stroke="#94e2d5"/>
+    <path d="M393 277 A148 148 0 0 1 365 342" stroke="#fab387"/>
+    <path d="M147 342 A148 148 0 0 1 119 277" stroke="#cba6f7"/>
+  </g>
+
+  <!-- Berkano rune -->
+  <g fill="none"
+     stroke="#b4befe"
+     stroke-width="30"
+     stroke-linejoin="miter"
+     stroke-linecap="square">
+    <path d="M218 148 V364" />
+    <path d="M218 148 L330 218 L218 256" />
+    <path d="M218 256 L330 294 L218 364" />
+  </g>
+</svg>

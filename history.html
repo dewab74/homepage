@@ -1,0 +1,1675 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cruise History - Bifrost</title>
+    <meta name="description" content="Daniel Whicker's family cruise history.">
+    <link rel="icon" href="./bifrost-berkano-logo.svg" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700&display=swap">
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+    <style>
+        :root {
+            --primary-color: var(--lavender);
+            --accent-bg: #eceeff;
+            --text-color: var(--ink);
+            --muted-text: var(--muted);
+            --overlay: rgba(17, 20, 33, 0.66);
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: radial-gradient(circle at 12% 18%, #f2f3fb 0%, var(--bg) 45%, var(--bg-soft) 100%);
+        }
+
+        .page-title.container {
+            padding: 32px 20px 0;
+            margin: 0 auto;
+        }
+
+        .page-title p.subtitle {
+            margin: 4px 0 0;
+            color: var(--muted);
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto 40px;
+            padding: 20px;
+        }
+
+        h2 {
+            color: var(--primary-color);
+            border-bottom: 2px solid #ddd;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
+
+        .status-message {
+            margin: 10px 0 30px;
+            color: var(--muted-text);
+            min-height: 22px;
+        }
+
+        .top-chips {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 0 0 14px;
+        }
+
+        .summary-chip {
+            display: inline-block;
+            padding: 7px 12px;
+            border-radius: 999px;
+            background: #dff1ff;
+            color: #113a66;
+            font-weight: 700;
+            border: 1px solid #b9ddff;
+        }
+
+        .master-map-intro {
+            margin: 0 0 12px;
+        }
+
+        .master-map {
+            width: 100%;
+            height: 440px;
+            border-radius: 10px;
+            overflow: hidden;
+            background: #e6edf5;
+            margin-bottom: 12px;
+        }
+
+        .master-map .leaflet-container {
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .master-map-legend {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-bottom: 8px;
+            max-height: 180px;
+            overflow-y: auto;
+            padding: 4px 2px;
+        }
+
+        .legend-item {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 5px 10px 5px 8px;
+            border-radius: 999px;
+            border: 1px solid var(--line);
+            background: #ffffff;
+            font: inherit;
+            font-size: 0.78rem;
+            font-weight: 600;
+            color: var(--ink);
+            cursor: pointer;
+            transition: opacity 0.15s ease, border-color 0.15s ease;
+        }
+
+        .legend-item:hover {
+            border-color: var(--primary-color);
+        }
+
+        .legend-item:focus-visible {
+            outline: 3px solid #78b6ff;
+            outline-offset: 2px;
+        }
+
+        .legend-item.dimmed {
+            opacity: 0.4;
+        }
+
+        .legend-swatch {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            flex-shrink: 0;
+            box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.15) inset;
+        }
+
+        .master-map-empty {
+            padding: 14px;
+            color: var(--muted-text);
+        }
+
+        .filter-groups {
+            margin: 0 0 14px;
+        }
+
+        .filter-toggle-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 0 0 10px;
+        }
+
+        .filter-toggle-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 14px;
+            border-radius: 999px;
+            border: 1px solid var(--line);
+            background: #ffffff;
+            color: var(--ink);
+            font: inherit;
+            font-size: 0.9rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+        }
+
+        .filter-toggle-btn:hover {
+            border-color: var(--primary-color);
+        }
+
+        .filter-toggle-btn:focus-visible {
+            outline: 3px solid #78b6ff;
+            outline-offset: 2px;
+        }
+
+        .filter-toggle-btn .chevron {
+            font-size: 0.75em;
+            transition: transform 0.15s ease;
+        }
+
+        .filter-toggle-btn[aria-expanded="true"] .chevron {
+            transform: rotate(180deg);
+        }
+
+        .filter-toggle-btn.has-selection {
+            background: var(--primary-color);
+            border-color: var(--primary-color);
+            color: #ffffff;
+        }
+
+        .filter-toggle-btn.has-selection.filter-toggle-ship {
+            background: var(--teal);
+            border-color: var(--teal);
+        }
+
+        .filter-toggle-btn.has-selection.filter-toggle-port {
+            background: var(--peach);
+            border-color: var(--peach);
+        }
+
+        .filter-panel {
+            padding: 12px 14px;
+            margin: 0 0 10px;
+            border: 1px solid var(--line);
+            border-radius: 10px;
+            background: #f8fbff;
+        }
+
+        .filter-panel[hidden] {
+            display: none;
+        }
+
+        .chip-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .filter-chip {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 6px 12px;
+            border-radius: 999px;
+            border: 1px solid var(--line);
+            background: #ffffff;
+            color: var(--ink);
+            font: inherit;
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease, transform 0.1s ease;
+        }
+
+        .filter-chip:hover {
+            border-color: var(--primary-color);
+            transform: translateY(-1px);
+        }
+
+        .filter-chip:focus-visible {
+            outline: 3px solid #78b6ff;
+            outline-offset: 2px;
+        }
+
+        .filter-chip .chip-count {
+            font-weight: 700;
+            opacity: 0.6;
+            font-size: 0.78rem;
+        }
+
+        .filter-chip.active {
+            background: var(--primary-color);
+            border-color: var(--primary-color);
+            color: #ffffff;
+        }
+
+        .filter-chip.active .chip-count {
+            opacity: 0.85;
+        }
+
+        .filter-chip-ship.active {
+            background: var(--teal);
+            border-color: var(--teal);
+        }
+
+        .filter-chip-port.active {
+            background: var(--peach);
+            border-color: var(--peach);
+        }
+
+        .clear-filters-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 6px 14px;
+            margin: 0 0 16px;
+            border-radius: 999px;
+            border: 1px solid #f3c6c2;
+            background: #fff5f5;
+            color: #b3261e;
+            font-weight: 700;
+            font-size: 0.85rem;
+            cursor: pointer;
+        }
+
+        .clear-filters-btn:hover {
+            background: #ffe4e2;
+        }
+
+        .clear-filters-btn[hidden] {
+            display: none;
+        }
+
+        .cruise-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 20px;
+        }
+
+        .cruise-card {
+            background-color: #ffffff;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.2s, box-shadow 0.2s;
+            cursor: pointer;
+            border-left: 5px solid var(--primary-color);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .cruise-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .cruise-card:focus-visible {
+            outline: 3px solid #78b6ff;
+            outline-offset: 3px;
+        }
+
+        .cruise-card h3 {
+            margin-top: 0;
+            margin-bottom: 14px;
+            color: var(--primary-color);
+            font-size: 1.2em;
+        }
+
+        .ship-photo-wrap {
+            margin-bottom: 12px;
+            width: 100%;
+            min-height: 128px;
+            max-height: 148px;
+            border-radius: 8px;
+            overflow: hidden;
+            background: #edf4fc;
+            border: 1px solid #d4e4f4;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .ship-photo {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            object-position: center;
+            display: block;
+            background: linear-gradient(180deg, #f8fbff 0%, #edf4fc 100%);
+        }
+
+        .ship-photo-fallback {
+            color: #5e6c7a;
+            font-size: 0.9rem;
+            padding: 8px;
+            text-align: center;
+        }
+
+        .meta-info p {
+            margin: 6px 0;
+        }
+
+        .meta-info strong {
+            display: inline-block;
+            min-width: 112px;
+        }
+
+        .duration-badges span {
+            display: inline-block;
+            padding: 5px 10px;
+            margin-right: 8px;
+            margin-bottom: 8px;
+            border-radius: 4px;
+            font-weight: 700;
+            background-color: var(--accent-bg);
+            color: var(--primary-color);
+        }
+
+        .subtle {
+            color: var(--muted-text);
+            font-size: 0.95em;
+        }
+
+        .modal {
+            position: fixed;
+            inset: 0;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 24px;
+            background: var(--overlay);
+            z-index: 99;
+        }
+
+        .modal.show {
+            display: flex;
+        }
+
+        .modal-card {
+            width: min(960px, 100%);
+            max-height: 88vh;
+            overflow-y: auto;
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
+            padding: 26px;
+            position: relative;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            border: 0;
+            border-radius: 6px;
+            background: #e6edf5;
+            color: #27496d;
+            padding: 8px 10px;
+            cursor: pointer;
+            font-size: 0.95rem;
+        }
+
+        .modal-close:hover {
+            background: #d7e4f2;
+        }
+
+        .detail-header {
+            padding-right: 80px;
+            margin-bottom: 16px;
+        }
+
+        .detail-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 18px;
+        }
+
+        .detail-section {
+            border: 1px solid #dde7f3;
+            border-radius: 10px;
+            padding: 14px;
+            background: #f8fbff;
+        }
+
+        .detail-section h4 {
+            margin: 4px 0 10px;
+            color: var(--primary-color);
+        }
+
+        .detail-list {
+            margin: 0;
+            padding-left: 18px;
+        }
+
+        .detail-list li {
+            margin-bottom: 6px;
+        }
+
+        .detail-section-wide {
+            grid-column: 1 / -1;
+        }
+
+        .route-map {
+            width: 100%;
+            height: 280px;
+            border-radius: 8px;
+            overflow: hidden;
+            background: #e6edf5;
+        }
+
+        .route-map .leaflet-container {
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .route-pin {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 26px;
+            height: 26px;
+            border-radius: 50%;
+            background: var(--primary-color);
+            color: #ffffff;
+            font-size: 0.7rem;
+            font-weight: 700;
+            border: 2px solid #ffffff;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.35);
+        }
+
+        .route-pin-embark,
+        .route-pin-roundtrip {
+            background: #2f9e44;
+        }
+
+        .route-pin-disembark {
+            background: var(--peach);
+        }
+
+        .route-pin-roundtrip {
+            font-size: 0.58rem;
+        }
+
+        .route-map .leaflet-tooltip.route-pin-label {
+            background: rgba(255, 255, 255, 0.95);
+            border: 1px solid var(--line);
+            border-radius: 6px;
+            padding: 2px 7px;
+            font-size: 0.72rem;
+            font-weight: 700;
+            color: var(--ink);
+            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.18);
+            white-space: nowrap;
+        }
+
+        .route-map .leaflet-tooltip.route-pin-label::before {
+            display: none;
+        }
+
+        @media (max-width: 720px) {
+            header {
+                padding: 18px;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 8px;
+            }
+
+            .container {
+                width: 94%;
+                margin: 20px auto;
+                padding: 8px;
+            }
+
+            .ship-photo-wrap {
+                min-height: 116px;
+                max-height: 132px;
+            }
+
+            .modal {
+                padding: 10px;
+            }
+
+            .modal-card {
+                padding: 18px;
+            }
+
+            .filter-toggle-row {
+                gap: 8px;
+            }
+
+            .filter-toggle-btn {
+                font-size: 0.82rem;
+                padding: 7px 12px;
+                flex: 1 1 auto;
+                justify-content: center;
+            }
+
+            .filter-panel {
+                padding: 10px;
+            }
+
+            .filter-chip {
+                font-size: 0.8rem;
+                padding: 5px 10px;
+            }
+
+            .route-map {
+                height: 220px;
+            }
+
+            .route-map .leaflet-tooltip.route-pin-label {
+                font-size: 0.62rem;
+                padding: 1px 5px;
+            }
+
+            .master-map {
+                height: 280px;
+            }
+
+            .legend-item {
+                font-size: 0.72rem;
+                padding: 4px 8px 4px 6px;
+            }
+        }
+    </style>
+</head>
+<body>
+<header class="site-header">
+    <div class="site-header-inner">
+        <a class="brand" href="./index.html">
+            <img class="brand-logo" src="./bifrost-berkano-logo.svg" alt="Bifrost logo">
+            <span class="brand-name">Bifrost</span>
+        </a>
+        <nav class="site-nav" aria-label="Primary">
+            <a href="./index.html">Home</a>
+            <a href="./history.html" aria-current="page">Cruise History</a>
+        </nav>
+    </div>
+</header>
+
+<div class="container page-title">
+    <h1 style="margin:0; font-weight:300; font-size:clamp(1.8rem, 4vw, 2.6rem);">Cruise History</h1>
+    <p class="subtitle">A record of our family's sailings over the years.</p>
+</div>
+
+<div class="container">
+    <h2>All Cruises at a Glance</h2>
+    <p class="subtle master-map-intro">Every port we've visited, overlaid on one map — each cruise has its own color. Click a legend entry to isolate or hide a sailing. This map follows the filters below.</p>
+    <div id="master-map" class="master-map"></div>
+    <div id="master-map-legend" class="master-map-legend"></div>
+</div>
+
+<div class="container">
+    <h2>Discover Your Journeys</h2>
+    <div class="top-chips">
+        <span id="total-days-at-sea-chip" class="summary-chip">Total days at sea: --</span>
+    </div>
+    <div id="filter-groups" class="filter-groups"></div>
+    <button id="clear-filters-btn" class="clear-filters-btn" type="button" hidden>Clear filters &times;</button>
+    <p id="status-message" class="status-message">Loading cruise history...</p>
+    <section id="cruise-list-container" class="cruise-list"></section>
+</div>
+
+<div id="sailing-modal" class="modal" aria-hidden="true">
+    <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="detail-title">
+        <button id="close-modal-btn" class="modal-close" type="button" aria-label="Close details">Close</button>
+        <div id="modal-content"></div>
+    </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<script>
+const DATA_URL = './cruise_history_public.json';
+const PORT_COORDINATES_URL = './port_coordinates.json';
+let PORT_COORDINATES = {};
+let currentRouteMap = null;
+const shipPhotoCache = new Map();
+const SHIP_PHOTO_CACHE_KEY = 'ship-photo-cache-v5';
+const CRUISE_DECKPLANS_PROFILE_MAP = {
+    'carnival conquest': './assets/ships-clean/carnival-conquest-clean.webp',
+    'carnival magic': './assets/ships-clean/carnival-magic-clean.webp',
+    'independence of the seas': './assets/ships-clean/independence-of-the-seas-clean.webp',
+    'koningsdam': './assets/ships-clean/koningsdam-clean.webp',
+    'liberty of the seas': './assets/ships-clean/liberty-of-the-seas-clean.webp',
+    'mariner of the seas': './assets/ships-clean/mariner-of-the-seas-clean.webp',
+    'navigator of the seas': './assets/ships-clean/navigator-of-the-seas-clean.webp',
+    'nieuw amsterdam': './assets/ships-clean/nieuw-amsterdam-clean.webp',
+    'nieuw statendam': './assets/ships-clean/nieuw-statendam-clean.webp',
+    'oosterdam': './assets/ships-clean/oosterdam-clean.webp',
+    'serenade of the seas': './assets/ships-clean/serenade-of-the-seas-clean.webp',
+    'voyager of the seas': './assets/ships-clean/voyager-of-the-seas-clean.webp',
+    'westerdam': './assets/ships-clean/westerdam-clean.webp'
+};
+
+const FILTER_GROUPS = [
+    { key: 'line', label: 'Cruise Lines', getValues: (cruise) => (cruise.cruise_line ? [cruise.cruise_line] : []) },
+    { key: 'ship', label: 'Ships', getValues: (cruise) => (cruise.ship ? [cruise.ship] : []) },
+    { key: 'port', label: 'Ports', getValues: (cruise) => getVisitedPorts(cruise) }
+];
+
+const activeFilters = { line: new Set(), ship: new Set(), port: new Set() };
+
+document.addEventListener('DOMContentLoaded', async () => {
+    const container = document.getElementById('cruise-list-container');
+    const statusMessage = document.getElementById('status-message');
+    const totalDaysChip = document.getElementById('total-days-at-sea-chip');
+    const filterGroupsContainer = document.getElementById('filter-groups');
+    const clearFiltersBtn = document.getElementById('clear-filters-btn');
+
+    const modal = document.getElementById('sailing-modal');
+    const modalContent = document.getElementById('modal-content');
+    const closeModalBtn = document.getElementById('close-modal-btn');
+
+    const masterMapEl = document.getElementById('master-map');
+    const masterMapLegendEl = document.getElementById('master-map-legend');
+    let masterMap = null;
+    const masterMapLayers = new Map(); // cruise_id -> L.layerGroup
+    const hiddenMasterMapCruises = new Set(); // cruise_ids toggled off via legend
+    const cruiseColorMap = new Map(); // cruise_id -> stable HSL color, assigned once
+
+    let cruises = [];
+    loadShipPhotoCache();
+
+    try {
+        const response = await fetch(DATA_URL);
+        if (!response.ok) {
+            throw new Error('Could not load cruise_history_public.json');
+        }
+
+        const payload = await response.json();
+        cruises = Array.isArray(payload.cruises) ? payload.cruises : [];
+    } catch (error) {
+        statusMessage.textContent = 'Unable to load cruise data automatically. If opened as a local file, run a local web server or deploy to static hosting so JSON fetch works.';
+        container.innerHTML = '';
+        return;
+    }
+
+    try {
+        const coordResponse = await fetch(PORT_COORDINATES_URL);
+        if (coordResponse.ok) {
+            PORT_COORDINATES = await coordResponse.json();
+        }
+    } catch (error) {
+        // Route maps are a nice-to-have -- if the coordinates file can't be
+        // loaded, the modal just skips the map and shows the port list only.
+        PORT_COORDINATES = {};
+    }
+
+    cruises.sort((a, b) => {
+        const left = (a.embarkation && a.embarkation.date) || '';
+        const right = (b.embarkation && b.embarkation.date) || '';
+        return right.localeCompare(left);
+    });
+
+    if (cruises.length === 0) {
+        statusMessage.textContent = 'No cruises were found in cruise_history_public.json.';
+        totalDaysChip.textContent = 'Total days at sea: 0';
+        container.innerHTML = '';
+        return;
+    }
+
+    // Assign each cruise a stable color up front (golden-angle hue rotation
+    // keeps adjacent cruises visually distinct even as more get added), so
+    // colors don't shift around when the chip filters change what's shown.
+    cruises.forEach((cruise, index) => {
+        const hue = (index * 137.508) % 360;
+        cruiseColorMap.set(cruise.cruise_id, `hsl(${hue.toFixed(1)}, 68%, 44%)`);
+    });
+
+    const totalDaysAtSea = cruises.reduce((sum, cruise) => sum + getDaysAtSea(cruise), 0);
+    totalDaysChip.textContent = 'Total days at sea: ' + totalDaysAtSea;
+
+    renderFilterChips();
+    renderCruiseList(cruises);
+    updateStatusMessage();
+    renderMasterMap(cruises);
+
+    clearFiltersBtn.addEventListener('click', () => {
+        Object.keys(activeFilters).forEach((groupKey) => {
+            activeFilters[groupKey].clear();
+            updateToggleButtonSelectionState(groupKey);
+        });
+        document.querySelectorAll('.filter-chip').forEach((chip) => {
+            chip.classList.remove('active');
+            chip.setAttribute('aria-pressed', 'false');
+        });
+        renderCruiseList(getFilteredCruises());
+        updateClearButtonVisibility();
+        updateStatusMessage();
+        renderMasterMap(getFilteredCruises());
+    });
+
+    closeModalBtn.addEventListener('click', closeModal);
+    modal.addEventListener('click', (event) => {
+        if (event.target === modal) {
+            closeModal();
+        }
+    });
+
+    document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape' && modal.classList.contains('show')) {
+            closeModal();
+        }
+    });
+
+    function openCruiseModal(cruise) {
+        modalContent.innerHTML = buildCruiseDetailHtml(cruise);
+        modal.classList.add('show');
+        modal.setAttribute('aria-hidden', 'false');
+        // Wait a frame so the modal's layout (display:flex) is applied
+        // before Leaflet measures the map container's size.
+        requestAnimationFrame(() => renderRouteMap(cruise));
+    }
+
+    function closeModal() {
+        modal.classList.remove('show');
+        modal.setAttribute('aria-hidden', 'true');
+        if (currentRouteMap) {
+            currentRouteMap.remove();
+            currentRouteMap = null;
+        }
+    }
+
+    function renderCruiseList(list) {
+        container.innerHTML = '';
+        list.forEach((cruise) => {
+            const card = createCardElement(cruise);
+            card.addEventListener('click', () => openCruiseModal(cruise));
+            card.addEventListener('keydown', (event) => {
+                if (event.key === 'Enter' || event.key === ' ') {
+                    event.preventDefault();
+                    openCruiseModal(cruise);
+                }
+            });
+            container.appendChild(card);
+            attachShipPhoto(card, cruise);
+        });
+    }
+
+    function getCruiseColor(cruise) {
+        return cruiseColorMap.get(cruise.cruise_id) || '#7287fd';
+    }
+
+    function masterMapLegendLabel(cruise) {
+        const year = (cruise.embarkation && cruise.embarkation.date || '').slice(0, 4);
+        return `${year ? year + ' — ' : ''}${cruise.ship || cruise.cruise_name || 'Cruise'}`;
+    }
+
+    // Renders (or re-renders from scratch) the top-level overview map: one
+    // curved route + a set of small colored dots per cruise in `list`, all
+    // overlaid on a single Leaflet map, plus a matching legend below it.
+    // Colors come from the stable cruiseColorMap so they don't reshuffle
+    // when the chip filters change which cruises are shown.
+    function renderMasterMap(list) {
+        if (!masterMapEl) {
+            return;
+        }
+
+        if (masterMap) {
+            masterMap.remove();
+            masterMap = null;
+        }
+        masterMapLayers.clear();
+
+        if (typeof L === 'undefined') {
+            masterMapEl.innerHTML = '<p class="master-map-empty">Map library failed to load.</p>';
+            if (masterMapLegendEl) {
+                masterMapLegendEl.innerHTML = '';
+            }
+            return;
+        }
+
+        masterMapEl.innerHTML = '';
+        masterMap = L.map(masterMapEl, { scrollWheelZoom: false }).setView([25, -60], 2);
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 12,
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a> contributors'
+        }).addTo(masterMap);
+
+        const boundsPoints = [];
+        const legendEntries = [];
+
+        list.forEach((cruise) => {
+            const color = getCruiseColor(cruise);
+            const route = getRoutePoints(cruise);
+            const pathPoints = route.pathPoints
+                .map((p) => ({ ...p, coords: PORT_COORDINATES[p.name] }))
+                .filter((p) => Array.isArray(p.coords));
+            const markerPoints = route.markerPoints
+                .map((p) => ({ ...p, coords: PORT_COORDINATES[p.name] }))
+                .filter((p) => Array.isArray(p.coords));
+
+            if (markerPoints.length === 0) {
+                return;
+            }
+
+            const layerGroup = L.layerGroup();
+            const latlngs = pathPoints.map((p) => p.coords);
+
+            if (latlngs.length > 1) {
+                const curvedPath = buildCurvedPath(latlngs);
+                L.polyline(curvedPath, { color, weight: 2.5, opacity: 0.8 }).addTo(layerGroup);
+            }
+
+            markerPoints.forEach((p) => {
+                const dot = L.circleMarker(p.coords, {
+                    radius: 5,
+                    color: '#ffffff',
+                    weight: 1,
+                    fillColor: color,
+                    fillOpacity: 0.9
+                });
+                dot.bindTooltip(`${escapeHtml(cruise.cruise_name || cruise.ship || 'Cruise')} — ${escapeHtml(p.name)}`, {
+                    direction: 'top',
+                    offset: [0, -6]
+                });
+                dot.addTo(layerGroup);
+                boundsPoints.push(p.coords);
+            });
+
+            if (!hiddenMasterMapCruises.has(cruise.cruise_id)) {
+                layerGroup.addTo(masterMap);
+            }
+
+            masterMapLayers.set(cruise.cruise_id, layerGroup);
+            legendEntries.push({ cruise, color });
+        });
+
+        if (boundsPoints.length) {
+            masterMap.fitBounds(L.latLngBounds(boundsPoints), { padding: [24, 24] });
+        }
+
+        renderMasterMapLegend(legendEntries);
+
+        setTimeout(() => {
+            if (masterMap) {
+                masterMap.invalidateSize();
+            }
+        }, 150);
+    }
+
+    function renderMasterMapLegend(entries) {
+        if (!masterMapLegendEl) {
+            return;
+        }
+
+        masterMapLegendEl.innerHTML = '';
+
+        if (entries.length === 0) {
+            masterMapLegendEl.innerHTML = '<p class="master-map-empty">No mappable cruises match the current filters.</p>';
+            return;
+        }
+
+        entries.forEach(({ cruise, color }) => {
+            const item = document.createElement('button');
+            item.type = 'button';
+            item.className = 'legend-item';
+            const isHidden = hiddenMasterMapCruises.has(cruise.cruise_id);
+            item.classList.toggle('dimmed', isHidden);
+            item.setAttribute('aria-pressed', String(!isHidden));
+            item.title = 'Click to ' + (isHidden ? 'show' : 'hide') + ' this cruise on the map';
+            item.innerHTML = `<span class="legend-swatch" style="background:${color}"></span>${escapeHtml(masterMapLegendLabel(cruise))}`;
+            item.addEventListener('click', () => toggleMasterMapCruise(cruise.cruise_id, item));
+            masterMapLegendEl.appendChild(item);
+        });
+    }
+
+    function toggleMasterMapCruise(cruiseId, itemEl) {
+        const layerGroup = masterMapLayers.get(cruiseId);
+        if (!layerGroup || !masterMap) {
+            return;
+        }
+
+        if (hiddenMasterMapCruises.has(cruiseId)) {
+            hiddenMasterMapCruises.delete(cruiseId);
+            layerGroup.addTo(masterMap);
+            itemEl.classList.remove('dimmed');
+            itemEl.setAttribute('aria-pressed', 'true');
+            itemEl.title = 'Click to hide this cruise on the map';
+        } else {
+            hiddenMasterMapCruises.add(cruiseId);
+            masterMap.removeLayer(layerGroup);
+            itemEl.classList.add('dimmed');
+            itemEl.setAttribute('aria-pressed', 'false');
+            itemEl.title = 'Click to show this cruise on the map';
+        }
+    }
+
+    function renderFilterChips() {
+        filterGroupsContainer.innerHTML = '';
+
+        const toggleRow = document.createElement('div');
+        toggleRow.className = 'filter-toggle-row';
+        filterGroupsContainer.appendChild(toggleRow);
+
+        FILTER_GROUPS.forEach((group) => {
+            const counts = new Map();
+            cruises.forEach((cruise) => {
+                const uniqueValues = Array.from(new Set(group.getValues(cruise).filter(Boolean)));
+                uniqueValues.forEach((value) => {
+                    counts.set(value, (counts.get(value) || 0) + 1);
+                });
+            });
+
+            if (counts.size === 0) {
+                return;
+            }
+
+            // Toggle button: shows the group name and the total number of
+            // distinct values (e.g. "Ships (14)"); reveals the chip panel
+            // below when clicked, so the chip list stays hidden by default.
+            const toggleBtn = document.createElement('button');
+            toggleBtn.type = 'button';
+            toggleBtn.className = 'filter-toggle-btn filter-toggle-' + group.key;
+            toggleBtn.dataset.group = group.key;
+            toggleBtn.setAttribute('aria-expanded', 'false');
+            toggleBtn.setAttribute('aria-controls', 'filter-panel-' + group.key);
+            toggleBtn.innerHTML = `${escapeHtml(group.label)} (${counts.size}) <span class="chevron">&#9662;</span>`;
+            toggleRow.appendChild(toggleBtn);
+
+            const panelEl = document.createElement('div');
+            panelEl.className = 'filter-panel';
+            panelEl.id = 'filter-panel-' + group.key;
+            panelEl.hidden = true;
+
+            const listEl = document.createElement('div');
+            listEl.className = 'chip-list';
+
+            const sortedEntries = Array.from(counts.entries()).sort((a, b) => {
+                if (b[1] !== a[1]) {
+                    return b[1] - a[1];
+                }
+                return a[0].localeCompare(b[0]);
+            });
+
+            sortedEntries.forEach(([value, count]) => {
+                const chip = document.createElement('button');
+                chip.type = 'button';
+                chip.className = 'filter-chip filter-chip-' + group.key;
+                chip.dataset.group = group.key;
+                chip.dataset.value = value;
+                chip.setAttribute('aria-pressed', 'false');
+                chip.innerHTML = `${escapeHtml(value)} <span class="chip-count">${count}</span>`;
+                chip.addEventListener('click', () => toggleFilter(group.key, value, chip));
+                listEl.appendChild(chip);
+            });
+
+            panelEl.appendChild(listEl);
+            filterGroupsContainer.appendChild(panelEl);
+
+            toggleBtn.addEventListener('click', () => {
+                const isOpen = toggleBtn.getAttribute('aria-expanded') === 'true';
+                toggleBtn.setAttribute('aria-expanded', String(!isOpen));
+                panelEl.hidden = isOpen;
+            });
+        });
+    }
+
+    function toggleFilter(groupKey, value, chipEl) {
+        const set = activeFilters[groupKey];
+        if (set.has(value)) {
+            set.delete(value);
+            chipEl.classList.remove('active');
+            chipEl.setAttribute('aria-pressed', 'false');
+        } else {
+            set.add(value);
+            chipEl.classList.add('active');
+            chipEl.setAttribute('aria-pressed', 'true');
+        }
+        updateToggleButtonSelectionState(groupKey);
+        renderCruiseList(getFilteredCruises());
+        updateClearButtonVisibility();
+        updateStatusMessage();
+        renderMasterMap(getFilteredCruises());
+    }
+
+    function updateToggleButtonSelectionState(groupKey) {
+        const toggleBtn = filterGroupsContainer.querySelector(`.filter-toggle-btn[data-group="${groupKey}"]`);
+        if (!toggleBtn) {
+            return;
+        }
+        toggleBtn.classList.toggle('has-selection', activeFilters[groupKey].size > 0);
+    }
+
+    function getFilteredCruises() {
+        return cruises.filter((cruise) => FILTER_GROUPS.every((group) => {
+            const set = activeFilters[group.key];
+            if (set.size === 0) {
+                return true;
+            }
+            const values = group.getValues(cruise);
+            return values.some((value) => set.has(value));
+        }));
+    }
+
+    function updateClearButtonVisibility() {
+        const hasActive = Object.values(activeFilters).some((set) => set.size > 0);
+        clearFiltersBtn.hidden = !hasActive;
+    }
+
+    function updateStatusMessage() {
+        const hasActive = Object.values(activeFilters).some((set) => set.size > 0);
+        if (!hasActive) {
+            statusMessage.textContent = 'Click any sailing card for cabin, ports, and significant excursion details.';
+            return;
+        }
+        const filteredCount = getFilteredCruises().length;
+        statusMessage.textContent = filteredCount
+            ? `Showing ${filteredCount} of ${cruises.length} sailings. Click any card for details.`
+            : 'No sailings match the selected filters.';
+    }
+});
+
+function createCardElement(cruise) {
+    const card = document.createElement('article');
+    card.className = 'cruise-card';
+    card.tabIndex = 0;
+    card.setAttribute('role', 'button');
+    card.setAttribute('aria-label', 'Open details for ' + (cruise.cruise_name || 'this cruise'));
+
+    const embarkDate = formatDate(cruise.embarkation && cruise.embarkation.date);
+    const disembarkDate = formatDate(cruise.disembarkation && cruise.disembarkation.date);
+    const sailDateRange = embarkDate + ' to ' + disembarkDate;
+    const uniquePorts = getVisitedPorts(cruise);
+    const previewPorts = uniquePorts.slice(0, 3);
+    const remainingPortCount = uniquePorts.length > 3 ? uniquePorts.length - 3 : 0;
+
+    card.innerHTML = `
+        <div class="ship-photo-wrap">
+            <img class="ship-photo" alt="" loading="lazy" referrerpolicy="no-referrer" hidden>
+            <div class="ship-photo-fallback">Finding photo for ${escapeHtml(cruise.ship || 'ship')}...</div>
+        </div>
+        <h3>${escapeHtml(cruise.cruise_name || 'Untitled Cruise')}</h3>
+        <div class="meta-info">
+            <p><strong>Ship:</strong> ${escapeHtml(cruise.ship || 'Unknown Ship')}</p>
+            <p><strong>Cruise Line:</strong> ${escapeHtml(cruise.cruise_line || 'N/A')}</p>
+            <p><strong>Sail Dates:</strong> ${sailDateRange}</p>
+        </div>
+        <div class="duration-badges">
+            <span>${toSafeText(cruise.length_nights, '?')} nights</span>
+        </div>
+        <div>
+            <p class="subtle"><strong>Ports visited:</strong> ${previewPorts.map(escapeHtml).join(', ') || 'Not listed'}</p>
+            ${remainingPortCount > 0 ? `<p class="subtle">+${remainingPortCount} more port stop(s)</p>` : ''}
+        </div>
+    `;
+
+    return card;
+}
+
+function buildCruiseDetailHtml(cruise) {
+    const embarkDate = formatDate(cruise.embarkation && cruise.embarkation.date);
+    const disembarkDate = formatDate(cruise.disembarkation && cruise.disembarkation.date);
+    const daysAtSeaCount = getDaysAtSea(cruise);
+    const ports = getVisitedPorts(cruise);
+
+    const cabinCategory = cruise.cabin && cruise.cabin.category ? cruise.cabin.category : 'Unknown';
+    const cabinNumber = cruise.cabin && cruise.cabin.number ? cruise.cabin.number : 'Unknown';
+
+    const significantEntries = getSignificantEntries(cruise);
+    const portsHtml = ports.length
+        ? `<ul class="detail-list">${ports.map((port) => `<li>${escapeHtml(port)}</li>`).join('')}</ul>`
+        : '<p class="subtle">No port call details were recorded.</p>';
+
+    const significantHtml = significantEntries.length
+        ? `<ul class="detail-list">${significantEntries.map((entry) => `<li>${escapeHtml(entry)}</li>`).join('')}</ul>`
+        : '<p class="subtle">No significant excursions or prebooked extras were recorded.</p>';
+
+    return `
+        <div class="detail-header">
+            <h2 id="detail-title">${escapeHtml(cruise.cruise_name || 'Cruise Details')}</h2>
+            <p><strong>Ship:</strong> ${escapeHtml(cruise.ship || 'Unknown Ship')} | <strong>Cruise Line:</strong> ${escapeHtml(cruise.cruise_line || 'N/A')}</p>
+            <p><strong>Dates:</strong> ${embarkDate} to ${disembarkDate}</p>
+            <p><strong>Duration:</strong> ${toSafeText(cruise.length_nights, '?')} nights | <strong>Days at sea:</strong> ${daysAtSeaCount}</p>
+        </div>
+
+        <div class="detail-grid">
+            <section class="detail-section detail-section-wide">
+                <h4>Route Map</h4>
+                <div id="route-map" class="route-map"></div>
+            </section>
+
+            <section class="detail-section">
+                <h4>Cabin</h4>
+                <p><strong>Class:</strong> ${escapeHtml(cabinCategory)}</p>
+                <p><strong>Number:</strong> ${escapeHtml(cabinNumber)}</p>
+            </section>
+
+            <section class="detail-section">
+                <h4>Ports Visited (${ports.length})</h4>
+                ${portsHtml}
+            </section>
+
+            <section class="detail-section">
+                <h4>Significant Excursions and Extras</h4>
+                ${significantHtml}
+            </section>
+        </div>
+    `;
+}
+
+function renderRouteMap(cruise) {
+    const mapEl = document.getElementById('route-map');
+    if (!mapEl) {
+        return;
+    }
+
+    if (currentRouteMap) {
+        currentRouteMap.remove();
+        currentRouteMap = null;
+    }
+
+    if (typeof L === 'undefined') {
+        mapEl.innerHTML = '<p class="subtle">Map library failed to load.</p>';
+        return;
+    }
+
+    const route = getRoutePoints(cruise);
+    const pathPoints = route.pathPoints
+        .map((p) => ({ ...p, coords: PORT_COORDINATES[p.name] }))
+        .filter((p) => Array.isArray(p.coords));
+    const markerPoints = route.markerPoints
+        .map((p) => ({ ...p, coords: PORT_COORDINATES[p.name] }))
+        .filter((p) => Array.isArray(p.coords));
+
+    if (markerPoints.length === 0) {
+        mapEl.innerHTML = route.markerPoints.length
+            ? '<p class="subtle">No mapped coordinates were found for this sailing\'s ports.</p>'
+            : '<p class="subtle">No port call details were recorded for this sailing.</p>';
+        return;
+    }
+
+    mapEl.innerHTML = '';
+    const latlngs = pathPoints.map((p) => p.coords);
+    const boundsLatLngs = markerPoints.map((p) => p.coords);
+
+    currentRouteMap = L.map(mapEl, { scrollWheelZoom: false }).setView(boundsLatLngs[0], 4);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 12,
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a> contributors'
+    }).addTo(currentRouteMap);
+
+    if (latlngs.length > 1) {
+        const curvedPath = buildCurvedPath(latlngs);
+        L.polyline(curvedPath, { color: '#7287fd', weight: 3, opacity: 0.85 }).addTo(currentRouteMap);
+    }
+
+    let portNumber = 0;
+    markerPoints.forEach((p) => {
+        let label;
+        let popupText;
+        if (p.kind === 'embark') {
+            label = 'S';
+            popupText = `Start: ${p.name}`;
+        } else if (p.kind === 'disembark') {
+            label = 'E';
+            popupText = `End: ${p.name}`;
+        } else if (p.kind === 'roundtrip') {
+            label = 'S/E';
+            popupText = `Start & End: ${p.name}`;
+        } else {
+            portNumber += 1;
+            label = String(portNumber);
+            popupText = `${portNumber}. ${p.name}`;
+        }
+
+        const icon = L.divIcon({
+            className: 'route-pin route-pin-' + p.kind,
+            html: `<span>${label}</span>`,
+            iconSize: [26, 26],
+            iconAnchor: [13, 13]
+        });
+        L.marker(p.coords, { icon })
+            .addTo(currentRouteMap)
+            .bindPopup(`<strong>${escapeHtml(popupText)}</strong>`)
+            .bindTooltip(escapeHtml(p.name), {
+                permanent: true,
+                direction: 'top',
+                offset: [0, -14],
+                className: 'route-pin-label'
+            });
+    });
+
+    currentRouteMap.fitBounds(L.latLngBounds(boundsLatLngs), { padding: [30, 30], maxZoom: 8 });
+
+    // The modal's CSS transition can settle a beat after we measure the
+    // container, so re-check the size shortly after to avoid a partially
+    // rendered tile grid.
+    setTimeout(() => {
+        if (currentRouteMap) {
+            currentRouteMap.invalidateSize();
+        }
+    }, 150);
+}
+
+function buildCurvedPath(latlngs) {
+    const result = [];
+    for (let i = 0; i < latlngs.length - 1; i++) {
+        const segment = curvedSegment(latlngs[i], latlngs[i + 1], 24, 0.15);
+        result.push(...(i === 0 ? segment : segment.slice(1)));
+    }
+    return result.length ? result : latlngs;
+}
+
+function curvedSegment(a, b, steps, curvature) {
+    const [lat1, lng1] = a;
+    const [lat2, lng2] = b;
+    const midLat = (lat1 + lat2) / 2;
+    const midLng = (lng1 + lng2) / 2;
+    const dLat = lat2 - lat1;
+    const dLng = lng2 - lng1;
+    // Perpendicular offset from the midpoint, scaled to the segment's own
+    // length, so the arc bows consistently to one side of travel.
+    const controlLat = midLat - dLng * curvature;
+    const controlLng = midLng + dLat * curvature;
+
+    const points = [];
+    for (let s = 0; s <= steps; s++) {
+        const t = s / steps;
+        const lat = (1 - t) * (1 - t) * lat1 + 2 * (1 - t) * t * controlLat + t * t * lat2;
+        const lng = (1 - t) * (1 - t) * lng1 + 2 * (1 - t) * t * controlLng + t * t * lng2;
+        points.push([lat, lng]);
+    }
+    return points;
+}
+
+function countDaysAtSea(cruise) {
+    const itinerary = Array.isArray(cruise.itinerary) ? cruise.itinerary : [];
+    return itinerary.filter((stop) => stop && stop.type === 'sea_day').length;
+}
+
+function getDaysAtSea(cruise) {
+    if (Number.isFinite(cruise && cruise.length_nights)) {
+        return cruise.length_nights;
+    }
+
+    return countDaysAtSea(cruise);
+}
+
+function getVisitedPorts(cruise) {
+    const itinerary = Array.isArray(cruise.itinerary) ? cruise.itinerary : [];
+    const ports = itinerary
+        .filter((stop) => stop && (stop.type === 'port' || stop.type === 'tender_port') && stop.port)
+        .map((stop) => stop.port);
+
+    return Array.from(new Set(ports));
+}
+
+// Builds the ordered sequence of stops for the route map: embarkation port,
+// each port of call in visit order, then disembarkation port. `pathPoints`
+// is used to draw the route line (it includes the embark/disembark point
+// twice for round trips, so the line visually closes the loop); `markerPoints`
+// is what actually gets a pin -- round trips get a single combined
+// "start & end" pin instead of two overlapping ones at the same spot.
+function getRoutePoints(cruise) {
+    const embarkPort = cruise.embarkation && cruise.embarkation.port;
+    const disembarkPort = cruise.disembarkation && cruise.disembarkation.port;
+    const calls = getVisitedPorts(cruise);
+    const roundTrip = Boolean(embarkPort) && Boolean(disembarkPort) && embarkPort === disembarkPort;
+
+    const pathPoints = [];
+    const markerPoints = [];
+
+    if (embarkPort) {
+        pathPoints.push({ name: embarkPort, kind: 'embark' });
+        markerPoints.push({ name: embarkPort, kind: roundTrip ? 'roundtrip' : 'embark' });
+    }
+
+    calls.forEach((name) => {
+        pathPoints.push({ name, kind: 'port' });
+        markerPoints.push({ name, kind: 'port' });
+    });
+
+    if (disembarkPort) {
+        pathPoints.push({ name: disembarkPort, kind: 'disembark' });
+        if (!roundTrip) {
+            markerPoints.push({ name: disembarkPort, kind: 'disembark' });
+        }
+    }
+
+    return { pathPoints, markerPoints };
+}
+
+function getSignificantEntries(cruise) {
+    if (Array.isArray(cruise && cruise.significant_entries)) {
+        return cruise.significant_entries.filter(Boolean).map((entry) => String(entry));
+    }
+
+    const preItems = cruise.financials && cruise.financials.pre_cruise_expenses && Array.isArray(cruise.financials.pre_cruise_expenses.items)
+        ? cruise.financials.pre_cruise_expenses.items
+        : [];
+    const onboardItems = cruise.financials && cruise.financials.onboard_expenses && Array.isArray(cruise.financials.onboard_expenses.items)
+        ? cruise.financials.onboard_expenses.items
+        : [];
+
+    const allItems = preItems.concat(onboardItems);
+    const excludedCategories = new Set([
+        'travel_insurance',
+        'drink_package',
+        'drink_packages',
+        'beverage_package',
+        'beverage_packages',
+        'gratuities',
+        'prepaid_gratuities'
+    ]);
+    const excludedDescriptionPattern = /(travel insurance|drink package|drink packages|beverage package|beverage packages|gratuities|gratuity)/i;
+
+    return allItems
+        .map((item) => {
+            const description = item && item.description ? item.description : null;
+            if (!description) {
+                return null;
+            }
+
+            const rawCategory = item && item.category ? String(item.category) : '';
+            const normalizedCategory = rawCategory.trim().toLowerCase();
+            if (excludedCategories.has(normalizedCategory) || excludedDescriptionPattern.test(description)) {
+                return null;
+            }
+
+            const category = rawCategory ? rawCategory.replace(/_/g, ' ') : 'extra';
+            const amount = Number.isFinite(item.amount) ? ` ($${item.amount.toFixed(2)})` : '';
+            return `${description} [${category}]${amount}`;
+        })
+        .filter(Boolean);
+}
+
+function formatDate(dateText) {
+    if (!dateText) {
+        return 'Unknown date';
+    }
+
+    const date = new Date(dateText + 'T00:00:00');
+    if (Number.isNaN(date.getTime())) {
+        return dateText;
+    }
+
+    return date.toLocaleDateString('en-US', {
+        year: 'numeric',
+        month: 'short',
+        day: 'numeric'
+    });
+}
+
+function toSafeText(value, fallback) {
+    return value === null || value === undefined || value === '' ? fallback : String(value);
+}
+
+function escapeHtml(value) {
+    const text = String(value);
+    return text
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#039;');
+}
+
+async function attachShipPhoto(card, cruise) {
+    const img = card.querySelector('.ship-photo');
+    const fallback = card.querySelector('.ship-photo-fallback');
+    if (!img || !fallback) {
+        return;
+    }
+
+    const photoUrl = await fetchShipPhotoUrl(cruise.ship, cruise.cruise_line);
+    if (!photoUrl) {
+        fallback.textContent = 'Photo unavailable';
+        return;
+    }
+
+    img.src = photoUrl;
+    img.alt = 'Photo of ' + (cruise.ship || 'the ship');
+    img.onload = () => {
+        img.hidden = false;
+        fallback.hidden = true;
+    };
+    img.onerror = () => {
+        img.hidden = true;
+        fallback.hidden = false;
+        fallback.textContent = 'Photo unavailable';
+    };
+}
+
+async function fetchShipPhotoUrl(shipName, cruiseLine) {
+    const cacheKey = (shipName || '').trim().toLowerCase();
+    if (!cacheKey) {
+        return null;
+    }
+
+    if (shipPhotoCache.has(cacheKey)) {
+        return shipPhotoCache.get(cacheKey);
+    }
+
+    const cruiseDeckPlansUrl = getCruiseDeckPlansProfileUrl(shipName);
+    if (cruiseDeckPlansUrl) {
+        shipPhotoCache.set(cacheKey, cruiseDeckPlansUrl);
+        saveShipPhotoCache();
+        return cruiseDeckPlansUrl;
+    }
+
+    const commonsQueries = buildCommonsSearchQueries(shipName, cruiseLine);
+    for (const query of commonsQueries) {
+        const photo = await fetchCommonsPhotoUrl(query);
+        if (photo) {
+            shipPhotoCache.set(cacheKey, photo);
+            saveShipPhotoCache();
+            return photo;
+        }
+    }
+
+    const candidates = buildWikipediaTitleCandidates(shipName, cruiseLine);
+    for (const title of candidates) {
+        const summary = await fetchWikipediaSummary(title);
+        const photo = extractWikipediaPhotoUrl(summary);
+        if (photo) {
+            shipPhotoCache.set(cacheKey, photo);
+            saveShipPhotoCache();
+            return photo;
+        }
+    }
+
+    const searchTitle = await searchWikipediaTitle(shipName + ' cruise ship');
+    if (searchTitle) {
+        const summary = await fetchWikipediaSummary(searchTitle);
+        const photo = extractWikipediaPhotoUrl(summary);
+        if (photo) {
+            shipPhotoCache.set(cacheKey, photo);
+            saveShipPhotoCache();
+            return photo;
+        }
+    }
+
+    shipPhotoCache.set(cacheKey, null);
+    saveShipPhotoCache();
+    return null;
+}
+
+function getCruiseDeckPlansProfileUrl(shipName) {
+    const key = String(shipName || '').trim().toLowerCase();
+    if (!key) {
+        return null;
+    }
+
+    if (CRUISE_DECKPLANS_PROFILE_MAP[key]) {
+        return CRUISE_DECKPLANS_PROFILE_MAP[key];
+    }
+
+    const slug = String(shipName || '')
+        .trim()
+        .replace(/\s+/g, '-')
+        .replace(/[^A-Za-z0-9-]/g, '');
+    if (!slug) {
+        return null;
+    }
+
+    return 'https://www.cruisedeckplans.com/assets/profiles/' + slug + '-profile.webp';
+}
+
+function buildCommonsSearchQueries(shipName, cruiseLine) {
+    const cleanShip = String(shipName || '').trim();
+    const cleanLine = String(cruiseLine || '').trim();
+    if (!cleanShip) {
+        return [];
+    }
+
+    const queries = [
+        '"' + cleanShip + '" cruise ship',
+        '"' + cleanShip + '" ship'
+    ];
+
+    if (cleanLine) {
+        queries.push('"' + cleanShip + '" "' + cleanLine + '"');
+    }
+
+    if (!/^MS\s+/i.test(cleanShip)) {
+        queries.push('"MS ' + cleanShip + '" cruise ship');
+    }
+
+    return Array.from(new Set(queries));
+}
+
+async function fetchCommonsPhotoUrl(query) {
+    try {
+        const params = new URLSearchParams({
+            action: 'query',
+            generator: 'search',
+            gsrsearch: query,
+            gsrnamespace: '6',
+            gsrlimit: '1',
+            prop: 'imageinfo',
+            iiprop: 'url',
+            iiurlwidth: '900',
+            format: 'json',
+            origin: '*'
+        });
+
+        const url = 'https://commons.wikimedia.org/w/api.php?' + params.toString();
+        const response = await fetch(url);
+        if (!response.ok) {
+            return null;
+        }
+
+        const payload = await response.json();
+        const pages = payload && payload.query && payload.query.pages ? payload.query.pages : null;
+        if (!pages) {
+            return null;
+        }
+
+        const values = Object.values(pages);
+        for (const page of values) {
+            const info = page && Array.isArray(page.imageinfo) ? page.imageinfo[0] : null;
+            if (info && info.thumburl) {
+                return info.thumburl;
+            }
+        }
+        return null;
+    } catch (error) {
+        return null;
+    }
+}
+
+function loadShipPhotoCache() {
+    try {
+        const raw = localStorage.getItem(SHIP_PHOTO_CACHE_KEY);
+        if (!raw) {
+            return;
+        }
+
+        const parsed = JSON.parse(raw);
+        if (!parsed || typeof parsed !== 'object') {
+            return;
+        }
+
+        Object.entries(parsed).forEach(([key, value]) => {
+            shipPhotoCache.set(key, value);
+        });
+    } catch (error) {
+        // Ignore storage errors and continue with in-memory cache only.
+    }
+}
+
+function saveShipPhotoCache() {
+    try {
+        const payload = Object.fromEntries(shipPhotoCache.entries());
+        localStorage.setItem(SHIP_PHOTO_CACHE_KEY, JSON.stringify(payload));
+    } catch (error) {
+        // Ignore storage write failures (quota/private mode).
+    }
+}
+
+function buildWikipediaTitleCandidates(shipName, cruiseLine) {
+    const clean = String(shipName || '').trim();
+    if (!clean) {
+        return [];
+    }
+
+    const candidates = [clean, clean + ' (ship)'];
+    if (/holland america/i.test(cruiseLine || '')) {
+        candidates.unshift('MS ' + clean);
+    }
+    return Array.from(new Set(candidates));
+}
+
+async function fetchWikipediaSummary(title) {
+    try {
+        const encoded = encodeURIComponent(title);
+        const response = await fetch('https://en.wikipedia.org/api/rest_v1/page/summary/' + encoded);
+        if (!response.ok) {
+            return null;
+        }
+        return response.json();
+    } catch (error) {
+        return null;
+    }
+}
+
+function extractWikipediaPhotoUrl(summary) {
+    if (!summary || typeof summary !== 'object') {
+        return null;
+    }
+
+    if (summary.thumbnail && summary.thumbnail.source) {
+        return summary.thumbnail.source;
+    }
+    if (summary.originalimage && summary.originalimage.source) {
+        return summary.originalimage.source;
+    }
+    return null;
+}
+
+async function searchWikipediaTitle(query) {
+    try {
+        const encoded = encodeURIComponent(query);
+        const url = 'https://en.wikipedia.org/w/api.php?action=query&list=search&srsearch=' + encoded + '&format=json&origin=*';
+        const response = await fetch(url);
+        if (!response.ok) {
+            return null;
+        }
+
+        const payload = await response.json();
+        const first = payload && payload.query && Array.isArray(payload.query.search)
+            ? payload.query.search[0]
+            : null;
+        return first && first.title ? first.title : null;
+    } catch (error) {
+        return null;
+    }
+}
+</script>
+</body>
+</html>

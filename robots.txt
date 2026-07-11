@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /cruise_history_public.json
+Disallow: /assets/ships-source/
+Allow: /
