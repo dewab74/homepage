@@ -1,0 +1,11 @@
+title: Bifrost — Daniel Whicker
+description: "Daniel Whicker's personal site — Bifrost."
+markdown: kramdown
+kramdown:
+  input: GFM
+  hard_wrap: false
+plugins: []
+exclude:
+  - process_data.py
+  - README.md
+  - cruise_history.json
